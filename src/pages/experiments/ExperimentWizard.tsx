@@ -26,18 +26,6 @@ export enum ExperimentWizardMode {
   Clone = 'clone',
 }
 
-/**
- * Takes an experiment to clone and returns the initial data for the clone.
- *
- * @param experiment The experiment to clone
- */
-function clonedExperiment(experiment: ExperimentFull): ExperimentFull {
-  return {
-    ...experiment,
-    name: ``,
-  }
-}
-
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     title: {
@@ -147,7 +135,9 @@ export default function WizardEdit({
   }
   const onSubmit = onSubmitByExperimentWizardMode[experimentWizardMode]
 
-  const initialExperiment = experiment && experimentToFormData(clonedExperiment(experiment))
+  const initialExperiment =
+    experiment &&
+    experimentToFormData(experimentWizardMode === ExperimentWizardMode.Clone ? { ...experiment, name: '' } : experiment)
 
   const titleByExperimentWizardMode: Record<ExperimentWizardMode, string> = {
     [ExperimentWizardMode.Create]: 'Create an Experiment',
