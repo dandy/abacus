@@ -4,8 +4,8 @@ import {
   Dialog,
   DialogActions,
   DialogContent,
+  DialogTitle,
   makeStyles,
-  Theme,
   Tooltip,
   Typography,
 } from '@material-ui/core'
@@ -14,14 +14,14 @@ import React, { useState } from 'react'
 
 import ExperimentsApi from 'src/api/ExperimentsApi'
 import { ExperimentFull, Status } from 'src/lib/schemas'
+import { useDangerStyles } from 'src/styles/styles'
 
 import LoadingButtonContainer from '../../general/LoadingButtonContainer'
 
-const useStyles = makeStyles((theme: Theme) =>
+const useStyles = makeStyles(() =>
   createStyles({
-    buttonOutlined: {
-      borderColor: theme.palette.error.dark,
-      color: theme.palette.error.dark,
+    dangerImage: {
+      textAlign: 'center',
     },
   }),
 )
@@ -34,6 +34,7 @@ const ExperimentRunButton = ({
   experimentReloadRef: React.MutableRefObject<() => void>
 }): JSX.Element => {
   const classes = useStyles()
+  const dangerClasses = useDangerStyles()
   const { enqueueSnackbar } = useSnackbar()
 
   const canRunExperiment =
@@ -68,7 +69,7 @@ const ExperimentRunButton = ({
         <span>
           <Button
             variant='outlined'
-            classes={{ outlined: classes.buttonOutlined }}
+            classes={{ outlined: dangerClasses.dangerButtonOutlined }}
             disabled={!canRunExperiment}
             onClick={onAskToConfirmRunExperiment}
           >
@@ -76,16 +77,35 @@ const ExperimentRunButton = ({
           </Button>
         </span>
       </Tooltip>
-      <Dialog open={isAskingToConfirmRunExperiment} aria-labelledby='confirm-run-experiment-dialog-title'>
+      <Dialog
+        open={isAskingToConfirmRunExperiment}
+        aria-labelledby='confirm-run-experiment-dialog-title'
+        BackdropProps={{ className: dangerClasses.dangerBackdrop }}
+      >
+        <DialogTitle>
+          <Typography variant='h5'>
+            Are you sure you want to <strong>deploy</strong> this experiment?
+          </Typography>
+        </DialogTitle>
         <DialogContent>
-          <Typography variant='body1'>Are you sure you want to deploy this experiment?</Typography>
+          <Typography variant='body2' gutterBottom>
+            Deploying will <strong>release experiment code to our users.</strong>
+          </Typography>
+          <Typography variant='body2' gutterBottom>
+            It also changes the experiment&apos;s status to running, which is <strong>irreversible</strong>.
+          </Typography>
+          <div className={classes.dangerImage}>
+            <img src='/img/danger.gif' alt='DANGER!' />
+          </div>
         </DialogContent>
         <DialogActions>
-          <Button onClick={onCancelRunExperiment}>Cancel</Button>
+          <Button variant='contained' color='primary' onClick={onCancelRunExperiment}>
+            Cancel
+          </Button>
           <LoadingButtonContainer isLoading={isSubmittingRunExperiment}>
             <Button
               variant='contained'
-              color='primary'
+              classes={{ contained: dangerClasses.dangerButtonContained }}
               disabled={isSubmittingRunExperiment}
               onClick={onConfirmRunExperiment}
             >
