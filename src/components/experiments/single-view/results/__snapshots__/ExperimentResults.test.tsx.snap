@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders the condensed table with some analyses in non-debug mode for a Conversion Metric 1`] = `
+exports[`renders correctly for 1 analysis datapoint 1`] = `
 <div
   class="analysis-latest-results"
 >
@@ -78,6 +78,734 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
                         style="width: 42px; text-align: center; display: flex;"
                       >
                         <button
+                          class="MuiButtonBase-root MuiIconButton-root"
+                          style="transition: all ease 200ms; transform: none;"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiIconButton-label"
+                          >
+                            <span
+                              aria-hidden="true"
+                              class="material-icons MuiIcon-root"
+                            >
+                              chevron_right
+                            </span>
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="box-sizing: border-box; font-family: 'Roboto Mono', monospace; font-weight: 600;"
+                    >
+                      metric_1
+                       
+                      <div
+                        aria-disabled="true"
+                        class="MuiChip-root makeStyles-primaryChip-2 MuiChip-outlined Mui-disabled"
+                      >
+                        <span
+                          class="MuiChip-label"
+                        >
+                          Primary
+                        </span>
+                      </div>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="box-sizing: border-box; font-family: 'Roboto Mono', monospace;"
+                    >
+                      1 week
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="box-sizing: border-box; font-family: 'Roboto Mono', monospace;"
+                    >
+                      Deploy 
+                      test
+                    </td>
+                  </tr>
+                  <tr
+                    class="MuiTableRow-root MuiTableRow-hover"
+                    index="1"
+                    level="0"
+                    path="1"
+                    style="transition: all ease 300ms; opacity: 0.8; cursor: pointer;"
+                  >
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingNone"
+                    >
+                      <div
+                        style="width: 42px; text-align: center; display: flex;"
+                      >
+                        <button
+                          class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
+                          disabled=""
+                          style="transition: all ease 200ms; transform: none;"
+                          tabindex="-1"
+                          type="button"
+                        >
+                          <span
+                            class="MuiIconButton-label"
+                          >
+                            <span
+                              aria-hidden="true"
+                              class="material-icons MuiIcon-root"
+                            >
+                              chevron_right
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="box-sizing: border-box; font-family: 'Roboto Mono', monospace; font-weight: 600;"
+                    >
+                      metric_2
+                       
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="box-sizing: border-box; font-family: 'Roboto Mono', monospace;"
+                    >
+                      1 hour
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="box-sizing: border-box; font-family: 'Roboto Mono', monospace;"
+                    >
+                      Not analyzed yet
+                    </td>
+                  </tr>
+                  <tr
+                    class="MuiTableRow-root MuiTableRow-hover"
+                    index="2"
+                    level="0"
+                    path="2"
+                    style="transition: all ease 300ms; opacity: 0.8; cursor: pointer;"
+                  >
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingNone"
+                    >
+                      <div
+                        style="width: 42px; text-align: center; display: flex;"
+                      >
+                        <button
+                          class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
+                          disabled=""
+                          style="transition: all ease 200ms; transform: none;"
+                          tabindex="-1"
+                          type="button"
+                        >
+                          <span
+                            class="MuiIconButton-label"
+                          >
+                            <span
+                              aria-hidden="true"
+                              class="material-icons MuiIcon-root"
+                            >
+                              chevron_right
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="box-sizing: border-box; font-family: 'Roboto Mono', monospace; font-weight: 600;"
+                    >
+                      metric_2
+                       
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="box-sizing: border-box; font-family: 'Roboto Mono', monospace;"
+                    >
+                      4 weeks
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="box-sizing: border-box; font-family: 'Roboto Mono', monospace;"
+                    >
+                      Not analyzed yet
+                    </td>
+                  </tr>
+                  <tr
+                    class="MuiTableRow-root MuiTableRow-hover"
+                    index="3"
+                    level="0"
+                    path="3"
+                    style="transition: all ease 300ms; opacity: 0.8; cursor: pointer;"
+                  >
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingNone"
+                    >
+                      <div
+                        style="width: 42px; text-align: center; display: flex;"
+                      >
+                        <button
+                          class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
+                          disabled=""
+                          style="transition: all ease 200ms; transform: none;"
+                          tabindex="-1"
+                          type="button"
+                        >
+                          <span
+                            class="MuiIconButton-label"
+                          >
+                            <span
+                              aria-hidden="true"
+                              class="material-icons MuiIcon-root"
+                            >
+                              chevron_right
+                            </span>
+                          </span>
+                        </button>
+                      </div>
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="box-sizing: border-box; font-family: 'Roboto Mono', monospace; font-weight: 600;"
+                    >
+                      metric_3
+                       
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="box-sizing: border-box; font-family: 'Roboto Mono', monospace;"
+                    >
+                      6 hours
+                    </td>
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
+                      style="box-sizing: border-box; font-family: 'Roboto Mono', monospace;"
+                    >
+                      Not analyzed yet
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`renders correctly for 1 analysis datapoint 2`] = `
+<div
+  class="MuiTableContainer-root makeStyles-root-11 analysis-detail-panel"
+>
+  <p
+    class="MuiTypography-root makeStyles-noPlotMessage-17 MuiTypography-body1"
+  >
+    Past values will be plotted once we have more than one day of results.
+  </p>
+  <h4
+    class="MuiTypography-root makeStyles-tableHeader-18 MuiTypography-h4"
+  >
+    Latest Estimates
+  </h4>
+  <table
+    class="MuiTable-root"
+  >
+    <tbody
+      class="MuiTableBody-root"
+    >
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-rowHeader-19 makeStyles-headerCell-12"
+          role="cell"
+          scope="row"
+        >
+          Difference
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-13"
+        >
+          [
+          
+          -1
+          <span
+            class="makeStyles-root-20"
+            title="Percentage points."
+          >
+            pp
+          </span>
+          , 
+          
+          1
+          <span
+            class="makeStyles-root-20"
+            title="Percentage points."
+          >
+            pp
+          </span>
+          ]
+          <br />
+          <br />
+          <strong>
+            Interpretation:
+          </strong>
+          <br />
+          There is a 95% probability that the difference between variations is between
+           
+          
+          -1
+          <span
+            class="makeStyles-root-20"
+            title="Percentage points."
+          >
+            pp
+          </span>
+           
+          and
+           
+          
+          1
+          <span
+            class="makeStyles-root-20"
+            title="Percentage points."
+          >
+            pp
+          </span>
+          .
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-rowHeader-19 makeStyles-headerCell-12"
+          role="cell"
+          scope="row"
+          valign="top"
+        >
+          <span
+            class="makeStyles-monospace-13"
+          >
+            test
+          </span>
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-13"
+        >
+          [
+          
+          -112.3
+          %
+          , 
+          
+          100
+          %
+          ]
+          <br />
+          <br />
+          <strong>
+            Interpretation:
+          </strong>
+          <br />
+          There is a 95% probability that the metric value for this variation is between
+           
+          
+          -112.3
+          %
+           
+          and
+           
+          
+          100
+          %
+          .
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-rowHeader-19 makeStyles-headerCell-12"
+          role="cell"
+          scope="row"
+          valign="top"
+        >
+          <span
+            class="makeStyles-monospace-13"
+          >
+            control
+          </span>
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-13"
+        >
+          [
+          
+          0
+          %
+          , 
+          
+          1000
+          %
+          ]
+          <br />
+          <br />
+          <strong>
+            Interpretation:
+          </strong>
+          <br />
+          There is a 95% probability that the metric value for this variation is between
+           
+          
+          0
+          %
+           
+          and
+           
+          
+          1000
+          %
+          .
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-12"
+          role="cell"
+          scope="row"
+        >
+          <span
+            aria-label=""
+            role="img"
+          >
+            ⚠️
+          </span>
+           
+          Warnings
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-13"
+        >
+          <div>
+            Experiment period is too short. Wait a few days to be safer.
+          </div>
+          <div>
+            The CI is too wide in comparison to the ROPE. Collect more data to be safer.
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h4
+    class="MuiTypography-root makeStyles-tableHeader-18 MuiTypography-h4"
+  >
+    Metric Assignment Details
+  </h4>
+  <table
+    class="MuiTable-root"
+  >
+    <tbody
+      class="MuiTableBody-root"
+    >
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-12"
+          role="cell"
+          scope="row"
+        >
+          Metric Description
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-13"
+        >
+          This is metric 1
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-12"
+          role="cell"
+          scope="row"
+        >
+          Minimum Practical Difference
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-13"
+        >
+          
+          10
+          <span
+            class="makeStyles-root-20"
+            title="Percentage points."
+          >
+            pp
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-12"
+          role="cell"
+          scope="row"
+        >
+          Change Expected
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-13"
+        >
+          Yes
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h4
+    class="MuiTypography-root makeStyles-tableHeader-18 MuiTypography-h4"
+  >
+    Analysis Fine Print
+  </h4>
+  <table
+    class="MuiTable-root"
+  >
+    <tbody
+      class="MuiTableBody-root"
+    >
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-12"
+          role="cell"
+          scope="row"
+        >
+          Last analyzed
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body"
+        >
+          <span
+            class="makeStyles-root-21"
+            title="09/05/2020, 20:00:00"
+          >
+            2020-05-10
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-12"
+          role="cell"
+          scope="row"
+        >
+          Analysis strategy
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-13"
+        >
+          Exposed without crossovers and spammers
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-12"
+          role="cell"
+          scope="row"
+        >
+          Analyzed participants
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-13"
+        >
+          1000
+           (
+          100
+           not final
+          <span>
+            ; 
+            600
+             in 
+            control
+          </span>
+          <span>
+            ; 
+            400
+             in 
+            test
+          </span>
+          )
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+`;
+
+exports[`renders correctly for 1 analysis datapoint 3`] = `
+[MockFunction] {
+  "calls": Array [
+    Array [
+      Object {
+        "className": "makeStyles-participantsPlot-4",
+        "data": Array [
+          Object {
+            "line": Object {
+              "color": "#1f78b488",
+            },
+            "mode": "lines+markers",
+            "name": "test",
+            "type": "scatter",
+            "x": Array [
+              "2020-05-10T00:00:00.000Z",
+            ],
+            "y": Array [
+              400,
+            ],
+          },
+          Object {
+            "line": Object {
+              "color": "#ff7f0088",
+            },
+            "mode": "lines+markers",
+            "name": "control",
+            "type": "scatter",
+            "x": Array [
+              "2020-05-10T00:00:00.000Z",
+            ],
+            "y": Array [
+              600,
+            ],
+          },
+        ],
+        "debug": false,
+        "layout": Object {
+          "autosize": true,
+          "hoverlabel": Object {
+            "namelength": -1,
+          },
+          "margin": Object {
+            "b": 48,
+            "l": 32,
+            "r": 16,
+            "t": 64,
+          },
+          "showlegend": false,
+          "title": "Participants (Exposed without crossovers and spammers)",
+        },
+        "style": Object {
+          "display": "inline-block",
+          "position": "relative",
+        },
+        "useResizeHandler": false,
+      },
+      Object {},
+    ],
+  ],
+  "results": Array [
+    Object {
+      "type": "return",
+      "value": undefined,
+    },
+  ],
+}
+`;
+
+exports[`renders the condensed table with some analyses in non-debug mode for a Conversion Metric 1`] = `
+<div
+  class="analysis-latest-results"
+>
+  <div
+    class="makeStyles-root-22"
+  >
+    <div
+      class="MuiPaper-root makeStyles-summary-24 MuiPaper-elevation1 MuiPaper-rounded"
+    />
+    <div
+      class="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
+      style="position: relative;"
+    >
+      <div
+        class="Component-horizontalScrollContainer-30"
+        style="overflow-x: auto; position: relative;"
+      >
+        <div>
+          <div
+            style="overflow-y: auto;"
+          >
+            <div>
+              <table
+                class="MuiTable-root"
+                style="table-layout: auto;"
+              >
+                <thead
+                  class="MuiTableHead-root"
+                >
+                  <tr
+                    class="MuiTableRow-root MuiTableRow-head"
+                  >
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-31 MuiTableCell-paddingNone"
+                      scope="col"
+                      style="font-weight: 700;"
+                    />
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-31 MuiTableCell-alignLeft"
+                      scope="col"
+                      style="font-weight: 700; box-sizing: border-box;"
+                    >
+                      Metric
+                    </th>
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-31 MuiTableCell-alignLeft"
+                      scope="col"
+                      style="font-weight: 700; box-sizing: border-box;"
+                    >
+                      Attribution window
+                    </th>
+                    <th
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-31 MuiTableCell-alignLeft"
+                      scope="col"
+                      style="font-weight: 700; box-sizing: border-box;"
+                    >
+                      Recommendation
+                    </th>
+                  </tr>
+                </thead>
+                <tbody
+                  class="MuiTableBody-root"
+                >
+                  <tr
+                    class="MuiTableRow-root MuiTableRow-hover"
+                    index="0"
+                    level="0"
+                    path="0"
+                    style="transition: all ease 300ms; opacity: 0.8; cursor: pointer;"
+                  >
+                    <td
+                      class="MuiTableCell-root MuiTableCell-body MuiTableCell-paddingNone"
+                    >
+                      <div
+                        style="width: 42px; text-align: center; display: flex;"
+                      >
+                        <button
                           class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
                           disabled=""
                           style="transition: all ease 200ms; transform: none;"
@@ -105,7 +833,7 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
                        
                       <div
                         aria-disabled="true"
-                        class="MuiChip-root makeStyles-primaryChip-2 MuiChip-outlined Mui-disabled"
+                        class="MuiChip-root makeStyles-primaryChip-23 MuiChip-outlined Mui-disabled"
                       >
                         <span
                           class="MuiChip-label"
@@ -302,8 +1030,16 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
 
 exports[`renders the condensed table with some analyses in non-debug mode for a Conversion Metric 2`] = `
 <div
-  class="MuiTableContainer-root makeStyles-root-11 analysis-detail-panel"
+  class="MuiTableContainer-root makeStyles-root-32 analysis-detail-panel"
 >
+  <div
+    class="makeStyles-metricEstimatePlots-35"
+  />
+  <h4
+    class="MuiTypography-root makeStyles-tableHeader-39 MuiTypography-h4"
+  >
+    Latest Estimates
+  </h4>
   <table
     class="MuiTable-root"
   >
@@ -314,103 +1050,177 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
         class="MuiTableRow-root"
       >
         <th
-          class="MuiTableCell-root MuiTableCell-head"
+          class="MuiTableCell-root MuiTableCell-head makeStyles-rowHeader-40 makeStyles-headerCell-33"
           role="cell"
           scope="row"
         >
-          Last analyzed
+          Difference
         </th>
         <td
-          class="MuiTableCell-root MuiTableCell-body"
-        >
-          <span
-            class="makeStyles-root-17"
-            title="09/05/2020, 20:00:00"
-          >
-            2020-05-10
-          </span>
-        </td>
-      </tr>
-      <tr
-        class="MuiTableRow-root"
-      >
-        <th
-          class="MuiTableCell-root MuiTableCell-head"
-          role="cell"
-          scope="row"
-        >
-          Analysis strategy
-        </th>
-        <td
-          class="MuiTableCell-root MuiTableCell-body makeStyles-dataCell-13"
-        >
-          Exposed without crossovers and spammers
-        </td>
-      </tr>
-      <tr
-        class="MuiTableRow-root"
-      >
-        <th
-          class="MuiTableCell-root MuiTableCell-head"
-          role="cell"
-          scope="row"
-        >
-          Analyzed participants
-        </th>
-        <td
-          class="MuiTableCell-root MuiTableCell-body makeStyles-dataCell-13"
-        >
-          1400
-           (
-          140
-           not final
-          <span>
-            ; 
-            840
-             in 
-            control
-          </span>
-          <span>
-            ; 
-            560
-             in 
-            test
-          </span>
-          )
-        </td>
-      </tr>
-      <tr
-        class="MuiTableRow-root"
-      >
-        <th
-          class="MuiTableCell-root MuiTableCell-head"
-          role="cell"
-          scope="row"
-        >
-          Difference interval
-        </th>
-        <td
-          class="MuiTableCell-root MuiTableCell-body makeStyles-dataCell-13"
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-34"
         >
           [
-          -0.01
-          ,
-          0.01
+          
+          -1
+          <span
+            class="makeStyles-root-41"
+            title="Percentage points."
+          >
+            pp
+          </span>
+          , 
+          
+          1
+          <span
+            class="makeStyles-root-41"
+            title="Percentage points."
+          >
+            pp
+          </span>
           ]
+          <br />
+          <br />
+          <strong>
+            Interpretation:
+          </strong>
+          <br />
+          There is a 95% probability that the difference between variations is between
+           
+          
+          -1
+          <span
+            class="makeStyles-root-41"
+            title="Percentage points."
+          >
+            pp
+          </span>
+           
+          and
+           
+          
+          1
+          <span
+            class="makeStyles-root-41"
+            title="Percentage points."
+          >
+            pp
+          </span>
+          .
         </td>
       </tr>
       <tr
         class="MuiTableRow-root"
       >
         <th
-          class="MuiTableCell-root MuiTableCell-head"
+          class="MuiTableCell-root MuiTableCell-head makeStyles-rowHeader-40 makeStyles-headerCell-33"
+          role="cell"
+          scope="row"
+          valign="top"
+        >
+          <span
+            class="makeStyles-monospace-34"
+          >
+            test
+          </span>
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-34"
+        >
+          [
+          
+          -112.3
+          %
+          , 
+          
+          100
+          %
+          ]
+          <br />
+          <br />
+          <strong>
+            Interpretation:
+          </strong>
+          <br />
+          There is a 95% probability that the metric value for this variation is between
+           
+          
+          -112.3
+          %
+           
+          and
+           
+          
+          100
+          %
+          .
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-rowHeader-40 makeStyles-headerCell-33"
+          role="cell"
+          scope="row"
+          valign="top"
+        >
+          <span
+            class="makeStyles-monospace-34"
+          >
+            control
+          </span>
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-34"
+        >
+          [
+          
+          0
+          %
+          , 
+          
+          1000
+          %
+          ]
+          <br />
+          <br />
+          <strong>
+            Interpretation:
+          </strong>
+          <br />
+          There is a 95% probability that the metric value for this variation is between
+           
+          
+          0
+          %
+           
+          and
+           
+          
+          1000
+          %
+          .
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-33"
           role="cell"
           scope="row"
         >
+          <span
+            aria-label=""
+            role="img"
+          >
+            ⚠️
+          </span>
+           
           Warnings
         </th>
         <td
-          class="MuiTableCell-root MuiTableCell-body makeStyles-dataCell-13"
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-34"
         >
           <div>
             Experiment period is too short. Wait a few days to be safer.
@@ -422,9 +1232,156 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
       </tr>
     </tbody>
   </table>
-  <div
-    class="makeStyles-metricEstimatePlots-14"
-  />
+  <h4
+    class="MuiTypography-root makeStyles-tableHeader-39 MuiTypography-h4"
+  >
+    Metric Assignment Details
+  </h4>
+  <table
+    class="MuiTable-root"
+  >
+    <tbody
+      class="MuiTableBody-root"
+    >
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-33"
+          role="cell"
+          scope="row"
+        >
+          Metric Description
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-34"
+        >
+          This is metric 3
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-33"
+          role="cell"
+          scope="row"
+        >
+          Minimum Practical Difference
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-34"
+        >
+          
+          1200
+          <span
+            class="makeStyles-root-41"
+            title="Percentage points."
+          >
+            pp
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-33"
+          role="cell"
+          scope="row"
+        >
+          Change Expected
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-34"
+        >
+          Yes
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h4
+    class="MuiTypography-root makeStyles-tableHeader-39 MuiTypography-h4"
+  >
+    Analysis Fine Print
+  </h4>
+  <table
+    class="MuiTable-root"
+  >
+    <tbody
+      class="MuiTableBody-root"
+    >
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-33"
+          role="cell"
+          scope="row"
+        >
+          Last analyzed
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body"
+        >
+          <span
+            class="makeStyles-root-42"
+            title="10/06/2020, 20:00:00"
+          >
+            2020-06-11
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-33"
+          role="cell"
+          scope="row"
+        >
+          Analysis strategy
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-34"
+        >
+          Exposed without crossovers and spammers
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-33"
+          role="cell"
+          scope="row"
+        >
+          Analyzed participants
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-34"
+        >
+          1200
+           (
+          140
+           not final
+          <span>
+            ; 
+            940
+             in 
+            control
+          </span>
+          <span>
+            ; 
+            660
+             in 
+            test
+          </span>
+          )
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;
 
@@ -433,13 +1390,13 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
   "calls": Array [
     Array [
       Object {
-        "className": "makeStyles-participantsPlot-4",
+        "className": "makeStyles-participantsPlot-25",
         "data": Array [
           Object {
             "line": Object {
               "color": "#1f78b488",
             },
-            "mode": "lines",
+            "mode": "lines+markers",
             "name": "test",
             "type": "scatter",
             "x": Array [
@@ -455,7 +1412,7 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "line": Object {
               "color": "#ff7f0088",
             },
-            "mode": "lines",
+            "mode": "lines+markers",
             "name": "control",
             "type": "scatter",
             "x": Array [
@@ -493,7 +1450,7 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
     ],
     Array [
       Object {
-        "className": "makeStyles-metricEstimatePlot-15",
+        "className": "makeStyles-metricEstimatePlot-36",
         "data": Array [
           Object {
             "line": Object {
@@ -504,8 +1461,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              -112.3,
               -112.3,
             ],
           },
@@ -520,8 +1479,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              100,
               100,
             ],
           },
@@ -534,8 +1495,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              0,
               0,
             ],
           },
@@ -550,8 +1513,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              1000,
               1000,
             ],
           },
@@ -581,7 +1546,7 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
     ],
     Array [
       Object {
-        "className": "makeStyles-metricEstimatePlot-15",
+        "className": "makeStyles-metricEstimatePlot-36",
         "data": Array [
           Object {
             "line": Object {
@@ -595,8 +1560,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              -1,
               -1,
             ],
           },
@@ -614,8 +1581,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              1,
               1,
             ],
           },
@@ -629,8 +1598,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              -1200,
               -1200,
             ],
           },
@@ -644,8 +1615,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              1200,
               1200,
             ],
           },
@@ -663,7 +1636,7 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "t": 64,
           },
           "showlegend": false,
-          "title": "Conversion rate difference estimates (%)",
+          "title": "Conversion rate difference estimates (percentage points)",
         },
         "style": Object {
           "display": "inline-block",
@@ -696,17 +1669,17 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
   class="analysis-latest-results"
 >
   <div
-    class="makeStyles-root-18"
+    class="makeStyles-root-43"
   >
     <div
-      class="MuiPaper-root makeStyles-summary-20 MuiPaper-elevation1 MuiPaper-rounded"
+      class="MuiPaper-root makeStyles-summary-45 MuiPaper-elevation1 MuiPaper-rounded"
     />
     <div
       class="MuiPaper-root MuiPaper-elevation2 MuiPaper-rounded"
       style="position: relative;"
     >
       <div
-        class="Component-horizontalScrollContainer-26"
+        class="Component-horizontalScrollContainer-51"
         style="overflow-x: auto; position: relative;"
       >
         <div>
@@ -725,26 +1698,26 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
                     class="MuiTableRow-root MuiTableRow-head"
                   >
                     <th
-                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-27 MuiTableCell-paddingNone"
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-52 MuiTableCell-paddingNone"
                       scope="col"
                       style="font-weight: 700;"
                     />
                     <th
-                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-27 MuiTableCell-alignLeft"
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-52 MuiTableCell-alignLeft"
                       scope="col"
                       style="font-weight: 700; box-sizing: border-box;"
                     >
                       Metric
                     </th>
                     <th
-                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-27 MuiTableCell-alignLeft"
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-52 MuiTableCell-alignLeft"
                       scope="col"
                       style="font-weight: 700; box-sizing: border-box;"
                     >
                       Attribution window
                     </th>
                     <th
-                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-27 MuiTableCell-alignLeft"
+                      class="MuiTableCell-root MuiTableCell-head MTableHeader-header-52 MuiTableCell-alignLeft"
                       scope="col"
                       style="font-weight: 700; box-sizing: border-box;"
                     >
@@ -796,7 +1769,7 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
                        
                       <div
                         aria-disabled="true"
-                        class="MuiChip-root makeStyles-primaryChip-19 MuiChip-outlined Mui-disabled"
+                        class="MuiChip-root makeStyles-primaryChip-44 MuiChip-outlined Mui-disabled"
                       >
                         <span
                           class="MuiChip-label"
@@ -993,8 +1966,16 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
 
 exports[`renders the condensed table with some analyses in non-debug mode for a Revenue Metric 2`] = `
 <div
-  class="MuiTableContainer-root makeStyles-root-28 analysis-detail-panel"
+  class="MuiTableContainer-root makeStyles-root-53 analysis-detail-panel"
 >
+  <div
+    class="makeStyles-metricEstimatePlots-56"
+  />
+  <h4
+    class="MuiTypography-root makeStyles-tableHeader-60 MuiTypography-h4"
+  >
+    Latest Estimates
+  </h4>
   <table
     class="MuiTable-root"
   >
@@ -1005,103 +1986,157 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
         class="MuiTableRow-root"
       >
         <th
-          class="MuiTableCell-root MuiTableCell-head"
+          class="MuiTableCell-root MuiTableCell-head makeStyles-rowHeader-61 makeStyles-headerCell-54"
           role="cell"
           scope="row"
         >
-          Last analyzed
+          Difference
         </th>
         <td
-          class="MuiTableCell-root MuiTableCell-body"
-        >
-          <span
-            class="makeStyles-root-34"
-            title="09/05/2020, 20:00:00"
-          >
-            2020-05-10
-          </span>
-        </td>
-      </tr>
-      <tr
-        class="MuiTableRow-root"
-      >
-        <th
-          class="MuiTableCell-root MuiTableCell-head"
-          role="cell"
-          scope="row"
-        >
-          Analysis strategy
-        </th>
-        <td
-          class="MuiTableCell-root MuiTableCell-body makeStyles-dataCell-30"
-        >
-          Exposed without crossovers and spammers
-        </td>
-      </tr>
-      <tr
-        class="MuiTableRow-root"
-      >
-        <th
-          class="MuiTableCell-root MuiTableCell-head"
-          role="cell"
-          scope="row"
-        >
-          Analyzed participants
-        </th>
-        <td
-          class="MuiTableCell-root MuiTableCell-body makeStyles-dataCell-30"
-        >
-          1400
-           (
-          140
-           not final
-          <span>
-            ; 
-            840
-             in 
-            control
-          </span>
-          <span>
-            ; 
-            560
-             in 
-            test
-          </span>
-          )
-        </td>
-      </tr>
-      <tr
-        class="MuiTableRow-root"
-      >
-        <th
-          class="MuiTableCell-root MuiTableCell-head"
-          role="cell"
-          scope="row"
-        >
-          Difference interval
-        </th>
-        <td
-          class="MuiTableCell-root MuiTableCell-body makeStyles-dataCell-30"
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-55"
         >
           [
+          USD 
           -0.01
-          ,
+          
+          , 
+          USD 
           0.01
+          
           ]
+          <br />
+          <br />
+          <strong>
+            Interpretation:
+          </strong>
+          <br />
+          There is a 95% probability that the difference between variations is between
+           
+          USD 
+          -0.01
+          
+           
+          and
+           
+          USD 
+          0.01
+          
+          .
         </td>
       </tr>
       <tr
         class="MuiTableRow-root"
       >
         <th
-          class="MuiTableCell-root MuiTableCell-head"
+          class="MuiTableCell-root MuiTableCell-head makeStyles-rowHeader-61 makeStyles-headerCell-54"
+          role="cell"
+          scope="row"
+          valign="top"
+        >
+          <span
+            class="makeStyles-monospace-55"
+          >
+            test
+          </span>
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-55"
+        >
+          [
+          USD 
+          -1.12
+          
+          , 
+          USD 
+          1
+          
+          ]
+          <br />
+          <br />
+          <strong>
+            Interpretation:
+          </strong>
+          <br />
+          There is a 95% probability that the metric value for this variation is between
+           
+          USD 
+          -1.12
+          
+           
+          and
+           
+          USD 
+          1
+          
+          .
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-rowHeader-61 makeStyles-headerCell-54"
+          role="cell"
+          scope="row"
+          valign="top"
+        >
+          <span
+            class="makeStyles-monospace-55"
+          >
+            control
+          </span>
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-55"
+        >
+          [
+          USD 
+          0
+          
+          , 
+          USD 
+          10
+          
+          ]
+          <br />
+          <br />
+          <strong>
+            Interpretation:
+          </strong>
+          <br />
+          There is a 95% probability that the metric value for this variation is between
+           
+          USD 
+          0
+          
+           
+          and
+           
+          USD 
+          10
+          
+          .
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-54"
           role="cell"
           scope="row"
         >
+          <span
+            aria-label=""
+            role="img"
+          >
+            ⚠️
+          </span>
+           
           Warnings
         </th>
         <td
-          class="MuiTableCell-root MuiTableCell-body makeStyles-dataCell-30"
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-55"
         >
           <div>
             Experiment period is too short. Wait a few days to be safer.
@@ -1113,9 +2148,151 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
       </tr>
     </tbody>
   </table>
-  <div
-    class="makeStyles-metricEstimatePlots-31"
-  />
+  <h4
+    class="MuiTypography-root makeStyles-tableHeader-60 MuiTypography-h4"
+  >
+    Metric Assignment Details
+  </h4>
+  <table
+    class="MuiTable-root"
+  >
+    <tbody
+      class="MuiTableBody-root"
+    >
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-54"
+          role="cell"
+          scope="row"
+        >
+          Metric Description
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-55"
+        >
+          This is metric 3
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-54"
+          role="cell"
+          scope="row"
+        >
+          Minimum Practical Difference
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-55"
+        >
+          USD 
+          12
+          
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-54"
+          role="cell"
+          scope="row"
+        >
+          Change Expected
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-55"
+        >
+          Yes
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <h4
+    class="MuiTypography-root makeStyles-tableHeader-60 MuiTypography-h4"
+  >
+    Analysis Fine Print
+  </h4>
+  <table
+    class="MuiTable-root"
+  >
+    <tbody
+      class="MuiTableBody-root"
+    >
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-54"
+          role="cell"
+          scope="row"
+        >
+          Last analyzed
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body"
+        >
+          <span
+            class="makeStyles-root-62"
+            title="10/06/2020, 20:00:00"
+          >
+            2020-06-11
+          </span>
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-54"
+          role="cell"
+          scope="row"
+        >
+          Analysis strategy
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-55"
+        >
+          Exposed without crossovers and spammers
+        </td>
+      </tr>
+      <tr
+        class="MuiTableRow-root"
+      >
+        <th
+          class="MuiTableCell-root MuiTableCell-head makeStyles-headerCell-54"
+          role="cell"
+          scope="row"
+        >
+          Analyzed participants
+        </th>
+        <td
+          class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-55"
+        >
+          1200
+           (
+          140
+           not final
+          <span>
+            ; 
+            940
+             in 
+            control
+          </span>
+          <span>
+            ; 
+            660
+             in 
+            test
+          </span>
+          )
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 `;
 
@@ -1124,13 +2301,13 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
   "calls": Array [
     Array [
       Object {
-        "className": "makeStyles-participantsPlot-21",
+        "className": "makeStyles-participantsPlot-46",
         "data": Array [
           Object {
             "line": Object {
               "color": "#1f78b488",
             },
-            "mode": "lines",
+            "mode": "lines+markers",
             "name": "test",
             "type": "scatter",
             "x": Array [
@@ -1146,7 +2323,7 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "line": Object {
               "color": "#ff7f0088",
             },
-            "mode": "lines",
+            "mode": "lines+markers",
             "name": "control",
             "type": "scatter",
             "x": Array [
@@ -1184,7 +2361,7 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
     ],
     Array [
       Object {
-        "className": "makeStyles-metricEstimatePlot-32",
+        "className": "makeStyles-metricEstimatePlot-57",
         "data": Array [
           Object {
             "line": Object {
@@ -1195,8 +2372,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              -1.123,
               -1.123,
             ],
           },
@@ -1211,8 +2390,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              1,
               1,
             ],
           },
@@ -1225,8 +2406,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              0,
               0,
             ],
           },
@@ -1241,8 +2424,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              10,
               10,
             ],
           },
@@ -1260,7 +2445,7 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "t": 64,
           },
           "showlegend": false,
-          "title": "Revenue estimates by variation ($)",
+          "title": "Revenue estimates by variation (USD)",
         },
         "style": Object {
           "display": "inline-block",
@@ -1272,7 +2457,7 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
     ],
     Array [
       Object {
-        "className": "makeStyles-metricEstimatePlot-32",
+        "className": "makeStyles-metricEstimatePlot-57",
         "data": Array [
           Object {
             "line": Object {
@@ -1286,8 +2471,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              -0.01,
               -0.01,
             ],
           },
@@ -1305,8 +2492,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              0.01,
               0.01,
             ],
           },
@@ -1320,8 +2509,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              -12,
               -12,
             ],
           },
@@ -1335,8 +2526,10 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "type": "scatter",
             "x": Array [
               "2020-05-10T00:00:00.000Z",
+              "2020-06-11T00:00:00.000Z",
             ],
             "y": Array [
+              12,
               12,
             ],
           },
@@ -1354,7 +2547,7 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
             "t": 64,
           },
           "showlegend": false,
-          "title": "Revenue difference estimates ($)",
+          "title": "Revenue difference estimates (USD)",
         },
         "style": Object {
           "display": "inline-block",

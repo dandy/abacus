@@ -8,7 +8,6 @@ import {
   FormControl,
   FormHelperText,
   FormLabel,
-  InputAdornment,
   MenuItem,
   Toolbar,
   Tooltip,
@@ -23,13 +22,15 @@ import TableRow from '@material-ui/core/TableRow'
 import Typography from '@material-ui/core/Typography'
 import { Add } from '@material-ui/icons'
 import { ErrorMessage, Field, Formik } from 'formik'
-import { Select, Switch, TextField } from 'formik-material-ui'
+import { Select, Switch } from 'formik-material-ui'
 import { useSnackbar } from 'notistack'
 import React, { useMemo, useState } from 'react'
 import * as yup from 'yup'
 
 import ExperimentsApi from 'src/api/ExperimentsApi'
 import { serverErrorMessage } from 'src/api/HttpResponseError'
+import MetricDifferenceField from 'src/components/general/MetricDifferenceField'
+import MetricValue from 'src/components/general/MetricValue'
 import { AttributionWindowSecondsToHuman } from 'src/lib/metric-assignments'
 import * as MetricAssignments from 'src/lib/metric-assignments'
 import { indexMetrics } from 'src/lib/normalizers'
@@ -42,7 +43,7 @@ import {
   MetricParameterType,
   Status,
 } from 'src/lib/schemas'
-import { formatBoolean, formatUsCurrencyDollar } from 'src/utils/formatters'
+import { formatBoolean } from 'src/utils/formatters'
 
 import LoadingButtonContainer from '../../../general/LoadingButtonContainer'
 
@@ -100,11 +101,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     primaryChip: {
       marginTop: theme.spacing(1),
-    },
-    tooltipped: {
-      borderBottomWidth: 1,
-      borderBottomStyle: 'dashed',
-      borderBottomColor: theme.palette.grey[500],
     },
   }),
 )
@@ -216,18 +212,11 @@ function MetricAssignmentsPanel({
                 {formatBoolean(resolvedMetricAssignment.changeExpected)}
               </TableCell>
               <TableCell className={classes.monospace}>
-                <span>
-                  {resolvedMetricAssignment.metric.parameterType === MetricParameterType.Revenue ? (
-                    formatUsCurrencyDollar(resolvedMetricAssignment.minDifference)
-                  ) : (
-                    <>
-                      {resolvedMetricAssignment.minDifference}&nbsp;
-                      <Tooltip title='Percentage Points'>
-                        <span className={classes.tooltipped}>pp</span>
-                      </Tooltip>
-                    </>
-                  )}
-                </span>
+                <MetricValue
+                  value={resolvedMetricAssignment.minDifference}
+                  metricParameterType={resolvedMetricAssignment.metric.parameterType}
+                  isDifference={true}
+                />
               </TableCell>
             </TableRow>
           ))}
@@ -338,35 +327,14 @@ function MetricAssignmentsPanel({
                     <FormLabel required className={classes.label} id={`metricAssignment.minDifference-label`}>
                       Minimum Difference
                     </FormLabel>
-                    <Field
-                      component={TextField}
+                    <MetricDifferenceField
                       name={`metricAssignment.minDifference`}
                       id={`metricAssignment.minDifference`}
-                      type='number'
-                      variant='outlined'
-                      placeholder='1.30'
-                      inputProps={{
-                        'aria-label': 'Minimum Difference',
-                        min: '0',
-                      }}
-                      InputProps={
-                        formikProps.values.metricAssignment.metricId &&
-                        indexedMetrics[(formikProps.values.metricAssignment.metricId as unknown) as number]
-                          .parameterType === MetricParameterType.Conversion
-                          ? {
-                              endAdornment: (
-                                <InputAdornment position='end'>
-                                  <Tooltip title='Percentage Points'>
-                                    <Typography variant='body1' color='textSecondary' className={classes.tooltipped}>
-                                      pp
-                                    </Typography>
-                                  </Tooltip>
-                                </InputAdornment>
-                              ),
-                            }
-                          : {
-                              startAdornment: <InputAdornment position='start'>$</InputAdornment>,
-                            }
+                      metricParameterType={
+                        (formikProps.values.metricAssignment.metricId &&
+                          indexedMetrics[(formikProps.values.metricAssignment.metricId as unknown) as number]
+                            .parameterType) ||
+                        MetricParameterType.Conversion
                       }
                     />
                   </FormControl>

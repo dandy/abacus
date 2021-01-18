@@ -134,15 +134,13 @@ test('renders as expected with all metrics resolvable', () => {
               <td
                 class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-2"
               >
-                <span>
-                  0.1
-                   
-                  <span
-                    class="makeStyles-tooltipped-8"
-                    title="Percentage Points"
-                  >
-                    pp
-                  </span>
+                
+                10
+                <span
+                  class="makeStyles-root-8"
+                  title="Percentage points."
+                >
+                  pp
                 </span>
               </td>
             </tr>
@@ -168,9 +166,9 @@ test('renders as expected with all metrics resolvable', () => {
               <td
                 class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-2"
               >
-                <span>
-                  $0.50
-                </span>
+                USD 
+                0.5
+                
               </td>
             </tr>
             <tr
@@ -195,9 +193,9 @@ test('renders as expected with all metrics resolvable', () => {
               <td
                 class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-2"
               >
-                <span>
-                  $10.50
-                </span>
+                USD 
+                10.5
+                
               </td>
             </tr>
             <tr
@@ -222,15 +220,13 @@ test('renders as expected with all metrics resolvable', () => {
               <td
                 class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-2"
               >
-                <span>
-                  12
-                   
-                  <span
-                    class="makeStyles-tooltipped-8"
-                    title="Percentage Points"
-                  >
-                    pp
-                  </span>
+                
+                1200
+                <span
+                  class="makeStyles-root-8"
+                  title="Percentage points."
+                >
+                  pp
                 </span>
               </td>
             </tr>
@@ -304,7 +300,7 @@ test('opens, submits and cancels assign metric dialog', async () => {
     fireEvent.click(attributionWindowFieldOption)
   })
 
-  await changeFieldByRole('spinbutton', /Minimum Difference/, '0.01')
+  await changeFieldByRole('spinbutton', /Minimum Difference/, '1')
 
   fireEvent.click(assignButton)
   await waitForElementToBeRemoved(assignButton)
@@ -315,7 +311,7 @@ test('opens, submits and cancels assign metric dialog', async () => {
     changeExpected: false,
     isPrimary: false,
     metricId: 3,
-    minDifference: 0.01,
+    minDifference: '0.01',
   })
 
   fireEvent.click(startAssignButton)

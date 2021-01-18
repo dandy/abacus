@@ -1,4 +1,4 @@
-import { formatBoolean, formatUsCurrencyDollar } from './formatters'
+import { formatBoolean } from './formatters'
 
 describe('utils/formatters.ts module', () => {
   describe('formatBoolean', () => {
@@ -8,12 +8,6 @@ describe('utils/formatters.ts module', () => {
 
     it('should format true as No', () => {
       expect(formatBoolean(false)).toBe('No')
-    })
-  })
-
-  describe('formatUsCurrencyDollar', () => {
-    it('should format value in US dollars', () => {
-      expect(formatUsCurrencyDollar(0.02)).toBe('$0.02')
     })
   })
 })
