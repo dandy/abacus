@@ -402,7 +402,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       scope="col"
                       style="font-weight: 700; box-sizing: border-box;"
                     >
-                      Participants (not final)
+                      Participants
                     </th>
                     <th
                       class="MuiTableCell-root MuiTableCell-head MTableHeader-header-6 MuiTableCell-alignLeft"
@@ -447,7 +447,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
                     >
-                      1000 (100)
+                      1000
                     </td>
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
@@ -491,7 +491,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
                     >
-                      900 (90)
+                      900
                     </td>
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
@@ -527,7 +527,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
                     >
-                      850 (85)
+                      850
                     </td>
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
@@ -563,7 +563,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
                     >
-                      800 (80)
+                      800
                     </td>
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
@@ -607,7 +607,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
                     >
-                      700 (70)
+                      700
                     </td>
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
@@ -696,7 +696,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       scope="col"
                       style="font-weight: 700; box-sizing: border-box;"
                     >
-                      Participants (not final)
+                      Participants
                     </th>
                     <th
                       class="MuiTableCell-root MuiTableCell-head MTableHeader-header-6 MuiTableCell-alignLeft"
@@ -789,7 +789,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       scope="col"
                       style="font-weight: 700; box-sizing: border-box;"
                     >
-                      Participants (not final)
+                      Participants
                     </th>
                     <th
                       class="MuiTableCell-root MuiTableCell-head MTableHeader-header-6 MuiTableCell-alignLeft"
@@ -834,7 +834,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
                     >
-                      10 (10)
+                      10
                     </td>
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
@@ -919,7 +919,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       scope="col"
                       style="font-weight: 700; box-sizing: border-box;"
                     >
-                      Participants (not final)
+                      Participants
                     </th>
                     <th
                       class="MuiTableCell-root MuiTableCell-head MTableHeader-header-6 MuiTableCell-alignLeft"
@@ -964,7 +964,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
                     >
-                      2000 (200)
+                      2000
                     </td>
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
@@ -1008,7 +1008,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
                     >
-                      1800 (180)
+                      1800
                     </td>
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
@@ -1052,7 +1052,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
                     >
-                      1700 (170)
+                      1700
                     </td>
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
@@ -1096,7 +1096,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
                     >
-                      1600 (160)
+                      1600
                     </td>
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
@@ -1140,7 +1140,7 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
                     >
-                      1200 (140)
+                      1200
                     </td>
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
