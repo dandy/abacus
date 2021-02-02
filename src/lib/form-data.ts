@@ -6,7 +6,6 @@ import {
   MetricAssignment,
   MetricFull,
   MetricParameterType,
-  Platform,
   SegmentAssignment,
   TagBare,
   Variation,
@@ -99,7 +98,7 @@ export function experimentToFormData(
       experiment.existingUsersAllowed === undefined
         ? 'true'
         : (String(experiment.existingUsersAllowed) as 'true' | 'false'),
-    platform: experiment.platform ?? Platform.Wpcom,
+    platform: experiment.platform ?? '',
     metricAssignments: experiment.metricAssignments ? experiment.metricAssignments.map(metricAssignmentToFormData) : [],
     segmentAssignments: experiment.segmentAssignments
       ? experiment.segmentAssignments.map(segmentAssignmentToFormData)
