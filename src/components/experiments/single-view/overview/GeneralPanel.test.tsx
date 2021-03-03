@@ -1,4 +1,4 @@
-/* eslint-disable @typescript-eslint/require-await */
+/* eslint-disable @typescript-eslint/require-await, no-irregular-whitespace */
 import { fireEvent, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react'
 import { noop } from 'lodash'
 import MockDate from 'mockdate'
@@ -187,6 +187,36 @@ test('renders as expected', () => {
                 >
                   https://wordpress.com/experiment_1
                 </a>
+              </td>
+            </tr>
+            <tr
+              class="MuiTableRow-root"
+            >
+              <th
+                class="MuiTableCell-root MuiTableCell-head"
+                role="cell"
+                scope="row"
+              >
+                Assignment Cache Entry
+              </th>
+              <td
+                class="MuiTableCell-root MuiTableCell-body"
+              >
+                <span
+                  class="makeStyles-monospace-5"
+                >
+                  ✅ Fresh: Production cache is up to date, but manual sandbox updates may be needed
+                   (
+                  <a
+                    class="MuiTypography-root MuiLink-root MuiLink-underlineAlways MuiTypography-colorPrimary"
+                    href="https://github.com/Automattic/experimentation-platform/wiki/Experimenter's-Guide#the-file-system-cache"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                  >
+                    learn more
+                  </a>
+                  )
+                </span>
               </td>
             </tr>
           </tbody>
