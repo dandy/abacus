@@ -144,10 +144,9 @@ exports[`renders correctly for 1 analysis datapoint 1`] = `
                         style="width: 42px; text-align: center; display: flex;"
                       >
                         <button
-                          class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
-                          disabled=""
+                          class="MuiButtonBase-root MuiIconButton-root"
                           style="transition: all ease 200ms; transform: none;"
-                          tabindex="-1"
+                          tabindex="0"
                           type="button"
                         >
                           <span
@@ -160,6 +159,9 @@ exports[`renders correctly for 1 analysis datapoint 1`] = `
                               chevron_right
                             </span>
                           </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
                         </button>
                       </div>
                     </td>
@@ -197,10 +199,9 @@ exports[`renders correctly for 1 analysis datapoint 1`] = `
                         style="width: 42px; text-align: center; display: flex;"
                       >
                         <button
-                          class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
-                          disabled=""
+                          class="MuiButtonBase-root MuiIconButton-root"
                           style="transition: all ease 200ms; transform: none;"
-                          tabindex="-1"
+                          tabindex="0"
                           type="button"
                         >
                           <span
@@ -213,6 +214,9 @@ exports[`renders correctly for 1 analysis datapoint 1`] = `
                               chevron_right
                             </span>
                           </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
                         </button>
                       </div>
                     </td>
@@ -250,10 +254,9 @@ exports[`renders correctly for 1 analysis datapoint 1`] = `
                         style="width: 42px; text-align: center; display: flex;"
                       >
                         <button
-                          class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
-                          disabled=""
+                          class="MuiButtonBase-root MuiIconButton-root"
                           style="transition: all ease 200ms; transform: none;"
-                          tabindex="-1"
+                          tabindex="0"
                           type="button"
                         >
                           <span
@@ -266,6 +269,9 @@ exports[`renders correctly for 1 analysis datapoint 1`] = `
                               chevron_right
                             </span>
                           </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
                         </button>
                       </div>
                     </td>
@@ -856,10 +862,9 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
                         style="width: 42px; text-align: center; display: flex;"
                       >
                         <button
-                          class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
-                          disabled=""
+                          class="MuiButtonBase-root MuiIconButton-root"
                           style="transition: all ease 200ms; transform: none;"
-                          tabindex="-1"
+                          tabindex="0"
                           type="button"
                         >
                           <span
@@ -872,6 +877,9 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
                               chevron_right
                             </span>
                           </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
                         </button>
                       </div>
                     </td>
@@ -909,10 +917,9 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
                         style="width: 42px; text-align: center; display: flex;"
                       >
                         <button
-                          class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
-                          disabled=""
+                          class="MuiButtonBase-root MuiIconButton-root"
                           style="transition: all ease 200ms; transform: none;"
-                          tabindex="-1"
+                          tabindex="0"
                           type="button"
                         >
                           <span
@@ -925,6 +932,9 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
                               chevron_right
                             </span>
                           </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
                         </button>
                       </div>
                     </td>
@@ -1779,10 +1789,9 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
                         style="width: 42px; text-align: center; display: flex;"
                       >
                         <button
-                          class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
-                          disabled=""
+                          class="MuiButtonBase-root MuiIconButton-root"
                           style="transition: all ease 200ms; transform: none;"
-                          tabindex="-1"
+                          tabindex="0"
                           type="button"
                         >
                           <span
@@ -1795,6 +1804,9 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
                               chevron_right
                             </span>
                           </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
                         </button>
                       </div>
                     </td>
@@ -1832,10 +1844,9 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
                         style="width: 42px; text-align: center; display: flex;"
                       >
                         <button
-                          class="MuiButtonBase-root MuiIconButton-root Mui-disabled Mui-disabled"
-                          disabled=""
+                          class="MuiButtonBase-root MuiIconButton-root"
                           style="transition: all ease 200ms; transform: none;"
-                          tabindex="-1"
+                          tabindex="0"
                           type="button"
                         >
                           <span
@@ -1848,6 +1859,9 @@ exports[`renders the condensed table with some analyses in non-debug mode for a 
                               chevron_right
                             </span>
                           </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
                         </button>
                       </div>
                     </td>

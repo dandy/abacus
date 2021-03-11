@@ -845,7 +845,9 @@ exports[`renders the full tables with some analyses in debug mode 2`] = `
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
-                    />
+                    >
+                      Not analyzed yet
+                    </td>
                     <td
                       class="MuiTableCell-root MuiTableCell-body MuiTableCell-alignLeft"
                       style="box-sizing: border-box;"
