@@ -153,7 +153,7 @@ interface VariationProbabilities {
   assignedSpammersDistributionMatchingAllocated: number
 }
 
-export interface ExperimentHealthStats {
+export interface ExperimentParticipantStats {
   ratios: {
     overall: {
       exposedToAssigned: number
@@ -170,10 +170,10 @@ export interface ExperimentHealthStats {
 /**
  * Gets Experiment Health Stats for an experiment
  */
-export function getExperimentHealthStats(
+export function getExperimentParticipantStats(
   experiment: ExperimentFull,
   analysesByStrategy: AnalysesByStrategy,
-): ExperimentHealthStats {
+): ExperimentParticipantStats {
   const participantCounts = getParticipantCounts(experiment, analysesByStrategy)
 
   const ratios = {
@@ -240,10 +240,22 @@ export function getExperimentHealthStats(
   }
 }
 
-export enum HealthIndication {
+export enum HealthIndicationCode {
   Nominal = 'Nominal',
   PossibleIssue = 'PossibleIssue',
   ProbableIssue = 'ProbableIssue',
+}
+
+export enum HealthIndicationSeverity {
+  Ok = 'Ok',
+  Warning = 'Warning',
+  Error = 'Error',
+}
+
+interface HealthIndication {
+  code: HealthIndicationCode
+  reason: string
+  severity: HealthIndicationSeverity
 }
 
 export enum HealthIndicatorUnit {
@@ -262,12 +274,35 @@ export interface HealthIndicator {
   indication: HealthIndication
 }
 
+interface IndicationBracket {
+  max: number
+  indication: Omit<HealthIndication, 'reason'>
+}
+
 /**
- * Returns indicators from experimentHealthStats.
+ * Get indication from set of IndicatorBrackets, adding a reason string.
+ * Expects brackets to be sorted.
  */
-export function getExperimentHealthIndicators(experimentHealthStats: ExperimentHealthStats): HealthIndicator[] {
+function getIndicationFromBrackets(sortedBracketsMaxAsc: IndicationBracket[], value: number): HealthIndication {
+  const bracketIndex = sortedBracketsMaxAsc.findIndex((bracket) => value <= bracket.max)
+  const previousBracketMax = sortedBracketsMaxAsc[bracketIndex - 1]?.max ?? -Infinity
+  const bracket = sortedBracketsMaxAsc[bracketIndex]
+  const reason = `${previousBracketMax === -Infinity ? '−∞' : previousBracketMax} < x ≤ ${bracket.max}`
+
+  return {
+    ...bracket.indication,
+    reason,
+  }
+}
+
+/**
+ * Returns indicators from experimentParticipantStats.
+ */
+export function getExperimentParticipantHealthIndicators(
+  experimentParticipantStats: ExperimentParticipantStats,
+): HealthIndicator[] {
   // Getting the min p-values across variations:
-  const minVariationProbabilities = Object.values(experimentHealthStats.probabilities.byVariationId).reduce(
+  const minVariationProbabilities = Object.values(experimentParticipantStats.probabilities.byVariationId).reduce(
     (acc: VariationProbabilities, cur: VariationProbabilities) => ({
       assignedDistributionMatchingAllocated: Math.min(
         acc.assignedDistributionMatchingAllocated,
@@ -284,16 +319,7 @@ export function getExperimentHealthIndicators(experimentHealthStats: ExperimentH
     }),
   )
 
-  interface IndicationBracket {
-    max: number
-    indication: HealthIndication
-  }
-
-  interface IndicatorDefinition {
-    name: string
-    value: number
-    unit: HealthIndicatorUnit
-    link?: string
+  interface IndicatorDefinition extends Omit<HealthIndicator, 'indication'> {
     indicationBrackets: Array<IndicationBracket>
   }
 
@@ -307,15 +333,24 @@ export function getExperimentHealthIndicators(experimentHealthStats: ExperimentH
       indicationBrackets: [
         {
           max: 0.001,
-          indication: HealthIndication.ProbableIssue,
+          indication: {
+            code: HealthIndicationCode.ProbableIssue,
+            severity: HealthIndicationSeverity.Error,
+          },
         },
         {
           max: 0.05,
-          indication: HealthIndication.PossibleIssue,
+          indication: {
+            code: HealthIndicationCode.PossibleIssue,
+            severity: HealthIndicationSeverity.Warning,
+          },
         },
         {
           max: 1,
-          indication: HealthIndication.Nominal,
+          indication: {
+            code: HealthIndicationCode.Nominal,
+            severity: HealthIndicationSeverity.Ok,
+          },
         },
       ],
     },
@@ -328,15 +363,24 @@ export function getExperimentHealthIndicators(experimentHealthStats: ExperimentH
       indicationBrackets: [
         {
           max: 0.001,
-          indication: HealthIndication.ProbableIssue,
+          indication: {
+            code: HealthIndicationCode.ProbableIssue,
+            severity: HealthIndicationSeverity.Error,
+          },
         },
         {
           max: 0.05,
-          indication: HealthIndication.PossibleIssue,
+          indication: {
+            code: HealthIndicationCode.PossibleIssue,
+            severity: HealthIndicationSeverity.Warning,
+          },
         },
         {
           max: 1,
-          indication: HealthIndication.Nominal,
+          indication: {
+            code: HealthIndicationCode.Nominal,
+            severity: HealthIndicationSeverity.Ok,
+          },
         },
       ],
     },
@@ -349,55 +393,82 @@ export function getExperimentHealthIndicators(experimentHealthStats: ExperimentH
       indicationBrackets: [
         {
           max: 0.001,
-          indication: HealthIndication.ProbableIssue,
+          indication: {
+            code: HealthIndicationCode.ProbableIssue,
+            severity: HealthIndicationSeverity.Error,
+          },
         },
         {
           max: 0.05,
-          indication: HealthIndication.PossibleIssue,
+          indication: {
+            code: HealthIndicationCode.PossibleIssue,
+            severity: HealthIndicationSeverity.Warning,
+          },
         },
         {
           max: 1,
-          indication: HealthIndication.Nominal,
+          indication: {
+            code: HealthIndicationCode.Nominal,
+            severity: HealthIndicationSeverity.Ok,
+          },
         },
       ],
     },
     {
       name: 'Total crossovers',
-      value: experimentHealthStats.ratios.overall.assignedCrossoversToAssigned,
+      value: experimentParticipantStats.ratios.overall.assignedCrossoversToAssigned,
       unit: HealthIndicatorUnit.Ratio,
       link: 'https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#total-crossovers',
       indicationBrackets: [
         {
           max: 0.01,
-          indication: HealthIndication.Nominal,
+          indication: {
+            code: HealthIndicationCode.Nominal,
+            severity: HealthIndicationSeverity.Ok,
+          },
         },
         {
           max: 0.05,
-          indication: HealthIndication.PossibleIssue,
+          indication: {
+            code: HealthIndicationCode.PossibleIssue,
+            severity: HealthIndicationSeverity.Warning,
+          },
         },
         {
           max: 1,
-          indication: HealthIndication.ProbableIssue,
+          indication: {
+            code: HealthIndicationCode.ProbableIssue,
+            severity: HealthIndicationSeverity.Error,
+          },
         },
       ],
     },
     {
       name: 'Total spammers',
-      value: experimentHealthStats.ratios.overall.assignedSpammersToAssigned,
+      value: experimentParticipantStats.ratios.overall.assignedSpammersToAssigned,
       unit: HealthIndicatorUnit.Ratio,
       link: 'https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#total-spammers',
       indicationBrackets: [
         {
           max: 0.075,
-          indication: HealthIndication.Nominal,
+          indication: {
+            code: HealthIndicationCode.Nominal,
+            severity: HealthIndicationSeverity.Ok,
+          },
         },
         {
           max: 0.3,
-          indication: HealthIndication.PossibleIssue,
+          indication: {
+            code: HealthIndicationCode.PossibleIssue,
+            severity: HealthIndicationSeverity.Warning,
+          },
         },
         {
           max: 1,
-          indication: HealthIndication.ProbableIssue,
+          indication: {
+            code: HealthIndicationCode.ProbableIssue,
+            severity: HealthIndicationSeverity.Error,
+          },
         },
       ],
     },
@@ -405,8 +476,7 @@ export function getExperimentHealthIndicators(experimentHealthStats: ExperimentH
 
   return indicatorDefinitions.map(({ value, indicationBrackets, ...rest }) => ({
     value,
-    indication: (_.sortBy(indicationBrackets, 'max').find((bracket) => value <= bracket.max) as IndicationBracket)
-      .indication,
+    indication: getIndicationFromBrackets(indicationBrackets, value),
     ...rest,
   }))
 }

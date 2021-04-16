@@ -413,10 +413,10 @@ describe('getParticipantCounts', () => {
   })
 })
 
-describe('getExperimentHealthStats', () => {
+describe('getExperimentParticipantStats', () => {
   it('should work correctly', () => {
     expect(
-      Analyses.getExperimentHealthStats(
+      Analyses.getExperimentParticipantStats(
         Fixtures.createExperimentFull({
           variations: [
             { variationId: 1, allocatedPercentage: 50, isDefault: true, name: 'variation_name_1' },
@@ -510,8 +510,8 @@ describe('getExperimentHealthStats', () => {
 describe('getExperimentHealthIndicators', () => {
   it('should work correctly', () => {
     expect(
-      Analyses.getExperimentHealthIndicators(
-        Analyses.getExperimentHealthStats(
+      Analyses.getExperimentParticipantHealthIndicators(
+        Analyses.getExperimentParticipantStats(
           Fixtures.createExperimentFull({
             variations: [
               { variationId: 1, allocatedPercentage: 50, isDefault: true, name: 'variation_name_1' },
@@ -559,7 +559,11 @@ describe('getExperimentHealthIndicators', () => {
       ),
     ).toEqual([
       {
-        indication: 'ProbableIssue',
+        indication: {
+          code: 'ProbableIssue',
+          reason: '−∞ < x ≤ 0.001',
+          severity: Analyses.HealthIndicationSeverity.Error,
+        },
         link:
           'https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#assignment-distribution-matching-allocated',
         name: 'Assignment distribution matching allocated',
@@ -567,7 +571,11 @@ describe('getExperimentHealthIndicators', () => {
         value: 0.000013715068445169529,
       },
       {
-        indication: 'PossibleIssue',
+        indication: {
+          code: 'PossibleIssue',
+          reason: '0.001 < x ≤ 0.05',
+          severity: Analyses.HealthIndicationSeverity.Warning,
+        },
         link:
           'https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#exposure-event-distribution-matching-allocated-sample-ratio-mismatch',
         name: 'Exposure event distribution matching allocated',
@@ -575,7 +583,11 @@ describe('getExperimentHealthIndicators', () => {
         value: 0.03847730828420026,
       },
       {
-        indication: 'ProbableIssue',
+        indication: {
+          code: 'ProbableIssue',
+          reason: '−∞ < x ≤ 0.001',
+          severity: Analyses.HealthIndicationSeverity.Error,
+        },
         link:
           'https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#spammer-distribution-matching-allocated',
         name: 'Spammer distribution matching allocated',
@@ -583,14 +595,22 @@ describe('getExperimentHealthIndicators', () => {
         value: 5.684341886080802e-14,
       },
       {
-        indication: 'ProbableIssue',
+        indication: {
+          code: 'ProbableIssue',
+          reason: '0.05 < x ≤ 1',
+          severity: Analyses.HealthIndicationSeverity.Error,
+        },
         link: 'https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#total-crossovers',
         name: 'Total crossovers',
         unit: 'Ratio',
         value: 0.3076923076923077,
       },
       {
-        indication: 'ProbableIssue',
+        indication: {
+          code: 'ProbableIssue',
+          reason: '0.3 < x ≤ 1',
+          severity: Analyses.HealthIndicationSeverity.Error,
+        },
         link: 'https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#total-spammers',
         name: 'Total spammers',
         unit: 'Ratio',
