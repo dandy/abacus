@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import {
   Chip,
   createStyles,
@@ -11,21 +12,14 @@ import {
   Typography,
   useTheme,
 } from '@material-ui/core'
+import clsx from 'clsx'
 import _ from 'lodash'
 import MaterialTable from 'material-table'
 import { PlotData } from 'plotly.js'
 import React, { useState } from 'react'
 import Plot from 'react-plotly.js'
 
-import DebugOutput from 'src/components/general/DebugOutput'
-import {
-  AggregateRecommendation,
-  AggregateRecommendationDecision,
-  AnalysisStrategyToHuman,
-  getAggregateRecommendation,
-  getExperimentParticipantHealthIndicators,
-  getExperimentParticipantStats,
-} from 'src/lib/analyses'
+import * as Analyses from 'src/lib/analyses'
 import * as Experiments from 'src/lib/experiments'
 import { AttributionWindowSecondsToHuman } from 'src/lib/metric-assignments'
 import { Analysis, AnalysisStrategy, ExperimentFull, MetricAssignment, MetricBare } from 'src/lib/schemas'
@@ -36,8 +30,10 @@ import { formatIsoDate } from 'src/utils/time'
 
 import AggregateRecommendationDisplay from './AggregateRecommendationDisplay'
 import { MetricAssignmentAnalysesData } from './ExperimentResults'
-import HealthIndicators from './HealthIndicators'
+import HealthIndicatorTable from './HealthIndicatorTable'
 import MetricAssignmentResults from './MetricAssignmentResults'
+
+const indicationSeverityClassSymbol = (severity: Analyses.HealthIndicationSeverity) => `indicationSeverity${severity}`
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -58,13 +54,6 @@ const useStyles = makeStyles((theme: Theme) =>
     advancedControls: {
       margin: theme.spacing(2, 0),
       padding: theme.spacing(2),
-      display: 'inline-flex',
-    },
-    healthStats: {
-      margin: theme.spacing(2, 0),
-      padding: theme.spacing(2),
-    },
-    healthStatsOutput: {
       display: 'inline-flex',
     },
     summaryColumn: {
@@ -96,6 +85,18 @@ const useStyles = makeStyles((theme: Theme) =>
       flexDirection: 'column',
       justifyContent: 'center',
       flex: 1,
+      textDecoration: 'none',
+    },
+    [indicationSeverityClassSymbol(Analyses.HealthIndicationSeverity.Ok)]: {},
+    [indicationSeverityClassSymbol(Analyses.HealthIndicationSeverity.Warning)]: {
+      borderTopWidth: 12,
+      borderTopStyle: 'solid',
+      borderTopColor: '#ffa500',
+    },
+    [indicationSeverityClassSymbol(Analyses.HealthIndicationSeverity.Error)]: {
+      borderTopWidth: 8,
+      borderTopStyle: 'solid',
+      borderTopColor: theme.palette.error.main,
     },
     participantsPlotPaper: {
       padding: theme.spacing(4, 4, 2),
@@ -104,6 +105,9 @@ const useStyles = makeStyles((theme: Theme) =>
     participantsPlot: {
       width: '100%',
       height: 300,
+    },
+    tableTitle: {
+      margin: theme.spacing(4, 2, 2),
     },
   }),
 )
@@ -141,7 +145,7 @@ export default function ActualExperimentResults({
       metricAssignment,
       metric,
       analysesByStrategyDateAsc,
-      aggregateRecommendation: getAggregateRecommendation(
+      aggregateRecommendation: Analyses.getAggregateRecommendation(
         Object.values(analysesByStrategyDateAsc)
           .map(_.last.bind(null))
           .filter((x) => x !== undefined) as Analysis[],
@@ -185,13 +189,30 @@ export default function ActualExperimentResults({
   const latestPrimaryMetricAnalysis = primaryMetricLatestAnalysesByStrategy[strategy]
   // istanbul ignore next; trivial
   const totalParticipants = latestPrimaryMetricAnalysis?.participantStats['total'] ?? 0
-  const primaryMetricAggregateRecommendation = getAggregateRecommendation(
+  const primaryMetricAggregateRecommendation = Analyses.getAggregateRecommendation(
     Object.values(primaryMetricLatestAnalysesByStrategy).filter((x) => x) as Analysis[],
     strategy,
   )
 
-  const experimentParticipantStats = getExperimentParticipantStats(experiment, primaryMetricLatestAnalysesByStrategy)
-  const experimentHealthIndicators = getExperimentParticipantHealthIndicators(experimentParticipantStats)
+  const experimentParticipantStats = Analyses.getExperimentParticipantStats(
+    experiment,
+    primaryMetricLatestAnalysesByStrategy,
+  )
+  const experimentHealthIndicators = Analyses.getExperimentParticipantHealthIndicators(experimentParticipantStats)
+
+  const maxIndicationSeverity = experimentHealthIndicators
+    .map(({ indication: { severity } }) => severity)
+    .sort(
+      (severityA, severityB) =>
+        Analyses.healthIndicationSeverityOrder.indexOf(severityB) -
+        Analyses.healthIndicationSeverityOrder.indexOf(severityA),
+    )[0]
+
+  const maxIndicationSeverityMessage = {
+    [Analyses.HealthIndicationSeverity.Ok]: 'No issues detected',
+    [Analyses.HealthIndicationSeverity.Warning]: 'Potential issues',
+    [Analyses.HealthIndicationSeverity.Error]: 'Serious issues',
+  }
 
   // ### Metric Assignments Table
 
@@ -226,7 +247,7 @@ export default function ActualExperimentResults({
         aggregateRecommendation,
       }: {
         experiment: ExperimentFull
-        aggregateRecommendation: AggregateRecommendation
+        aggregateRecommendation: Analyses.AggregateRecommendation
       }) => {
         return <AggregateRecommendationDisplay {...{ experiment, aggregateRecommendation }} />
       },
@@ -248,9 +269,10 @@ export default function ActualExperimentResults({
       analysesByStrategyDateAsc: Record<AnalysisStrategy, Analysis[]>
       metricAssignment: MetricAssignment
       metric: MetricBare
-      aggregateRecommendation: AggregateRecommendation
+      aggregateRecommendation: Analyses.AggregateRecommendation
     }) => {
-      let disabled = aggregateRecommendation.decision === AggregateRecommendationDecision.ManualAnalysisRequired
+      let disabled =
+        aggregateRecommendation.decision === Analyses.AggregateRecommendationDecision.ManualAnalysisRequired
       // istanbul ignore next; debug only
       disabled = disabled && !isDebugMode()
       return {
@@ -273,7 +295,7 @@ export default function ActualExperimentResults({
               <Select id='strategy-selector' value={strategy} onChange={onStrategyChange}>
                 {Object.values(AnalysisStrategy).map((strat) => (
                   <MenuItem key={strat} value={strat}>
-                    {AnalysisStrategyToHuman[strat]}
+                    {Analyses.AnalysisStrategyToHuman[strat]}
                   </MenuItem>
                 ))}
               </Select>
@@ -326,18 +348,36 @@ export default function ActualExperimentResults({
               </>
             )}
           </Paper>
-          <HealthIndicators indicators={experimentHealthIndicators} className={classes.summaryStatsPaper} />
+          <Paper
+            className={clsx(classes.summaryHealthPaper, classes[indicationSeverityClassSymbol(maxIndicationSeverity)])}
+            component='a'
+            // @ts-ignore: Component extensions aren't appearing in types.
+            href='#health-report'
+          >
+            <div className={classes.summaryStats}>
+              <Typography variant='h3' className={clsx(classes.summaryStatsStat)} color='primary'>
+                {maxIndicationSeverityMessage[maxIndicationSeverity]}
+              </Typography>
+              <Typography variant='subtitle1'>
+                see <strong>health report</strong>
+              </Typography>
+            </div>
+          </Paper>
         </div>
       </div>
+      <Typography variant='h3' className={classes.tableTitle}>
+        Metric Assignment Results
+      </Typography>
       <MaterialTable
         columns={tableColumns}
         data={metricAssignmentSummaryData}
         options={createStaticTableOptions(metricAssignmentSummaryData.length)}
         onRowClick={(_event, rowData, togglePanel) => {
           const { aggregateRecommendation } = rowData as {
-            aggregateRecommendation: AggregateRecommendation
+            aggregateRecommendation: Analyses.AggregateRecommendation
           }
-          let disabled = aggregateRecommendation.decision === AggregateRecommendationDecision.ManualAnalysisRequired
+          let disabled =
+            aggregateRecommendation.decision === Analyses.AggregateRecommendationDecision.ManualAnalysisRequired
           // istanbul ignore next; debug only
           disabled = disabled && !isDebugMode()
 
@@ -348,11 +388,12 @@ export default function ActualExperimentResults({
         }}
         detailPanel={DetailPanel}
       />
-      {
-        // Displaying these temporarily:
-        // istanbul ignore next; debug only
-        isDebugMode() && <DebugOutput label='Health Stats' content={experimentParticipantStats} />
-      }
+      <Typography variant='h3' className={classes.tableTitle}>
+        Health Report
+      </Typography>
+      <Paper id='health-report'>
+        <HealthIndicatorTable indicators={experimentHealthIndicators} />
+      </Paper>
     </div>
   )
 }

@@ -578,7 +578,7 @@ describe('getExperimentHealthIndicators', () => {
       Array [
         Object {
           "indication": Object {
-            "code": "ProbableIssue",
+            "code": "probable issue",
             "reason": "−∞ < x ≤ 0.001",
             "severity": "Error",
           },
@@ -589,7 +589,7 @@ describe('getExperimentHealthIndicators', () => {
         },
         Object {
           "indication": Object {
-            "code": "ProbableIssue",
+            "code": "probable issue",
             "reason": "−∞ < x ≤ 0.001",
             "severity": "Error",
           },
@@ -600,7 +600,7 @@ describe('getExperimentHealthIndicators', () => {
         },
         Object {
           "indication": Object {
-            "code": "PossibleIssue",
+            "code": "possible issue",
             "reason": "0.001 < x ≤ 0.05",
             "severity": "Warning",
           },
@@ -611,7 +611,7 @@ describe('getExperimentHealthIndicators', () => {
         },
         Object {
           "indication": Object {
-            "code": "VeryHigh",
+            "code": "very high",
             "reason": "0.05 < x ≤ 1",
             "severity": "Error",
           },
@@ -622,7 +622,7 @@ describe('getExperimentHealthIndicators', () => {
         },
         Object {
           "indication": Object {
-            "code": "VeryHigh",
+            "code": "very high",
             "reason": "0.3 < x ≤ 1",
             "severity": "Error",
           },
@@ -667,7 +667,7 @@ describe('getExperimentHealthIndicators', () => {
       Array [
         Object {
           "indication": Object {
-            "code": "Nominal",
+            "code": "nominal",
             "reason": "0.05 < x ≤ 1",
             "severity": "Ok",
           },
@@ -678,7 +678,7 @@ describe('getExperimentHealthIndicators', () => {
         },
         Object {
           "indication": Object {
-            "code": "Nominal",
+            "code": "nominal",
             "reason": "0.05 < x ≤ 1",
             "severity": "Ok",
           },
@@ -689,7 +689,7 @@ describe('getExperimentHealthIndicators', () => {
         },
         Object {
           "indication": Object {
-            "code": "ValueError",
+            "code": "value error",
             "reason": "Unexpected value",
             "severity": "Error",
           },
@@ -700,7 +700,7 @@ describe('getExperimentHealthIndicators', () => {
         },
         Object {
           "indication": Object {
-            "code": "ValueError",
+            "code": "value error",
             "reason": "Unexpected value",
             "severity": "Error",
           },

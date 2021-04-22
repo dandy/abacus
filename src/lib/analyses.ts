@@ -250,18 +250,18 @@ export function getExperimentParticipantStats(
 }
 
 export enum HealthIndicationCode {
-  Nominal = 'Nominal',
-  ValueError = 'ValueError',
+  Nominal = 'nominal',
+  ValueError = 'value error',
 
   // Probabilistic
-  PossibleIssue = 'PossibleIssue',
-  ProbableIssue = 'ProbableIssue',
+  PossibleIssue = 'possible issue',
+  ProbableIssue = 'probable issue',
 
   // Proportional
-  VeryLow = 'VeryLow',
-  Low = 'Low',
-  High = 'High',
-  VeryHigh = 'VeryHigh',
+  VeryLow = 'very low',
+  Low = 'low',
+  High = 'high',
+  VeryHigh = 'very high',
 }
 
 export enum HealthIndicationSeverity {
@@ -269,6 +269,12 @@ export enum HealthIndicationSeverity {
   Warning = 'Warning',
   Error = 'Error',
 }
+
+export const healthIndicationSeverityOrder = [
+  HealthIndicationSeverity.Ok,
+  HealthIndicationSeverity.Warning,
+  HealthIndicationSeverity.Error,
+]
 
 interface HealthIndication {
   code: HealthIndicationCode
