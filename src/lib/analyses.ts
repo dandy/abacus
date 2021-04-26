@@ -99,6 +99,9 @@ interface CountsSet {
   exposed: number
 }
 
+/**
+ * Get a participant count set for a specific participant stats key.
+ */
 function getParticipantCountsSetForParticipantStatsKey(
   participantStatsKey: string,
   analysesByStrategy: AnalysesByStrategy,
@@ -320,12 +323,18 @@ function getIndicationFromBrackets(sortedBracketsMaxAsc: IndicationBracket[], va
 
   const previousBracketMax = sortedBracketsMaxAsc[bracketIndex - 1]?.max ?? -Infinity
   const bracket = sortedBracketsMaxAsc[bracketIndex]
-  const reason = `${previousBracketMax === -Infinity ? '−∞' : previousBracketMax} < x ≤ ${bracket.max}`
+  const reason = `${previousBracketMax === -Infinity ? '−∞' : previousBracketMax} < x ≤ ${
+    bracket.max === Infinity ? '∞' : bracket.max
+  }`
 
   return {
     ...bracket.indication,
     reason,
   }
+}
+
+interface IndicatorDefinition extends Omit<HealthIndicator, 'indication'> {
+  indicationBrackets: Array<IndicationBracket>
 }
 
 /**
@@ -355,10 +364,6 @@ export function getExperimentParticipantHealthIndicators(
       ),
     }),
   )
-
-  interface IndicatorDefinition extends Omit<HealthIndicator, 'indication'> {
-    indicationBrackets: Array<IndicationBracket>
-  }
 
   const indicatorDefinitions: IndicatorDefinition[] = []
 
@@ -518,6 +523,72 @@ export function getExperimentParticipantHealthIndicators(
       ],
     },
   )
+
+  return indicatorDefinitions.map(({ value, indicationBrackets, ...rest }) => ({
+    value,
+    indication: getIndicationFromBrackets(indicationBrackets, value),
+    ...rest,
+  }))
+}
+
+/**
+ * Get experiment health indicators for an set of analyses.
+ * Will be expanded to future cross-strategy indicators.
+ *
+ * @param strategy The "default" strategy to use when a single strategy is needed.
+ */
+export function getExperimentAnalysesHealthIndicators(
+  experiment: ExperimentFull,
+  analysesByStrategy: Record<AnalysisStrategy, Analysis | undefined>,
+  strategy: AnalysisStrategy,
+): HealthIndicator[] {
+  const analysis = analysesByStrategy[strategy]
+  if (!analysis) {
+    return []
+  }
+  const metricAssignment = experiment.metricAssignments.find(
+    (metricAssignment) => metricAssignment.metricAssignmentId === analysis.metricAssignmentId,
+  )
+  if (!metricAssignment) {
+    throw new Error('Missing metricAssignment')
+  }
+  if (!analysis.metricEstimates) {
+    return []
+  }
+
+  const diffCiWidth = Math.abs(analysis.metricEstimates.diff.top - analysis.metricEstimates.diff.bottom)
+  const ropeWidth = metricAssignment.minDifference * 2
+  const indicatorDefinitions = [
+    {
+      name: 'Kruschke Precision (CI to ROPE ratio)',
+      value: diffCiWidth / ropeWidth,
+      unit: HealthIndicatorUnit.Ratio,
+      link: 'https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#ci-width-to-rope-ratio',
+      indicationBrackets: [
+        {
+          max: 0.8,
+          indication: {
+            code: HealthIndicationCode.Nominal,
+            severity: HealthIndicationSeverity.Ok,
+          },
+        },
+        {
+          max: 1.5,
+          indication: {
+            code: HealthIndicationCode.High,
+            severity: HealthIndicationSeverity.Warning,
+          },
+        },
+        {
+          max: Infinity,
+          indication: {
+            code: HealthIndicationCode.VeryHigh,
+            severity: HealthIndicationSeverity.Error,
+          },
+        },
+      ],
+    },
+  ]
 
   return indicatorDefinitions.map(({ value, indicationBrackets, ...rest }) => ({
     value,
