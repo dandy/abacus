@@ -175,19 +175,19 @@ const Audience = ({
 
       <div className={classes.row}>
         <FormControl component='fieldset'>
-          <FormLabel required>User types</FormLabel>
+          <FormLabel required>User type</FormLabel>
           <FormHelperText>Types of users to include in experiment</FormHelperText>
 
           <Field component={FormikMuiRadioGroup} name='experiment.existingUsersAllowed' required>
             <FormControlLabel
               value='false'
-              label='New users only'
+              label='New logged-in users only'
               control={<Radio disabled={formikProps.isSubmitting} />}
               disabled={formikProps.isSubmitting}
             />
             <FormControlLabel
               value='true'
-              label='All users (new + existing)'
+              label='All users (new + existing + anonymous)'
               control={<Radio disabled={formikProps.isSubmitting} />}
               disabled={formikProps.isSubmitting}
             />
