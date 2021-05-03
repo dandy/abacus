@@ -580,6 +580,7 @@ describe('getExperimentParticipantStatHealthIndicators', () => {
           "indication": Object {
             "code": "probable issue",
             "reason": "−∞ < x ≤ 0.001",
+            "recommendation": "Contact @experimentation-review-guild",
             "severity": "Error",
           },
           "link": "https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#assignment-distribution-matching-allocated",
@@ -591,6 +592,7 @@ describe('getExperimentParticipantStatHealthIndicators', () => {
           "indication": Object {
             "code": "probable issue",
             "reason": "−∞ < x ≤ 0.001",
+            "recommendation": "Contact @experimentation-review-guild",
             "severity": "Error",
           },
           "link": "https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#assigned-no-spammers-no-crossovers-distribution-matching-allocated",
@@ -602,6 +604,7 @@ describe('getExperimentParticipantStatHealthIndicators', () => {
           "indication": Object {
             "code": "possible issue",
             "reason": "0.001 < x ≤ 0.05",
+            "recommendation": "If not in combination with other distribution issues, exposure event being fired is linked to variation causing bias. Choose a different exposure event or use assignment analysis (contact @experiment-review-guild to do so).",
             "severity": "Warning",
           },
           "link": "https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#exposure-event-distribution-matching-allocated-sample-ratio-mismatch",
@@ -613,6 +616,7 @@ describe('getExperimentParticipantStatHealthIndicators', () => {
           "indication": Object {
             "code": "very high",
             "reason": "0.05 < x ≤ 1",
+            "recommendation": "Contact @experimentation-review-guild",
             "severity": "Error",
           },
           "link": "https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#total-crossovers",
@@ -622,9 +626,10 @@ describe('getExperimentParticipantStatHealthIndicators', () => {
         },
         Object {
           "indication": Object {
-            "code": "very high",
-            "reason": "0.3 < x ≤ 1",
-            "severity": "Error",
+            "code": "high",
+            "reason": "0.1 < x ≤ 0.4",
+            "recommendation": "Spammers don't affect experiments, but high numbers could indicate other problems.",
+            "severity": "Warning",
           },
           "link": "https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#total-spammers",
           "name": "Ratio of spammers to assigned",
@@ -691,6 +696,7 @@ describe('getExperimentParticipantStatHealthIndicators', () => {
           "indication": Object {
             "code": "value error",
             "reason": "Unexpected value",
+            "recommendation": "Contact @experimentation-review-guild",
             "severity": "Error",
           },
           "link": "https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#total-crossovers",
@@ -702,6 +708,7 @@ describe('getExperimentParticipantStatHealthIndicators', () => {
           "indication": Object {
             "code": "value error",
             "reason": "Unexpected value",
+            "recommendation": "Contact @experimentation-review-guild",
             "severity": "Error",
           },
           "link": "https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#total-spammers",
@@ -752,7 +759,8 @@ describe('getExperimentAnalysesHealthIndicators', () => {
           "indication": Object {
             "code": "very high",
             "reason": "1.5 < x ≤ ∞",
-            "severity": "Error",
+            "recommendation": "Results are very imprecise, be careful about drawing conclusions. Extend for more precision",
+            "severity": "Warning",
           },
           "link": "https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#kruschke-precision",
           "name": "Kruschke Precision (CI to ROPE ratio)",
@@ -849,7 +857,8 @@ describe('getExperimentHealthIndicators', () => {
           "indication": Object {
             "code": "very low",
             "reason": "−∞ < x ≤ 3",
-            "severity": "Error",
+            "recommendation": "Experiments should generally run at least 7 days before drawing conclusions.",
+            "severity": "Warning",
           },
           "link": "https://github.com/Automattic/experimentation-platform/wiki/Experiment-Health#experiment-run-time",
           "name": "Experiment Run Time",
