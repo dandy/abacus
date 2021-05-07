@@ -3,9 +3,10 @@ import 'ag-grid-community/dist/styles/ag-grid.css'
 import 'ag-grid-community/dist/styles/ag-theme-alpine.css'
 
 import { createStyles, Link, makeStyles, Theme, useTheme } from '@material-ui/core'
+import { ColumnApi, GridApi, GridReadyEvent } from 'ag-grid-community'
 import { AgGridReact } from 'ag-grid-react'
 import clsx from 'clsx'
-import React from 'react'
+import React, { useRef } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 
 import DatetimeText from 'src/components/general/DatetimeText'
@@ -27,7 +28,8 @@ const statusComparator = (statusA: Status, statusB: Status) => {
 const useStyles = makeStyles((_theme: Theme) =>
   createStyles({
     root: {
-      height: 600,
+      display: 'flex',
+      flex: 1,
     },
   }),
 )
@@ -38,6 +40,21 @@ const useStyles = makeStyles((_theme: Theme) =>
 const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): JSX.Element => {
   const theme = useTheme()
   const classes = useStyles()
+
+  const gridApiRef = useRef<GridApi | null>(null)
+  const gridColumnApiRef = useRef<ColumnApi | null>(null)
+
+  const onGridReady = (event: GridReadyEvent) => {
+    gridApiRef.current = event.api
+    gridColumnApiRef.current = gridColumnApiRef.current = event.columnApi
+
+    event.api.sizeColumnsToFit()
+    window.addEventListener('resize', function () {
+      setTimeout(function () {
+        event.api.sizeColumnsToFit()
+      })
+    })
+  }
 
   return (
     <div className={clsx('ag-theme-alpine', classes.root)}>
@@ -111,6 +128,7 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
           },
         ]}
         rowData={experiments}
+        containerStyle={{ flex: 1, height: 'auto' }}
         onFirstDataRendered={(event) => {
           event.columnApi.autoSizeAllColumns()
           event.columnApi.applyColumnState({
@@ -129,6 +147,7 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
             defaultState: { sort: null },
           })
         }}
+        onGridReady={onGridReady}
       />
     </div>
   )
