@@ -223,13 +223,16 @@ export default function ActualExperimentResults({
     ...Analyses.getExperimentHealthIndicators(experiment),
   ]
 
-  const maxIndicationSeverity = experimentHealthIndicators
-    .map(({ indication: { severity } }) => severity)
-    .sort(
-      (severityA, severityB) =>
-        Analyses.healthIndicationSeverityOrder.indexOf(severityB) -
-        Analyses.healthIndicationSeverityOrder.indexOf(severityA),
-    )[0]
+  const maxIndicationSeverity =
+    primaryMetricAggregateRecommendation.decision === Analyses.AggregateRecommendationDecision.MissingAnalysis
+      ? Analyses.HealthIndicationSeverity.Ok
+      : experimentHealthIndicators
+          .map(({ indication: { severity } }) => severity)
+          .sort(
+            (severityA, severityB) =>
+              Analyses.healthIndicationSeverityOrder.indexOf(severityB) -
+              Analyses.healthIndicationSeverityOrder.indexOf(severityA),
+          )[0]
 
   const maxIndicationSeverityMessage = {
     [Analyses.HealthIndicationSeverity.Ok]: 'No issues detected',
