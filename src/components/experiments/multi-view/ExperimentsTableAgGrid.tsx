@@ -7,7 +7,7 @@ import { Search as SearchIcon } from '@material-ui/icons'
 import { ColumnApi, GridApi, GridReadyEvent } from 'ag-grid-community'
 import { AgGridReact } from 'ag-grid-react'
 import clsx from 'clsx'
-import React, { useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { Link as RouterLink } from 'react-router-dom'
 
 import DatetimeText from 'src/components/general/DatetimeText'
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme: Theme) =>
       flex: 1,
     },
     toolbar: {
-      margin: theme.spacing(4, 0),
+      margin: theme.spacing(3, 0, 2),
       display: 'flex',
       justifyContent: 'space-between',
     },
@@ -48,7 +48,7 @@ const useStyles = makeStyles((theme: Theme) =>
     search: {
       position: 'relative',
       borderRadius: theme.shape.borderRadius,
-      backgroundColor: fade(theme.palette.common.white, 0.8),
+      backgroundColor: fade(theme.palette.common.white, 0.9),
       marginRight: theme.spacing(2),
       marginLeft: 0,
       width: '100%',
@@ -104,6 +104,46 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
     })
   }
 
+  const [searchValue, setSearchValue] = useState<string | null>(null)
+  const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSearchValue(event.target.value)
+  }
+  useEffect(() => {
+    // istanbul ignore next; trivial and shouldn't occur
+    if (!gridApiRef.current) {
+      return
+    }
+
+    gridApiRef.current?.setQuickFilter(searchValue)
+  }, [searchValue])
+
+  const onReset = () => {
+    // istanbul ignore next; trivial and shouldn't occur
+    if (!gridApiRef.current || !gridColumnApiRef.current) {
+      return
+    }
+
+    setSearchValue(null)
+    gridColumnApiRef.current.autoSizeAllColumns()
+    gridColumnApiRef.current.resetColumnState()
+    gridApiRef.current.setFilterModel(null)
+    gridColumnApiRef.current.applyColumnState({
+      state: [
+        {
+          colId: 'status',
+          sort: 'asc',
+          sortIndex: 0,
+        },
+        {
+          colId: 'startDatetime',
+          sort: 'desc',
+          sortIndex: 1,
+        },
+      ],
+      defaultState: { sort: null },
+    })
+  }
+
   return (
     <div className={clsx('ag-theme-alpine', classes.root)}>
       <div className={classes.toolbar}>
@@ -120,9 +160,11 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
                 input: classes.inputInput,
               }}
               inputProps={{ 'aria-label': 'search' }}
+              value={searchValue}
+              onChange={onSearchChange}
             />
           </div>
-          <Button> Reset </Button>
+          <Button onClick={onReset}> Reset </Button>
         </div>
       </div>
       <div className={clsx('ag-theme-alpine', classes.gridContainer)}>
@@ -197,24 +239,7 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
           ]}
           rowData={experiments}
           containerStyle={{ flex: 1, height: 'auto' }}
-          onFirstDataRendered={(event) => {
-            event.columnApi.autoSizeAllColumns()
-            event.columnApi.applyColumnState({
-              state: [
-                {
-                  colId: 'status',
-                  sort: 'asc',
-                  sortIndex: 0,
-                },
-                {
-                  colId: 'startDatetime',
-                  sort: 'desc',
-                  sortIndex: 1,
-                },
-              ],
-              defaultState: { sort: null },
-            })
-          }}
+          onFirstDataRendered={onReset}
           onGridReady={onGridReady}
         />
       </div>
