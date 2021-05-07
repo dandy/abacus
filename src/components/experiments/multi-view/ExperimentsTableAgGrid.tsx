@@ -104,9 +104,9 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
     })
   }
 
-  const [searchValue, setSearchValue] = useState<string | null>(null)
+  const [searchState, setSearchState] = useState<string>('')
   const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchValue(event.target.value)
+    setSearchState(event.target.value)
   }
   useEffect(() => {
     // istanbul ignore next; trivial and shouldn't occur
@@ -114,8 +114,8 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
       return
     }
 
-    gridApiRef.current?.setQuickFilter(searchValue)
-  }, [searchValue])
+    gridApiRef.current?.setQuickFilter(searchState)
+  }, [searchState])
 
   const onReset = () => {
     // istanbul ignore next; trivial and shouldn't occur
@@ -123,7 +123,7 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
       return
     }
 
-    setSearchValue(null)
+    setSearchState('')
     gridColumnApiRef.current.autoSizeAllColumns()
     gridColumnApiRef.current.resetColumnState()
     gridApiRef.current.setFilterModel(null)
@@ -159,8 +159,8 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
                 root: classes.inputRoot,
                 input: classes.inputInput,
               }}
-              inputProps={{ 'aria-label': 'search' }}
-              value={searchValue}
+              inputProps={{ 'aria-label': 'Search' }}
+              value={searchState}
               onChange={onSearchChange}
             />
           </div>
