@@ -32,6 +32,9 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       flexDirection: 'column',
       flex: 1,
+      '& .ag-header-cell-label .ag-header-icon.ag-sort-order': {
+        display: 'none',
+      },
     },
     toolbar: {
       margin: theme.spacing(3, 0, 2),
