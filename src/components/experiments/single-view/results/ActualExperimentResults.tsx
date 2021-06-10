@@ -135,6 +135,9 @@ const useStyles = makeStyles((theme: Theme) =>
       color: theme.palette.grey[600],
       whiteSpace: 'pre',
     },
+    metricAssignmentNameLine: {
+      whiteSpace: 'nowrap',
+    },
   }),
 )
 
@@ -249,13 +252,15 @@ export default function ActualExperimentResults({
 
   const tableColumns = [
     {
-      title: 'Metric',
+      title: 'Metric (attribution window)',
       render: ({ metric, metricAssignment }: { metric: MetricBare; metricAssignment: MetricAssignment }) => (
         <>
-          <Tooltip title={metric.description}>
-            <span>{metric.name}</span>
-          </Tooltip>
-          &nbsp;
+          <span className={classes.metricAssignmentNameLine}>
+            <Tooltip title={metric.description}>
+              <span>{metric.name}</span>
+            </Tooltip>
+            &nbsp;({AttributionWindowSecondsToHuman[metricAssignment.attributionWindowSeconds]})
+          </span>
           {metricAssignment.isPrimary && (
             <>
               <br />
@@ -267,14 +272,6 @@ export default function ActualExperimentResults({
       cellStyle: {
         fontFamily: theme.custom.fonts.monospace,
         fontWeight: 600,
-      },
-    },
-    {
-      title: 'Attribution window',
-      render: ({ metricAssignment }: { metricAssignment: MetricAssignment }) =>
-        AttributionWindowSecondsToHuman[metricAssignment.attributionWindowSeconds],
-      cellStyle: {
-        fontFamily: theme.custom.fonts.monospace,
       },
     },
     {
