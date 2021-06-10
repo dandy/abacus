@@ -3,7 +3,6 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Chip,
   createStyles,
   FormControl,
   InputLabel,
@@ -24,6 +23,7 @@ import { PlotData } from 'plotly.js'
 import React, { useState } from 'react'
 import Plot from 'react-plotly.js'
 
+import Attribute from 'src/components/general/Attribute'
 import MetricValue, { metricValueFormatData } from 'src/components/general/MetricValue'
 import * as Analyses from 'src/lib/analyses'
 import * as Experiments from 'src/lib/experiments'
@@ -52,9 +52,6 @@ const useStyles = makeStyles((theme: Theme) =>
       '& .MuiIconButton-root.Mui-disabled': {
         opacity: 0,
       },
-    },
-    primaryChip: {
-      marginTop: theme.spacing(1),
     },
     summary: {
       display: 'flex',
@@ -257,9 +254,13 @@ export default function ActualExperimentResults({
         <>
           <Tooltip title={metric.description}>
             <span>{metric.name}</span>
-          </Tooltip>{' '}
+          </Tooltip>
+          &nbsp;
           {metricAssignment.isPrimary && (
-            <Chip label='Primary' variant='outlined' disabled className={classes.primaryChip} />
+            <>
+              <br />
+              <Attribute name='primary' />
+            </>
           )}
         </>
       ),

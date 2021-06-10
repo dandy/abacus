@@ -663,17 +663,12 @@ exports[`renders as expected at large width 1`] = `
               class="makeStyles-monospace-30"
             >
               metric_1
-              <br />
-              <div
-                aria-disabled="true"
-                class="MuiChip-root makeStyles-primaryChip-35 MuiChip-outlined Mui-disabled"
+               
+              <span
+                class="makeStyles-root-35"
               >
-                <span
-                  class="MuiChip-label"
-                >
-                  Primary
-                </span>
-              </div>
+                primary
+              </span>
             </strong>
             <br />
             <small
@@ -715,7 +710,7 @@ exports[`renders as expected at large width 1`] = `
               class="makeStyles-monospace-30"
             >
               metric_2
-              <br />
+               
             </strong>
             <br />
             <small
@@ -752,7 +747,7 @@ exports[`renders as expected at large width 1`] = `
               class="makeStyles-monospace-30"
             >
               metric_2
-              <br />
+               
             </strong>
             <br />
             <small
@@ -789,7 +784,7 @@ exports[`renders as expected at large width 1`] = `
               class="makeStyles-monospace-30"
             >
               metric_3
-              <br />
+               
             </strong>
             <br />
             <small
@@ -1490,17 +1485,12 @@ exports[`renders as expected at small width 1`] = `
               class="makeStyles-monospace-66"
             >
               metric_1
-              <br />
-              <div
-                aria-disabled="true"
-                class="MuiChip-root makeStyles-primaryChip-71 MuiChip-outlined Mui-disabled"
+               
+              <span
+                class="makeStyles-root-71"
               >
-                <span
-                  class="MuiChip-label"
-                >
-                  Primary
-                </span>
-              </div>
+                primary
+              </span>
             </strong>
             <br />
             <small
@@ -1542,7 +1532,7 @@ exports[`renders as expected at small width 1`] = `
               class="makeStyles-monospace-66"
             >
               metric_2
-              <br />
+               
             </strong>
             <br />
             <small
@@ -1579,7 +1569,7 @@ exports[`renders as expected at small width 1`] = `
               class="makeStyles-monospace-66"
             >
               metric_2
-              <br />
+               
             </strong>
             <br />
             <small
@@ -1616,7 +1606,7 @@ exports[`renders as expected at small width 1`] = `
               class="makeStyles-monospace-66"
             >
               metric_3
-              <br />
+               
             </strong>
             <br />
             <small
@@ -2421,17 +2411,12 @@ exports[`renders as expected with conclusion data 1`] = `
               class="makeStyles-monospace-104"
             >
               metric_1
-              <br />
-              <div
-                aria-disabled="true"
-                class="MuiChip-root makeStyles-primaryChip-109 MuiChip-outlined Mui-disabled"
+               
+              <span
+                class="makeStyles-root-109"
               >
-                <span
-                  class="MuiChip-label"
-                >
-                  Primary
-                </span>
-              </div>
+                primary
+              </span>
             </strong>
             <br />
             <small
@@ -2473,7 +2458,7 @@ exports[`renders as expected with conclusion data 1`] = `
               class="makeStyles-monospace-104"
             >
               metric_2
-              <br />
+               
             </strong>
             <br />
             <small
@@ -2510,7 +2495,7 @@ exports[`renders as expected with conclusion data 1`] = `
               class="makeStyles-monospace-104"
             >
               metric_2
-              <br />
+               
             </strong>
             <br />
             <small
@@ -2547,7 +2532,7 @@ exports[`renders as expected with conclusion data 1`] = `
               class="makeStyles-monospace-104"
             >
               metric_3
-              <br />
+               
             </strong>
             <br />
             <small
@@ -3248,17 +3233,12 @@ exports[`renders as expected without conclusion data 1`] = `
               class="makeStyles-monospace-140"
             >
               metric_1
-              <br />
-              <div
-                aria-disabled="true"
-                class="MuiChip-root makeStyles-primaryChip-145 MuiChip-outlined Mui-disabled"
+               
+              <span
+                class="makeStyles-root-145"
               >
-                <span
-                  class="MuiChip-label"
-                >
-                  Primary
-                </span>
-              </div>
+                primary
+              </span>
             </strong>
             <br />
             <small
@@ -3300,7 +3280,7 @@ exports[`renders as expected without conclusion data 1`] = `
               class="makeStyles-monospace-140"
             >
               metric_2
-              <br />
+               
             </strong>
             <br />
             <small
@@ -3337,7 +3317,7 @@ exports[`renders as expected without conclusion data 1`] = `
               class="makeStyles-monospace-140"
             >
               metric_2
-              <br />
+               
             </strong>
             <br />
             <small
@@ -3374,7 +3354,7 @@ exports[`renders as expected without conclusion data 1`] = `
               class="makeStyles-monospace-140"
             >
               metric_3
-              <br />
+               
             </strong>
             <br />
             <small
