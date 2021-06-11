@@ -11,6 +11,12 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 )
 
+/**
+ * Attribute is a UI element to indicate another element has a certain state.
+ * Similar to chips but low profile.
+ *
+ * e.g. "default", "primary", "excluded"
+ */
 export default function Attribute({ name, className }: { name: string; className?: string }): JSX.Element {
   const classes = useStyles()
 
