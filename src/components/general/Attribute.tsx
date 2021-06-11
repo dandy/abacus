@@ -11,7 +11,7 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 )
 
-export default function Attribute({ name, className }: { name: string; className?: string }) {
+export default function Attribute({ name, className }: { name: string; className?: string }): JSX.Element {
   const classes = useStyles()
 
   return <span className={clsx(classes.root, className)}>{name}</span>
