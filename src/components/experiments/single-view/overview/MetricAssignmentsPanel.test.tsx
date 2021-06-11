@@ -112,17 +112,12 @@ test('renders as expected with all metrics resolvable', () => {
                   class="makeStyles-monospace-2"
                 >
                   metric_1
-                  <br />
-                  <div
-                    aria-disabled="true"
-                    class="MuiChip-root makeStyles-primaryChip-7 MuiChip-outlined Mui-disabled"
+                   
+                  <span
+                    class="makeStyles-root-7"
                   >
-                    <span
-                      class="MuiChip-label"
-                    >
-                      Primary
-                    </span>
-                  </div>
+                    primary
+                  </span>
                 </strong>
                 <br />
                 <small
@@ -164,7 +159,7 @@ test('renders as expected with all metrics resolvable', () => {
                   class="makeStyles-monospace-2"
                 >
                   metric_2
-                  <br />
+                   
                 </strong>
                 <br />
                 <small
@@ -201,7 +196,7 @@ test('renders as expected with all metrics resolvable', () => {
                   class="makeStyles-monospace-2"
                 >
                   metric_2
-                  <br />
+                   
                 </strong>
                 <br />
                 <small
@@ -238,7 +233,7 @@ test('renders as expected with all metrics resolvable', () => {
                   class="makeStyles-monospace-2"
                 >
                   metric_3
-                  <br />
+                   
                 </strong>
                 <br />
                 <small

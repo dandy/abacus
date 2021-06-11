@@ -1,6 +1,5 @@
 import {
   Button,
-  Chip,
   Dialog,
   DialogActions,
   DialogContent,
@@ -29,6 +28,7 @@ import * as yup from 'yup'
 
 import ExperimentsApi from 'src/api/ExperimentsApi'
 import { serverErrorMessage } from 'src/api/HttpResponseError'
+import Attribute from 'src/components/general/Attribute'
 import MetricDifferenceField from 'src/components/general/MetricDifferenceField'
 import MetricValue from 'src/components/general/MetricValue'
 import { AttributionWindowSecondsToHuman } from 'src/lib/metric-assignments'
@@ -98,9 +98,6 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     label: {
       marginBottom: theme.spacing(1),
-    },
-    primaryChip: {
-      marginTop: theme.spacing(1),
     },
   }),
 )
@@ -201,10 +198,8 @@ function MetricAssignmentsPanel({
               <TableCell>
                 <strong className={classes.monospace}>
                   {resolvedMetricAssignment.metric.name}
-                  <br />
-                  {resolvedMetricAssignment.isPrimary && (
-                    <Chip label='Primary' variant='outlined' disabled className={classes.primaryChip} />
-                  )}
+                  &nbsp;
+                  {resolvedMetricAssignment.isPrimary && <Attribute name='primary' />}
                 </strong>
                 <br />
                 <small className={classes.monospace}>{resolvedMetricAssignment.metric.description}</small>

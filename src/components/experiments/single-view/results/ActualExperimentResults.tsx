@@ -3,7 +3,6 @@ import {
   Accordion,
   AccordionDetails,
   AccordionSummary,
-  Chip,
   createStyles,
   FormControl,
   FormHelperText,
@@ -25,6 +24,7 @@ import { PlotData } from 'plotly.js'
 import React, { useState } from 'react'
 import Plot from 'react-plotly.js'
 
+import Attribute from 'src/components/general/Attribute'
 import MetricValue, { metricValueFormatData } from 'src/components/general/MetricValue'
 import * as Analyses from 'src/lib/analyses'
 import * as Experiments from 'src/lib/experiments'
@@ -53,9 +53,6 @@ const useStyles = makeStyles((theme: Theme) =>
       '& .MuiIconButton-root.Mui-disabled': {
         opacity: 0,
       },
-    },
-    primaryChip: {
-      marginTop: theme.spacing(1),
     },
     summary: {
       display: 'flex',
@@ -138,6 +135,9 @@ const useStyles = makeStyles((theme: Theme) =>
       fontFamily: theme.custom.fonts.monospace,
       color: theme.palette.grey[600],
       whiteSpace: 'pre',
+    },
+    metricAssignmentNameLine: {
+      whiteSpace: 'nowrap',
     },
   }),
 )
@@ -258,28 +258,26 @@ export default function ActualExperimentResults({
 
   const tableColumns = [
     {
-      title: 'Metric',
+      title: 'Metric (attribution window)',
       render: ({ metric, metricAssignment }: { metric: MetricBare; metricAssignment: MetricAssignment }) => (
         <>
-          <Tooltip title={metric.description}>
-            <span>{metric.name}</span>
-          </Tooltip>{' '}
+          <span className={classes.metricAssignmentNameLine}>
+            <Tooltip title={metric.description}>
+              <span>{metric.name}</span>
+            </Tooltip>
+            &nbsp;({AttributionWindowSecondsToHuman[metricAssignment.attributionWindowSeconds]})
+          </span>
           {metricAssignment.isPrimary && (
-            <Chip label='Primary' variant='outlined' disabled className={classes.primaryChip} />
+            <>
+              <br />
+              <Attribute name='primary' />
+            </>
           )}
         </>
       ),
       cellStyle: {
         fontFamily: theme.custom.fonts.monospace,
         fontWeight: 600,
-      },
-    },
-    {
-      title: 'Attribution window',
-      render: ({ metricAssignment }: { metricAssignment: MetricAssignment }) =>
-        AttributionWindowSecondsToHuman[metricAssignment.attributionWindowSeconds],
-      cellStyle: {
-        fontFamily: theme.custom.fonts.monospace,
       },
     },
     {
