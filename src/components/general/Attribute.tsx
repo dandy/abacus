@@ -17,7 +17,16 @@ const useStyles = makeStyles((theme: Theme) =>
  *
  * e.g. "default", "primary", "excluded"
  */
-export default function Attribute({ name, className }: { name: string; className?: string }): JSX.Element {
+export default function Attribute({
+  name,
+  className,
+}: {
+  /**
+   * Name of the attribute.
+   */
+  name: string
+  className?: string
+}): JSX.Element {
   const classes = useStyles()
 
   return <span className={clsx(classes.root, className)}>{name}</span>
