@@ -11,10 +11,11 @@ import {
   Theme,
   Typography,
 } from '@material-ui/core'
+import { ChevronRight, ExpandMore } from '@material-ui/icons'
 import clsx from 'clsx'
 import _, { identity } from 'lodash'
 import { PlotData } from 'plotly.js'
-import React from 'react'
+import React, { useState } from 'react'
 import Plot from 'react-plotly.js'
 
 import DatetimeText from 'src/components/general/DatetimeText'
@@ -112,6 +113,13 @@ const useStyles = makeStyles((theme: Theme) =>
         borderRightColor: theme.palette.grey[300],
       },
     },
+    clickable: {
+      cursor: 'pointer',
+      userSelect: 'none',
+    },
+    expandCollapseIcon: {
+      verticalAlign: 'middle',
+    },
   }),
 )
 
@@ -147,6 +155,11 @@ export default function MetricAssignmentResults({
   aggregateRecommendation: AggregateRecommendation
 }): JSX.Element | null {
   const classes = useStyles()
+
+  const [isShowObservedData, setIsShowObservedData] = useState<boolean>(false)
+  const toggleIsShowObservedData = () => {
+    setIsShowObservedData((isShowObservedData) => !isShowObservedData)
+  }
 
   const isConversion = metric.parameterType === MetricParameterType.Conversion
   const estimateTransform: (estimate: number | null) => number | null = isConversion
@@ -368,54 +381,67 @@ export default function MetricAssignmentResults({
           Past values will be plotted once we have more than one day of results.
         </Typography>
       )}
-      <Typography className={classes.dataTableHeader}>Observed data</Typography>
-      <TableContainer component={Paper}>
-        <Table className={classes.coolTable}>
-          <TableHead>
-            <TableRow>
-              <TableCell>Variant</TableCell>
-              <TableCell align='right'>Users</TableCell>
-              <TableCell align='right'>
-                {metric.parameterType === MetricParameterType.Revenue ? 'Revenue (USD)' : 'Conversions'}
-              </TableCell>
-              <TableCell align='right'>
-                {metric.parameterType === MetricParameterType.Revenue
-                  ? 'Average revenue per user (USD)'
-                  : 'Conversion rate'}
-              </TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {experiment.variations.map((variation) => (
-              <React.Fragment key={variation.variationId}>
-                <TableRow>
-                  <TableCell
-                    component='th'
-                    scope='row'
-                    variant='head'
-                    valign='top'
-                    className={clsx(classes.rowHeader, classes.headerCell, classes.credibleIntervalHeader)}
-                  >
-                    <span className={classes.monospace}>{variation.name}</span>
-                  </TableCell>
-                  <TableCell className={classes.monospace} align='right'>
-                    {latestAnalysis.participantStats[`variation_${variation.variationId}`].toLocaleString()}
-                  </TableCell>
-                  <TableCell className={classes.monospace} align='right'>
-                    {(
-                      latestAnalysis.participantStats[`variation_${variation.variationId}`] *
-                      latestEstimates[`variation_${variation.variationId}`].estimate
-                    ).toLocaleString()}
-                  </TableCell>
-                  <TableCell className={classes.monospace} align='right'>
-                    {latestEstimates[`variation_${variation.variationId}`].estimate.toLocaleString()}
-                  </TableCell>
-                </TableRow>
-              </React.Fragment>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <Typography
+        className={clsx(classes.dataTableHeader, classes.clickable)}
+        onClick={toggleIsShowObservedData}
+        role='button'
+      >
+        Observed data (sampled){' '}
+        {isShowObservedData ? (
+          <ExpandMore className={classes.expandCollapseIcon} />
+        ) : (
+          <ChevronRight className={classes.expandCollapseIcon} />
+        )}{' '}
+      </Typography>
+      {isShowObservedData && (
+        <TableContainer component={Paper}>
+          <Table className={classes.coolTable}>
+            <TableHead>
+              <TableRow>
+                <TableCell>Variant</TableCell>
+                <TableCell align='right'>Users</TableCell>
+                <TableCell align='right'>
+                  {metric.parameterType === MetricParameterType.Revenue ? 'Revenue (USD)' : 'Conversions'}
+                </TableCell>
+                <TableCell align='right'>
+                  {metric.parameterType === MetricParameterType.Revenue
+                    ? 'Average revenue per user (USD)'
+                    : 'Conversion rate'}
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {experiment.variations.map((variation) => (
+                <React.Fragment key={variation.variationId}>
+                  <TableRow>
+                    <TableCell
+                      component='th'
+                      scope='row'
+                      variant='head'
+                      valign='top'
+                      className={clsx(classes.rowHeader, classes.headerCell, classes.credibleIntervalHeader)}
+                    >
+                      <span className={classes.monospace}>{variation.name}</span>
+                    </TableCell>
+                    <TableCell className={classes.monospace} align='right'>
+                      {latestAnalysis.participantStats[`variation_${variation.variationId}`].toLocaleString()}
+                    </TableCell>
+                    <TableCell className={classes.monospace} align='right'>
+                      {(
+                        latestAnalysis.participantStats[`variation_${variation.variationId}`] *
+                        latestEstimates[`variation_${variation.variationId}`].estimate
+                      ).toLocaleString()}
+                    </TableCell>
+                    <TableCell className={classes.monospace} align='right'>
+                      {latestEstimates[`variation_${variation.variationId}`].estimate.toLocaleString()}
+                    </TableCell>
+                  </TableRow>
+                </React.Fragment>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      )}
     </div>
   )
 }
