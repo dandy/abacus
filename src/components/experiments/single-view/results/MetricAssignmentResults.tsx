@@ -29,7 +29,6 @@ import {
   MetricBare,
   MetricParameterType,
 } from 'src/lib/schemas'
-import * as Variations from 'src/lib/variations'
 import * as Visualizations from 'src/lib/visualizations'
 
 import MetricValueInterval from '../../../general/MetricValueInterval'
@@ -339,14 +338,7 @@ export default function MetricAssignmentResults({
           metricParameterType={metric.parameterType}
           isDifference={true}
         />
-        . <strong>Participants:</strong> {latestAnalysis.participantStats.total} (
-        {_.join(
-          Variations.sort(experiment.variations).map(
-            ({ variationId, name }) => `${latestAnalysis.participantStats[`variation_${variationId}`]} in ${name}`,
-          ),
-          '; ',
-        )}
-        ).
+        .
       </Typography>
       {dates.length > 1 ? (
         <div className={classes.metricEstimatePlots}>
