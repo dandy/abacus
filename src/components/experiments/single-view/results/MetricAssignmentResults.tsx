@@ -244,7 +244,7 @@ export default function MetricAssignmentResults({
   ]
 
   return (
-    <TableContainer className={clsx(classes.root, 'analysis-detail-panel')}>
+    <div className={clsx(classes.root, 'analysis-detail-panel')}>
       <Typography className={classes.dataTableHeader}>Summary</Typography>
       <TableContainer component={Paper}>
         <Table>
@@ -376,6 +376,54 @@ export default function MetricAssignmentResults({
           Past values will be plotted once we have more than one day of results.
         </Typography>
       )}
-    </TableContainer>
+      <Typography className={classes.dataTableHeader}>Observed data</Typography>
+      <TableContainer component={Paper}>
+        <Table className={classes.coolTable}>
+          <TableHead>
+            <TableRow>
+              <TableCell>Variant</TableCell>
+              <TableCell align='right'>Users</TableCell>
+              <TableCell align='right'>
+                {metric.parameterType === MetricParameterType.Revenue ? 'Revenue (USD)' : 'Conversions'}
+              </TableCell>
+              <TableCell align='right'>
+                {metric.parameterType === MetricParameterType.Revenue
+                  ? 'Average revenue per user (USD)'
+                  : 'Conversion rate'}
+              </TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody>
+            {experiment.variations.map((variation) => (
+              <React.Fragment key={variation.variationId}>
+                <TableRow>
+                  <TableCell
+                    component='th'
+                    scope='row'
+                    variant='head'
+                    valign='top'
+                    className={clsx(classes.rowHeader, classes.headerCell, classes.credibleIntervalHeader)}
+                  >
+                    <span className={classes.monospace}>{variation.name}</span>
+                  </TableCell>
+                  <TableCell className={classes.monospace} align='right'>
+                    {latestAnalysis.participantStats[`variation_${variation.variationId}`].toLocaleString()}
+                  </TableCell>
+                  <TableCell className={classes.monospace} align='right'>
+                    {(
+                      latestAnalysis.participantStats[`variation_${variation.variationId}`] *
+                      latestEstimates[`variation_${variation.variationId}`].estimate
+                    ).toLocaleString()}
+                  </TableCell>
+                  <TableCell className={classes.monospace} align='right'>
+                    {latestEstimates[`variation_${variation.variationId}`].estimate.toLocaleString()}
+                  </TableCell>
+                </TableRow>
+              </React.Fragment>
+            ))}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    </div>
   )
 }
