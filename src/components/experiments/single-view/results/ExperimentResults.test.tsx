@@ -85,6 +85,7 @@ test('renders the condensed table with some analyses in non-debug mode for a Con
   fireEvent.click(getByText(container, /metric_3/))
   await waitFor(() => getAllByText(container, /Last analyzed/), { container })
   expect(container.querySelector('.analysis-latest-results .analysis-detail-panel')).toMatchSnapshot()
+  fireEvent.click(screen.getAllByRole('button', { name: /Observed data/ })[0])
 
   expect(mockedPlot).toMatchSnapshot()
 })
@@ -109,6 +110,7 @@ test('renders the condensed table with some analyses in non-debug mode for a Rev
   fireEvent.click(getByText(container, /metric_3/))
   await waitFor(() => getAllByText(container, /Last analyzed/), { container })
   expect(container.querySelector('.analysis-latest-results .analysis-detail-panel')).toMatchSnapshot()
+  fireEvent.click(screen.getAllByRole('button', { name: /Observed data/ })[0])
 
   expect(mockedPlot).toMatchSnapshot()
 })
