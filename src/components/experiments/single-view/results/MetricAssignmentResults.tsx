@@ -119,6 +119,10 @@ const useStyles = makeStyles((theme: Theme) =>
     },
     expandCollapseIcon: {
       verticalAlign: 'middle',
+      height: '1.3rem',
+      width: '1.3rem',
+      marginTop: '-2px',
+      marginLeft: '-1.3rem',
     },
   }),
 )
@@ -386,12 +390,12 @@ export default function MetricAssignmentResults({
         onClick={toggleIsShowObservedData}
         role='button'
       >
-        Observed data (sampled){' '}
         {isShowObservedData ? (
           <ExpandMore className={classes.expandCollapseIcon} />
         ) : (
           <ChevronRight className={classes.expandCollapseIcon} />
-        )}{' '}
+        )}
+        Observed data
       </Typography>
       {isShowObservedData && (
         <TableContainer component={Paper}>
