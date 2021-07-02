@@ -127,6 +127,36 @@ const useStyles = makeStyles((theme: Theme) =>
   }),
 )
 
+type StringifiedStatisticalDifference = 'true' | 'false'
+
+// Practical Difference Status -> (string) Statistical Difference -> string
+const differenceOverviewMessages: Record<
+  Analyses.PracticalSignificanceStatus,
+  Record<StringifiedStatisticalDifference, string>
+> = {
+  [Analyses.PracticalSignificanceStatus.Yes]: {
+    true: `There is high certainty that the change is practically significant.`,
+    false: `There is high certainty that the change is practically significant.`,
+  },
+  [Analyses.PracticalSignificanceStatus.Uncertain]: {
+    true: `There is not enough certainty to draw a conclusion at this time, but the change is statistically different from zero.`,
+    false: `There is not enough certainty to draw a conclusion at this time.`,
+  },
+  [Analyses.PracticalSignificanceStatus.No]: {
+    true: `There is high certainty that the change isn't practically significant, but the change is statistically different from zero.`,
+    false: `There is high certainty that the change isn't practically significant.`,
+  },
+}
+
+const explanationLine2: Record<Analyses.PracticalSignificanceStatus, string> = {
+  [Analyses.PracticalSignificanceStatus
+    .Yes]: `With high certainty, there is a practical difference between the variations because the absolute change is outside the minimum difference of `,
+  [Analyses.PracticalSignificanceStatus
+    .Uncertain]: `Uncertainty is too high because the absolute change overlaps with the specified minimum practical difference between `,
+  [Analyses.PracticalSignificanceStatus
+    .No]: `With high certainty, there is no practical difference between the variations because the absolute change is inside the specified minimum difference between `,
+}
+
 function MissingAnalysisMessage() {
   const classes = useStyles()
   return (
@@ -269,6 +299,64 @@ export default function MetricAssignmentResults({
               <TableCell>
                 <Typography variant='h5' gutterBottom className={classes.aggregateRecommendation}>
                   <AggregateRecommendationDisplay {...{ experiment, aggregateRecommendation }} />
+                </Typography>
+                {aggregateRecommendation.decision ===
+                  Analyses.AggregateRecommendationDecision.ManualAnalysisRequired && (
+                  <Typography variant='body1' gutterBottom>
+                    <strong> Different strategies are recommending conflicting variations! </strong>
+                  </Typography>
+                )}
+                <Typography variant='body1'>
+                  {
+                    differenceOverviewMessages[
+                      aggregateRecommendation.practicallySignificant as Analyses.PracticalSignificanceStatus
+                    ][String(aggregateRecommendation.statisticallySignificant) as StringifiedStatisticalDifference]
+                  }{' '}
+                </Typography>
+              </TableCell>
+            </TableRow>
+            <TableRow>
+              <TableCell>
+                <Typography variant='body1' gutterBottom>
+                  The absolute change in the {isConversion ? 'conversion rate' : 'ARPU'} of{' '}
+                  <MetricValue
+                    metricParameterType={metric.parameterType}
+                    isDifference={true}
+                    value={latestEstimates.diff.bottom}
+                    displayPositiveSign
+                    displayUnit={false}
+                  />{' '}
+                  to{' '}
+                  <MetricValue
+                    metricParameterType={metric.parameterType}
+                    isDifference={true}
+                    value={latestEstimates.diff.top}
+                    displayPositiveSign
+                  />{' '}
+                  is {aggregateRecommendation.statisticallySignificant ? '' : ' not '}
+                  statistically different from zero because the interval
+                  {aggregateRecommendation.statisticallySignificant ? ' excludes ' : ' includes '}
+                  zero.{' '}
+                  {
+                    explanationLine2[
+                      aggregateRecommendation.practicallySignificant as Analyses.PracticalSignificanceStatus
+                    ]
+                  }
+                  <MetricValue
+                    metricParameterType={metric.parameterType}
+                    isDifference={true}
+                    value={-metricAssignment.minDifference}
+                    displayPositiveSign
+                    displayUnit={false}
+                  />{' '}
+                  to{' '}
+                  <MetricValue
+                    metricParameterType={metric.parameterType}
+                    isDifference={true}
+                    value={metricAssignment.minDifference}
+                    displayPositiveSign
+                  />
+                  .
                 </Typography>
                 <strong>Last analyzed:</strong>{' '}
                 <DatetimeText datetime={latestAnalysis.analysisDatetime} excludeTime={true} />.
