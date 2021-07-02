@@ -20,8 +20,8 @@ import Plot from 'react-plotly.js'
 
 import DatetimeText from 'src/components/general/DatetimeText'
 import MetricValue from 'src/components/general/MetricValue'
-import { AggregateRecommendation } from 'src/lib/analyses'
 import * as Analyses from 'src/lib/analyses'
+import * as Recommendations from 'src/lib/recommendations'
 import {
   Analysis,
   AnalysisStrategy,
@@ -33,7 +33,7 @@ import {
 import * as Visualizations from 'src/lib/visualizations'
 
 import MetricValueInterval from '../../../general/MetricValueInterval'
-import AggregateRecommendationDisplay from './AggregateRecommendationDisplay'
+import RecommendationDisplay from './RecommendationDisplay'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -90,7 +90,7 @@ const useStyles = makeStyles((theme: Theme) =>
     credibleIntervalHeader: {
       width: '8rem',
     },
-    aggregateRecommendation: {
+    recommendation: {
       fontFamily: theme.custom.fonts.monospace,
       marginBottom: theme.spacing(2),
     },
@@ -131,29 +131,29 @@ type StringifiedStatisticalDifference = 'true' | 'false'
 
 // Practical Difference Status -> (string) Statistical Difference -> string
 const differenceOverviewMessages: Record<
-  Analyses.PracticalSignificanceStatus,
+  Recommendations.PracticalSignificanceStatus,
   Record<StringifiedStatisticalDifference, string>
 > = {
-  [Analyses.PracticalSignificanceStatus.Yes]: {
+  [Recommendations.PracticalSignificanceStatus.Yes]: {
     true: `There is high certainty that the change is practically significant.`,
     false: `There is high certainty that the change is practically significant.`,
   },
-  [Analyses.PracticalSignificanceStatus.Uncertain]: {
+  [Recommendations.PracticalSignificanceStatus.Uncertain]: {
     true: `There is not enough certainty to draw a conclusion at this time, but the change is statistically different from zero.`,
     false: `There is not enough certainty to draw a conclusion at this time.`,
   },
-  [Analyses.PracticalSignificanceStatus.No]: {
+  [Recommendations.PracticalSignificanceStatus.No]: {
     true: `There is high certainty that the change isn't practically significant, but the change is statistically different from zero.`,
     false: `There is high certainty that the change isn't practically significant.`,
   },
 }
 
-const explanationLine2: Record<Analyses.PracticalSignificanceStatus, string> = {
-  [Analyses.PracticalSignificanceStatus
+const explanationLine2: Record<Recommendations.PracticalSignificanceStatus, string> = {
+  [Recommendations.PracticalSignificanceStatus
     .Yes]: `With high certainty, there is a practical difference between the variations because the absolute change is outside the minimum difference of `,
-  [Analyses.PracticalSignificanceStatus
+  [Recommendations.PracticalSignificanceStatus
     .Uncertain]: `Uncertainty is too high because the absolute change overlaps with the specified minimum practical difference between `,
-  [Analyses.PracticalSignificanceStatus
+  [Recommendations.PracticalSignificanceStatus
     .No]: `With high certainty, there is no practical difference between the variations because the absolute change is inside the specified minimum difference between `,
 }
 
@@ -179,14 +179,14 @@ export default function MetricAssignmentResults({
   metric,
   analysesByStrategyDateAsc,
   experiment,
-  aggregateRecommendation,
+  recommendation,
 }: {
   strategy: AnalysisStrategy
   metricAssignment: MetricAssignment
   metric: MetricBare
   analysesByStrategyDateAsc: Record<AnalysisStrategy, Analysis[]>
   experiment: ExperimentFull
-  aggregateRecommendation: AggregateRecommendation
+  recommendation: Recommendations.Recommendation
 }): JSX.Element | null {
   const classes = useStyles()
 
@@ -297,11 +297,10 @@ export default function MetricAssignmentResults({
           <TableBody>
             <TableRow>
               <TableCell>
-                <Typography variant='h5' gutterBottom className={classes.aggregateRecommendation}>
-                  <AggregateRecommendationDisplay {...{ experiment, aggregateRecommendation }} />
+                <Typography variant='h5' gutterBottom className={classes.recommendation}>
+                  <RecommendationDisplay {...{ experiment, recommendation }} />
                 </Typography>
-                {aggregateRecommendation.decision ===
-                  Analyses.AggregateRecommendationDecision.ManualAnalysisRequired && (
+                {recommendation.decision === Recommendations.Decision.ManualAnalysisRequired && (
                   <Typography variant='body1' gutterBottom>
                     <strong> Different strategies are recommending conflicting variations! </strong>
                   </Typography>
@@ -309,8 +308,8 @@ export default function MetricAssignmentResults({
                 <Typography variant='body1'>
                   {
                     differenceOverviewMessages[
-                      aggregateRecommendation.practicallySignificant as Analyses.PracticalSignificanceStatus
-                    ][String(aggregateRecommendation.statisticallySignificant) as StringifiedStatisticalDifference]
+                      recommendation.practicallySignificant as Recommendations.PracticalSignificanceStatus
+                    ][String(recommendation.statisticallySignificant) as StringifiedStatisticalDifference]
                   }{' '}
                 </Typography>
               </TableCell>
@@ -333,13 +332,13 @@ export default function MetricAssignmentResults({
                     value={latestEstimates.diff.top}
                     displayPositiveSign
                   />{' '}
-                  is {aggregateRecommendation.statisticallySignificant ? '' : ' not '}
+                  is {recommendation.statisticallySignificant ? '' : ' not '}
                   statistically different from zero because the interval
-                  {aggregateRecommendation.statisticallySignificant ? ' excludes ' : ' includes '}
+                  {recommendation.statisticallySignificant ? ' excludes ' : ' includes '}
                   zero.{' '}
                   {
                     explanationLine2[
-                      aggregateRecommendation.practicallySignificant as Analyses.PracticalSignificanceStatus
+                      recommendation.practicallySignificant as Recommendations.PracticalSignificanceStatus
                     ]
                   }
                   <MetricValue

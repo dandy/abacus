@@ -1,7 +1,7 @@
 import { createStyles, makeStyles, Theme, Tooltip } from '@material-ui/core'
 import React from 'react'
 
-import { AggregateRecommendation, AggregateRecommendationDecision } from 'src/lib/analyses'
+import { Decision, Recommendation } from 'src/lib/recommendations'
 import { ExperimentFull } from 'src/lib/schemas'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -15,32 +15,32 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 /**
- * Displays an AggregateRecommendation.
+ * Displays a Recommendation.
  */
-export default function AggregateRecommendationDisplay({
-  aggregateRecommendation,
+export default function RecommendationDisplay({
+  recommendation,
   experiment,
 }: {
-  aggregateRecommendation: AggregateRecommendation
+  recommendation: Recommendation
   experiment: ExperimentFull
 }): JSX.Element {
   const classes = useStyles()
-  switch (aggregateRecommendation.decision) {
-    case AggregateRecommendationDecision.ManualAnalysisRequired:
+  switch (recommendation.decision) {
+    case Decision.ManualAnalysisRequired:
       return (
         <Tooltip title='Contact @experimentation-review on #a8c-experiments'>
           <span className={classes.tooltipped}>Manual analysis required</span>
         </Tooltip>
       )
-    case AggregateRecommendationDecision.MissingAnalysis:
+    case Decision.MissingAnalysis:
       return <>Not analyzed yet</>
-    case AggregateRecommendationDecision.Inconclusive:
+    case Decision.Inconclusive:
       return <>Inconclusive</>
-    case AggregateRecommendationDecision.DeployAnyVariation:
+    case Decision.DeployAnyVariation:
       return <>Deploy either variation</>
-    case AggregateRecommendationDecision.DeployChosenVariation: {
+    case Decision.DeployChosenVariation: {
       const chosenVariation = experiment.variations.find(
-        (variation) => variation.variationId === aggregateRecommendation.chosenVariationId,
+        (variation) => variation.variationId === recommendation.chosenVariationId,
       )
       if (!chosenVariation) {
         throw new Error('No match for chosenVariationId among variations in experiment.')
@@ -49,6 +49,6 @@ export default function AggregateRecommendationDisplay({
       return <>Deploy {chosenVariation.name}</>
     }
     default:
-      throw new Error('Missing AggregateRecommendationDecision.')
+      throw new Error('Missing Decision.')
   }
 }

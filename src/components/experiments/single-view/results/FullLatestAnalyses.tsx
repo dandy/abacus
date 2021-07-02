@@ -3,14 +3,11 @@ import _, { last } from 'lodash'
 import MaterialTable from 'material-table'
 import React from 'react'
 
-import AggregateRecommendationDisplay from 'src/components/experiments/single-view/results/AggregateRecommendationDisplay'
+import RecommendationDisplay from 'src/components/experiments/single-view/results/RecommendationDisplay'
 import DatetimeText from 'src/components/general/DatetimeText'
-import {
-  AnalysisStrategyToHuman,
-  getMetricAssignmentRecommendation,
-  RecommendationWarningToHuman,
-} from 'src/lib/analyses'
+import { AnalysisStrategyToHuman, RecommendationWarningToHuman } from 'src/lib/analyses'
 import { AttributionWindowSecondsToHuman } from 'src/lib/metric-assignments'
+import { getMetricAssignmentRecommendation } from 'src/lib/recommendations'
 import { Analysis, ExperimentFull, MetricBare } from 'src/lib/schemas'
 import { createStaticTableOptions } from 'src/utils/material-table'
 
@@ -56,8 +53,8 @@ export default function FullLatestAnalyses({
     {
       title: 'Recommendation',
       render: ({ analysis, metric }: { analysis: Analysis; metric: MetricBare }) => (
-        <AggregateRecommendationDisplay
-          aggregateRecommendation={getMetricAssignmentRecommendation(experiment, metric, analysis)}
+        <RecommendationDisplay
+          recommendation={getMetricAssignmentRecommendation(experiment, metric, analysis)}
           experiment={experiment}
         />
       ),
