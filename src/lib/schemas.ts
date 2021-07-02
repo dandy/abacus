@@ -104,20 +104,13 @@ export enum MetricParameterType {
   Count = 'count',
 }
 
-export const metricBareSchema = yup
+export const metricSchema = yup
   .object({
     metricId: idSchema.defined(),
     name: nameSchema.defined(),
     description: yup.string().defined(),
     parameterType: yup.string().oneOf(Object.values(MetricParameterType)).defined(),
     higherIsBetter: yup.boolean().defined(),
-  })
-  .defined()
-  .camelCase()
-export interface MetricBare extends yup.InferType<typeof metricBareSchema> {}
-
-export const metricFullSchema = metricBareSchema
-  .shape({
     eventParams: yup.mixed().when('parameterType', {
       is: MetricParameterType.Conversion,
       then: yup.array(eventSchema).defined(),
@@ -131,25 +124,25 @@ export const metricFullSchema = metricBareSchema
   })
   .defined()
   .camelCase()
-  .test('event-params-required', 'Event Params is required and must be valid JSON.', (metricFull) => {
+  .test('event-params-required', 'Event Params is required and must be valid JSON.', (metric) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    return !(metricFull.parameterType === MetricParameterType.Conversion && !metricFull.eventParams)
+    return !(metric.parameterType === MetricParameterType.Conversion && !metric.eventParams)
   })
-  .test('revenue-params-required', 'Revenue Params is required and must be valid JSON.', (metricFull) => {
+  .test('revenue-params-required', 'Revenue Params is required and must be valid JSON.', (metric) => {
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    return !(metricFull.parameterType === MetricParameterType.Revenue && !metricFull.revenueParams)
+    return !(metric.parameterType === MetricParameterType.Revenue && !metric.revenueParams)
   })
-  .test('exactly-one-params', 'Exactly one of eventParams or revenueParams must be defined.', (metricFull) => {
+  .test('exactly-one-params', 'Exactly one of eventParams or revenueParams must be defined.', (metric) => {
     // (Logical XOR)
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    return !!metricFull.eventParams !== !!metricFull.revenueParams
+    return !!metric.eventParams !== !!metric.revenueParams
   })
-export interface MetricFull extends yup.InferType<typeof metricFullSchema> {}
-export const metricFullNewSchema = metricFullSchema.shape({
+export interface Metric extends yup.InferType<typeof metricSchema> {}
+export const metricNewSchema = metricSchema.shape({
   metricId: idSchema.nullable(),
 })
-export interface MetricFullNew extends yup.InferType<typeof metricFullNewSchema> {}
-export const metricFullNewOutboundSchema = metricFullNewSchema.snakeCase().transform(
+export interface MetricNew extends yup.InferType<typeof metricNewSchema> {}
+export const metricNewOutboundSchema = metricNewSchema.snakeCase().transform(
   // istanbul ignore next; Tested by integration
   // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   (currentValue) => ({

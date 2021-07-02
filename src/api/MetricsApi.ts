@@ -1,15 +1,7 @@
 import _ from 'lodash'
 import * as yup from 'yup'
 
-import {
-  MetricBare,
-  metricBareSchema,
-  MetricFull,
-  MetricFullNew,
-  metricFullNewOutboundSchema,
-  metricFullNewSchema,
-  metricFullSchema,
-} from 'src/lib/schemas'
+import { Metric, MetricNew, metricNewOutboundSchema, metricNewSchema, metricSchema } from 'src/lib/schemas'
 import { isDebugMode } from 'src/utils/general'
 
 import { fetchApi } from './utils'
@@ -19,10 +11,10 @@ import { fetchApi } from './utils'
  *
  * Note: Be sure to handle any errors that may be thrown.
  */
-async function create(newMetric: MetricFullNew): Promise<MetricFull> {
-  const validatedNewMetric = await metricFullNewSchema.validate(newMetric, { abortEarly: false })
-  const outboundNewMetric = metricFullNewOutboundSchema.cast(validatedNewMetric)
-  return await metricFullSchema.validate(await fetchApi('POST', '/metrics', outboundNewMetric))
+async function create(newMetric: MetricNew): Promise<Metric> {
+  const validatedNewMetric = await metricNewSchema.validate(newMetric, { abortEarly: false })
+  const outboundNewMetric = metricNewOutboundSchema.cast(validatedNewMetric)
+  return await metricSchema.validate(await fetchApi('POST', '/metrics', outboundNewMetric))
 }
 
 /**
@@ -30,14 +22,14 @@ async function create(newMetric: MetricFullNew): Promise<MetricFull> {
  *
  * Note: Be sure to handle any errors that may be thrown.
  */
-async function put(metricId: number, newMetric: MetricFullNew): Promise<MetricFull> {
+async function put(metricId: number, newMetric: MetricNew): Promise<Metric> {
   // istanbul ignore next; Shouldn't happen
   if (!_.isNumber(metricId)) {
     throw new Error('Invalid metricId.')
   }
-  const validatedNewMetric = await metricFullNewSchema.validate(newMetric, { abortEarly: false })
-  const outboundNewMetric = metricFullNewOutboundSchema.cast(validatedNewMetric)
-  return await metricFullSchema.validate(await fetchApi('PUT', `/metrics/${metricId}`, outboundNewMetric))
+  const validatedNewMetric = await metricNewSchema.validate(newMetric, { abortEarly: false })
+  const outboundNewMetric = metricNewOutboundSchema.cast(validatedNewMetric)
+  return await metricSchema.validate(await fetchApi('PUT', `/metrics/${metricId}`, outboundNewMetric))
 }
 
 /**
@@ -47,10 +39,10 @@ async function put(metricId: number, newMetric: MetricFullNew): Promise<MetricFu
  *
  * @throws UnauthorizedError
  */
-async function findAll(): Promise<MetricBare[]> {
+async function findAll(): Promise<Metric[]> {
   // istanbul ignore next; debug only
   const { metrics } = await yup
-    .object({ metrics: yup.array(metricBareSchema).defined() })
+    .object({ metrics: yup.array(metricSchema).defined() })
     .defined()
     .validate(await fetchApi('GET', isDebugMode() ? '/metrics?debug=true' : '/metrics'), {
       abortEarly: false,
@@ -65,8 +57,8 @@ async function findAll(): Promise<MetricBare[]> {
  *
  * @throws UnauthorizedError
  */
-async function findById(metricId: number): Promise<MetricFull> {
-  return await metricFullSchema.validate(await fetchApi('GET', `/metrics/${metricId}`), { abortEarly: false })
+async function findById(metricId: number): Promise<Metric> {
+  return await metricSchema.validate(await fetchApi('GET', `/metrics/${metricId}`), { abortEarly: false })
 }
 
 const MetricsApi = {
