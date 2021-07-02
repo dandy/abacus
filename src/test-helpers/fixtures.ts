@@ -28,6 +28,7 @@ import {
   TransactionTypes,
 } from 'src/lib/schemas'
 
+// Note: analysis.recommendation is deprecated and doesn't match metricEstimates
 function createAnalysis(fieldOverrides: Partial<Analysis>): Analysis {
   return {
     metricAssignmentId: 123,
@@ -54,6 +55,7 @@ function createAnalysis(fieldOverrides: Partial<Analysis>): Analysis {
   }
 }
 
+// Note: analysis.recommendation is deprecated and doesn't match metricEstimates
 function createAnalyses(): Analysis[] {
   return [
     // Full set of "latest" analyses for the default metric assignment.
@@ -421,17 +423,19 @@ function createExperimentFull(fieldOverrides: Partial<ExperimentFull> = {}): Exp
   }
 }
 
-function createMetricBare(id: number): MetricBare {
+function createMetricBare(id: number, fieldOverrides?: Partial<MetricBare>): MetricBare {
   return {
     metricId: id,
     name: `metric_${id}`,
     description: `This is metric ${id}`,
     parameterType: id % 2 === 0 ? MetricParameterType.Revenue : MetricParameterType.Conversion,
+    higherIsBetter: true,
+    ...fieldOverrides,
   }
 }
 
 function createMetricBares(numMetrics = 3): MetricBare[] {
-  return _.range(1, numMetrics + 1).map(createMetricBare)
+  return _.range(1, numMetrics + 1).map((id) => createMetricBare(id))
 }
 
 function createMetricFull(id: number): MetricFull {
@@ -500,6 +504,7 @@ const Fixtures = {
   createExperimentFull,
   createExperimentFullNew,
   createMetricAssignment,
+  createMetricBare,
   createMetricBares,
   createMetricFull,
   createTagBares,
