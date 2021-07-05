@@ -193,7 +193,7 @@ const ExperimentForm = ({
           void updateStageState(stages[currentStageIndex])
 
           if (errorStages.includes(stageId)) {
-            getStageErrors(stages[stageId]).then((stageErrors) =>
+            void getStageErrors(stages[stageId]).then((stageErrors) =>
               formikProps.setTouched(setNestedObjectValues(stageErrors, true)),
             )
           }
