@@ -192,10 +192,11 @@ const ExperimentForm = ({
           setActiveStageId(stageId)
           void updateStageState(stages[currentStageIndex])
 
-          errorStages.includes(stageId) &&
+          if (errorStages.includes(stageId)) {
             getStageErrors(stages[stageId]).then((stageErrors) =>
               formikProps.setTouched(setNestedObjectValues(stageErrors, true)),
             )
+          }
           if (stageId === StageId.Submit) {
             stages.map(updateStageState)
           }
