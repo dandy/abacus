@@ -52,6 +52,11 @@ const useStyles = makeStyles((theme: Theme) =>
     monospaced: {
       fontFamily: theme.custom.fonts.monospace,
     },
+    metricNameCell: {
+      maxWidth: '24rem',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+    },
     metricName: {
       fontFamily: theme.custom.fonts.monospace,
       fontWeight: theme.custom.fontWeights.monospaceBold,
@@ -130,7 +135,7 @@ const createMetricAssignment = (metric: Metric) => {
     metricId: metric.metricId,
     attributionWindowSeconds: '',
     isPrimary: false,
-    changeExpected: false,
+    changeExpected: true,
     minDifference: '',
   }
 }
@@ -348,7 +353,7 @@ const Metrics = ({
                       <TableCell>Metric</TableCell>
                       <TableCell>Attribution Window</TableCell>
                       <TableCell>Change Expected?</TableCell>
-                      <TableCell>Minimum Difference</TableCell>
+                      <TableCell>Minimum Practical Difference</TableCell>
                       <TableCell />
                     </TableRow>
                   </TableHead>
@@ -374,7 +379,7 @@ const Metrics = ({
 
                       return (
                         <TableRow key={index}>
-                          <TableCell>
+                          <TableCell className={classes.metricNameCell}>
                             <Tooltip arrow title={indexedMetrics[metricAssignment.metricId].description}>
                               <span className={clsx(classes.metricName, classes.tooltipped)}>
                                 {indexedMetrics[metricAssignment.metricId].name}

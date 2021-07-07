@@ -1,4 +1,5 @@
 import { createStyles, InputAdornment, makeStyles, Theme, Tooltip, Typography } from '@material-ui/core'
+import clsx from 'clsx'
 import { Field } from 'formik'
 import { TextField } from 'formik-material-ui'
 import React from 'react'
@@ -14,6 +15,9 @@ const ConversionMetricTextField = formikFieldTransformer(
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
+    root: {
+      minWidth: '7rem',
+    },
     tooltipped: {
       borderBottomWidth: 1,
       borderBottomStyle: 'dashed',
@@ -34,7 +38,7 @@ export default function MetricDifferenceField(props: {
   if (props.metricParameterType === MetricParameterType.Conversion) {
     return (
       <Field
-        className={props.className}
+        className={clsx(classes.root, props.className)}
         component={ConversionMetricTextField}
         name={props.name}
         id={props.id}
@@ -62,7 +66,7 @@ export default function MetricDifferenceField(props: {
   } else if (props.metricParameterType === MetricParameterType.Revenue) {
     return (
       <Field
-        className={props.className}
+        className={clsx(classes.root, props.className)}
         component={TextField}
         name={props.name}
         id={props.id}
@@ -74,7 +78,7 @@ export default function MetricDifferenceField(props: {
           min: '0',
         }}
         InputProps={{
-          startAdornment: <InputAdornment position='start'>USD</InputAdornment>,
+          endAdornment: <InputAdornment position='end'>USD</InputAdornment>,
         }}
       />
     )
