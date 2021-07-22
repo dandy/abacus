@@ -9,7 +9,7 @@ jobs:
       name: node/default
       tag: '12.18.4'
     steps:
-      - checkout
+      - run: git clone --depth 1 "$CIRCLE_REPOSITORY_URL" --branch "$CIRCLE_BRANCH"
       - node/install-packages
       - run:
           name: Format Checking
@@ -23,7 +23,7 @@ jobs:
       name: node/default
       tag: '12.18.4'
     steps:
-      - checkout
+      - run: git clone --depth 1 "$CIRCLE_REPOSITORY_URL" --branch "$CIRCLE_BRANCH"
       - node/install-packages
       - run:
           name: Unit Testing
@@ -34,7 +34,7 @@ jobs:
       name: node/default
       tag: '12.18.4'
     steps:
-      - checkout
+      - run: git clone --depth 1 "$CIRCLE_REPOSITORY_URL" --branch "$CIRCLE_BRANCH"
       - node/install-packages
       # Adapted from https://circleci.com/orbs/registry/orb/threetreeslight/puppeteer. Not using this Orb directly to
       # prevent re-downloading Chromium which was already done in the build step.
