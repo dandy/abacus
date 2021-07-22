@@ -2,8 +2,7 @@ version: 2.1
 
 orbs:
   node: circleci/node@4.0.1
-  
-  
+
 references:
   custom_checkout: &custom_checkout
     name: Custom checkout
