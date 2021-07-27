@@ -573,6 +573,8 @@ const Metrics = ({
         >
           What is an Exposure Event? And when do I need it?
         </Link>
+        <br />
+        <span>Only validated events can be used as exposure events.</span>
       </Alert>
     </div>
   )
