@@ -51,6 +51,13 @@ exports[`renders layout with declared title and children, using a flexblox 1`] =
             >
               Metrics
             </a>
+            <a
+              class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+              href="https://github.com/Automattic/experimentation-platform/wiki"
+              target="_blank"
+            >
+              Documentation
+            </a>
           </nav>
         </div>
       </div>
@@ -132,6 +139,13 @@ exports[`renders layout without title with children 1`] = `
               href="/metrics"
             >
               Metrics
+            </a>
+            <a
+              class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+              href="https://github.com/Automattic/experimentation-platform/wiki"
+              target="_blank"
+            >
+              Documentation
             </a>
           </nav>
         </div>

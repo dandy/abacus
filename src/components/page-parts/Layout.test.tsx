@@ -69,6 +69,13 @@ test('renders layout with declared title and children', () => {
             >
               Metrics
             </a>
+            <a
+              class="MuiTypography-root MuiLink-root MuiLink-underlineHover MuiTypography-colorPrimary"
+              href="https://github.com/Automattic/experimentation-platform/wiki"
+              target="_blank"
+            >
+              Documentation
+            </a>
           </nav>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import { AppBar, Container, Theme, Typography } from '@material-ui/core'
+import { AppBar, Container, Link as MuiLink, Theme, Typography } from '@material-ui/core'
 import { createStyles, makeStyles } from '@material-ui/core/styles'
 import clsx from 'clsx'
 import React, { ReactNode, useEffect } from 'react'
@@ -149,6 +149,9 @@ const Layout = ({
                 /* istanbul ignore next; Development mode only */
                 isDebugMode() && <Link to='/tags'>Tags</Link>
               }
+              <MuiLink href='https://github.com/Automattic/experimentation-platform/wiki' target='_blank'>
+                Documentation
+              </MuiLink>
             </nav>
           </Container>
         </div>
