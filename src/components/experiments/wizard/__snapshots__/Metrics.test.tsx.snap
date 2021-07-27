@@ -330,7 +330,9 @@ exports[`allows adding, editing and removing a Metric Assignment 1`] = `
           What is an Exposure Event? And when do I need it?
         </a>
         <br />
-        Only validated events can be used as exposure events.
+        <span>
+          Only validated events can be used as exposure events.
+        </span>
       </div>
     </div>
   </div>
@@ -667,7 +669,9 @@ exports[`allows adding, editing and removing a Metric Assignment 2`] = `
           What is an Exposure Event? And when do I need it?
         </a>
         <br />
-        Only validated events can be used as exposure events.
+        <span>
+          Only validated events can be used as exposure events.
+        </span>
       </div>
     </div>
   </div>
@@ -1174,7 +1178,9 @@ exports[`allows adding, editing and removing a Metric Assignment 3`] = `
           What is an Exposure Event? And when do I need it?
         </a>
         <br />
-        Only validated events can be used as exposure events.
+        <span>
+          Only validated events can be used as exposure events.
+        </span>
       </div>
     </div>
   </div>
@@ -1683,7 +1689,9 @@ exports[`allows adding, editing and removing a Metric Assignment 4`] = `
           What is an Exposure Event? And when do I need it?
         </a>
         <br />
-        Only validated events can be used as exposure events.
+        <span>
+          Only validated events can be used as exposure events.
+        </span>
       </div>
     </div>
   </div>
@@ -2190,7 +2198,9 @@ exports[`allows adding, editing and removing a Metric Assignment 5`] = `
           What is an Exposure Event? And when do I need it?
         </a>
         <br />
-        Only validated events can be used as exposure events.
+        <span>
+          Only validated events can be used as exposure events.
+        </span>
       </div>
     </div>
   </div>
@@ -2527,7 +2537,9 @@ exports[`allows adding, editing and removing a Metric Assignment 6`] = `
           What is an Exposure Event? And when do I need it?
         </a>
         <br />
-        Only validated events can be used as exposure events.
+        <span>
+          Only validated events can be used as exposure events.
+        </span>
       </div>
     </div>
   </div>
@@ -3036,7 +3048,9 @@ exports[`allows adding, editing and removing a Metric Assignment 7`] = `
           What is an Exposure Event? And when do I need it?
         </a>
         <br />
-        Only validated events can be used as exposure events.
+        <span>
+          Only validated events can be used as exposure events.
+        </span>
       </div>
     </div>
   </div>
@@ -3373,7 +3387,9 @@ exports[`renders as expected 1`] = `
           What is an Exposure Event? And when do I need it?
         </a>
         <br />
-        Only validated events can be used as exposure events.
+        <span>
+          Only validated events can be used as exposure events.
+        </span>
       </div>
     </div>
   </div>
