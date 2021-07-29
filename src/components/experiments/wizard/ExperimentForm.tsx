@@ -217,11 +217,6 @@ const ExperimentForm = ({
           nextStage && changeStage(nextStage.id)
         }
 
-        const onEnterKeyPressOnForm = (e: React.KeyboardEvent<HTMLFormElement>) => {
-          e.preventDefault()
-          nextStage()
-        }
-
         preventSubmissionRef.current = formikProps.dirty && !formikProps.isSubmitting
 
         return (
@@ -247,17 +242,10 @@ const ExperimentForm = ({
             <div ref={rootRef}>
               {/* Explanation: This should be fine as we aren't hiding behaviour that can't be accessed otherwise. */}
               {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
-              <form
-                className={classes.form}
-                onSubmit={formikProps.handleSubmit}
-                noValidate
-                onKeyPress={(e) => {
-                  // istanbul ignore else
-                  if (e.key === 'Enter') {
-                    onEnterKeyPressOnForm(e)
-                  }
-                }}
-              >
+              <form className={classes.form} onSubmit={formikProps.handleSubmit} noValidate>
+                {/* Prevent implicit submission of the form on enter. */}
+                {/* See https://stackoverflow.com/a/51507806 */}
+                <button type='submit' disabled style={{ display: 'none' }} aria-hidden='true'></button>
                 {currentStageId === StageId.Beginning && (
                   <div className={classes.formPart}>
                     <Paper className={classes.paper}>
