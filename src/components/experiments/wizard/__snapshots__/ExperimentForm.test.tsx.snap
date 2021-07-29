@@ -6,21 +6,21 @@ exports[`renders as expected 1`] = `
     class="makeStyles-root-1"
   >
     <div
-      class="makeStyles-navigation-2"
+      class="MuiPaper-root makeStyles-navigation-2 MuiPaper-elevation1 MuiPaper-rounded"
     >
       <div
-        class="MuiPaper-root MuiStepper-root MuiStepper-vertical MuiPaper-elevation0"
+        class="MuiPaper-root MuiStepper-root MuiStepper-horizontal MuiPaper-elevation0"
       >
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -62,22 +62,22 @@ exports[`renders as expected 1`] = `
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -119,22 +119,22 @@ exports[`renders as expected 1`] = `
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -176,22 +176,22 @@ exports[`renders as expected 1`] = `
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -233,22 +233,22 @@ exports[`renders as expected 1`] = `
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -418,21 +418,21 @@ exports[`sections should be browsable by the section buttons and show validation
     class="makeStyles-root-121"
   >
     <div
-      class="makeStyles-navigation-122"
+      class="MuiPaper-root makeStyles-navigation-122 MuiPaper-elevation1 MuiPaper-rounded"
     >
       <div
-        class="MuiPaper-root MuiStepper-root MuiStepper-vertical MuiPaper-elevation0"
+        class="MuiPaper-root MuiStepper-root MuiStepper-horizontal MuiPaper-elevation0"
       >
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -474,22 +474,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -531,22 +531,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -588,22 +588,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -645,22 +645,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -830,21 +830,21 @@ exports[`sections should be browsable by the section buttons and show validation
     class="makeStyles-root-121"
   >
     <div
-      class="makeStyles-navigation-122"
+      class="MuiPaper-root makeStyles-navigation-122 MuiPaper-elevation1 MuiPaper-rounded"
     >
       <div
-        class="MuiPaper-root MuiStepper-root MuiStepper-vertical MuiPaper-elevation0"
+        class="MuiPaper-root MuiStepper-root MuiStepper-horizontal MuiPaper-elevation0"
       >
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -876,22 +876,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -923,22 +923,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -970,22 +970,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -1017,22 +1017,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical MuiStepConnector-active"
+          class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-active"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -1166,21 +1166,21 @@ exports[`sections should be browsable by the section buttons and show validation
     class="makeStyles-root-121"
   >
     <div
-      class="makeStyles-navigation-122"
+      class="MuiPaper-root makeStyles-navigation-122 MuiPaper-elevation1 MuiPaper-rounded"
     >
       <div
-        class="MuiPaper-root MuiStepper-root MuiStepper-vertical MuiPaper-elevation0"
+        class="MuiPaper-root MuiStepper-root MuiStepper-horizontal MuiPaper-elevation0"
       >
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -1212,22 +1212,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -1259,22 +1259,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -1306,22 +1306,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical MuiStepConnector-active"
+          class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-active"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -1363,22 +1363,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -1816,21 +1816,21 @@ exports[`sections should be browsable by the section buttons and show validation
     class="makeStyles-root-121"
   >
     <div
-      class="makeStyles-navigation-122"
+      class="MuiPaper-root makeStyles-navigation-122 MuiPaper-elevation1 MuiPaper-rounded"
     >
       <div
-        class="MuiPaper-root MuiStepper-root MuiStepper-vertical MuiPaper-elevation0"
+        class="MuiPaper-root MuiStepper-root MuiStepper-horizontal MuiPaper-elevation0"
       >
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -1862,22 +1862,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical MuiStepConnector-active"
+          class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-active"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -1919,22 +1919,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -1966,22 +1966,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -2013,22 +2013,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -2523,21 +2523,21 @@ exports[`sections should be browsable by the section buttons and show validation
     class="makeStyles-root-121"
   >
     <div
-      class="makeStyles-navigation-122"
+      class="MuiPaper-root makeStyles-navigation-122 MuiPaper-elevation1 MuiPaper-rounded"
     >
       <div
-        class="MuiPaper-root MuiStepper-root MuiStepper-vertical MuiPaper-elevation0"
+        class="MuiPaper-root MuiStepper-root MuiStepper-horizontal MuiPaper-elevation0"
       >
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -2569,22 +2569,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -2616,22 +2616,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -2663,22 +2663,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical MuiStepConnector-active"
+          class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-active"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -2720,22 +2720,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -3347,21 +3347,21 @@ exports[`sections should be browsable by the section buttons and show validation
     class="makeStyles-root-121"
   >
     <div
-      class="makeStyles-navigation-122"
+      class="MuiPaper-root makeStyles-navigation-122 MuiPaper-elevation1 MuiPaper-rounded"
     >
       <div
-        class="MuiPaper-root MuiStepper-root MuiStepper-vertical MuiPaper-elevation0"
+        class="MuiPaper-root MuiStepper-root MuiStepper-horizontal MuiPaper-elevation0"
       >
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -3393,22 +3393,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -3440,22 +3440,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical MuiStepConnector-active"
+          class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-active"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -3497,22 +3497,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -3544,22 +3544,22 @@ exports[`sections should be browsable by the section buttons and show validation
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -4244,21 +4244,21 @@ exports[`skipping to submit should check all sections 1`] = `
     class="makeStyles-root-225"
   >
     <div
-      class="makeStyles-navigation-226"
+      class="MuiPaper-root makeStyles-navigation-226 MuiPaper-elevation1 MuiPaper-rounded"
     >
       <div
-        class="MuiPaper-root MuiStepper-root MuiStepper-vertical MuiPaper-elevation0"
+        class="MuiPaper-root MuiStepper-root MuiStepper-horizontal MuiPaper-elevation0"
       >
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -4290,22 +4290,22 @@ exports[`skipping to submit should check all sections 1`] = `
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -4337,22 +4337,22 @@ exports[`skipping to submit should check all sections 1`] = `
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -4384,22 +4384,22 @@ exports[`skipping to submit should check all sections 1`] = `
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical"
+          class="MuiStepConnector-root MuiStepConnector-horizontal"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical Mui-error"
+              class="MuiStepLabel-root MuiStepLabel-horizontal Mui-error"
             >
               <span
                 class="MuiStepLabel-iconContainer"
@@ -4431,22 +4431,22 @@ exports[`skipping to submit should check all sections 1`] = `
           </button>
         </div>
         <div
-          class="MuiStepConnector-root MuiStepConnector-vertical MuiStepConnector-active"
+          class="MuiStepConnector-root MuiStepConnector-horizontal MuiStepConnector-active"
         >
           <span
-            class="MuiStepConnector-line MuiStepConnector-lineVertical"
+            class="MuiStepConnector-line MuiStepConnector-lineHorizontal"
           />
         </div>
         <div
-          class="MuiStep-root MuiStep-vertical"
+          class="MuiStep-root MuiStep-horizontal"
         >
           <button
-            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-vertical"
+            class="MuiButtonBase-root MuiStepButton-root MuiStepButton-horizontal"
             tabindex="0"
             type="button"
           >
             <span
-              class="MuiStepLabel-root MuiStepLabel-vertical"
+              class="MuiStepLabel-root MuiStepLabel-horizontal"
             >
               <span
                 class="MuiStepLabel-iconContainer"

@@ -25,11 +25,18 @@ const useStyles = makeStyles((theme: Theme) =>
       '&:first-of-type': {
         marginTop: theme.spacing(3),
       },
+      [theme.breakpoints.down('xs')]: {
+        flexDirection: 'column',
+        alignItems: 'stretch',
+      },
     },
     through: {
       flex: 0,
       margin: theme.spacing(0, 2),
       color: theme.palette.text.hint,
+      [theme.breakpoints.down('xs')]: {
+        margin: theme.spacing(2, 2),
+      },
     },
     datePicker: {
       flex: 1,
