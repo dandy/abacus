@@ -80,22 +80,29 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: 'flex',
+      flexDirection: 'column',
     },
     navigation: {
       flexShrink: 0,
-      marginRight: theme.spacing(6),
+      marginRight: theme.spacing(1),
       marginTop: theme.spacing(2),
+      maxWidth: 600,
+      [theme.breakpoints.down('xs')]: {
+        '& .MuiStepLabel-labelContainer': {
+          display: 'none',
+        },
+      },
     },
     form: {
       flex: 1,
       display: 'flex',
     },
     formPart: {
-      flexShrink: 0,
-      padding: theme.spacing(2, 1),
+      flex: '1  0',
+      maxWidth: 980,
+      padding: theme.spacing(2, 0),
     },
     formPartActions: {
-      maxWidth: 950,
       display: 'flex',
       justifyContent: 'flex-end',
       '& .MuiButton-root': {
@@ -103,7 +110,6 @@ const useStyles = makeStyles((theme: Theme) =>
       },
     },
     paper: {
-      maxWidth: 950,
       padding: theme.spacing(3, 4),
       marginBottom: theme.spacing(2),
     },
@@ -225,8 +231,8 @@ const ExperimentForm = ({
               when={preventSubmissionRef.current}
               message='You have unsaved data, are you sure you want to leave?'
             />
-            <div className={classes.navigation}>
-              <Stepper nonLinear activeStep={currentStageId} orientation='vertical'>
+            <Paper className={classes.navigation}>
+              <Stepper nonLinear activeStep={currentStageId} orientation='horizontal'>
                 {stages.map((stage) => (
                   <Step key={stage.id} completed={stage.id !== currentStageId && completeStages.includes(stage.id)}>
                     <StepButton onClick={() => changeStage(stage.id)}>
@@ -237,7 +243,7 @@ const ExperimentForm = ({
                   </Step>
                 ))}
               </Stepper>
-            </div>
+            </Paper>
             <div ref={rootRef}>
               {/* Explanation: This should be fine as we aren't hiding behaviour that can't be accessed otherwise. */}
               {/* eslint-disable-next-line jsx-a11y/no-noninteractive-element-interactions */}
