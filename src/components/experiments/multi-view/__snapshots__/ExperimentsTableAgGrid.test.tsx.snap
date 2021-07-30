@@ -3313,7 +3313,7 @@ exports[`should render a table with experiments, allow searching and resetting 3
               class="MuiInputBase-input makeStyles-inputInput-16"
               placeholder="Search…"
               type="text"
-              value="explat_test"
+              value=""
             />
           </div>
         </div>
