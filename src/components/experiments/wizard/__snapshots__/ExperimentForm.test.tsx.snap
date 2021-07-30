@@ -1791,6 +1791,10 @@ exports[`sections should be browsable by the section buttons and show validation
                   >
                     What is an Exposure Event? And when do I need it?
                   </a>
+                  <br />
+                  <span>
+                    Only validated events can be used as exposure events.
+                  </span>
                 </div>
               </div>
             </div>
@@ -3334,6 +3338,10 @@ exports[`sections should be browsable by the section buttons and show validation
                   >
                     What is an Exposure Event? And when do I need it?
                   </a>
+                  <br />
+                  <span>
+                    Only validated events can be used as exposure events.
+                  </span>
                 </div>
               </div>
             </div>
