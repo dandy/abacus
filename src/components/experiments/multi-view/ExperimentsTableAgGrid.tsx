@@ -16,6 +16,10 @@ import { createIdSlug } from 'src/utils/general'
 
 import ExperimentStatus from '../ExperimentStatus'
 
+// We are storying this in memory as we want it persisted when the back button is pressed
+// but not more generally than that.
+let lastSearchString = ''
+
 const statusOrder = {
   [Status.Completed]: 0,
   [Status.Running]: 1,
@@ -107,9 +111,10 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
     })
   }
 
-  const [searchState, setSearchState] = useState<string>('')
+  const [searchState, setSearchState] = useState<string>(lastSearchString)
   const onSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchState(event.target.value)
+    lastSearchString = event.target.value
   }
   useEffect(() => {
     // istanbul ignore next; trivial and shouldn't occur
@@ -126,7 +131,6 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
       return
     }
 
-    setSearchState('')
     gridColumnApiRef.current.autoSizeAllColumns()
     gridColumnApiRef.current.resetColumnState()
     gridApiRef.current.setFilterModel(null)
@@ -145,6 +149,11 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
       ],
       defaultState: { sort: null },
     })
+  }
+
+  const onClearAndReset = () => {
+    setSearchState('')
+    onReset()
   }
 
   return (
@@ -167,7 +176,7 @@ const ExperimentsTable = ({ experiments }: { experiments: ExperimentBare[] }): J
               onChange={onSearchChange}
             />
           </div>
-          <Button onClick={onReset}> Reset </Button>
+          <Button onClick={onClearAndReset}> Reset </Button>
         </div>
       </div>
       <div className={clsx('ag-theme-alpine', classes.gridContainer)}>
