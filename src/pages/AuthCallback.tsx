@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
 /**
  * The authorization page.
  *
- * Note: This relies upon the fact that `pages/_app.tsx` will redirect the user to
+ * Note: This relies upon the fact that `src/App.tsx` will redirect the user to
  * the OAuth authorize page.
  */
 const AuthPage = function AuthPage(): JSX.Element {
@@ -97,7 +97,8 @@ const AuthPage = function AuthPage(): JSX.Element {
 
     saveExperimentsAuthInfo(experimentsAuthInfo)
 
-    window.location.replace(window.location.origin)
+    const redirectTo = qs.parse(window.location.search.substr(1)).redirect_to as string | undefined
+    window.location.replace(redirectTo || window.location.origin)
   }, [])
 
   return (
