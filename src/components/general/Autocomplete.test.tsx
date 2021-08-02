@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/require-await,@typescript-eslint/ban-ts-comment */
 import { InputAdornment, TextField as MuiTextField } from '@material-ui/core'
 import { act, fireEvent, render, screen } from '@testing-library/react'
 import { Field, Formik } from 'formik'

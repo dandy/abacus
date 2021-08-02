@@ -39,7 +39,7 @@ function App(): JSX.Element {
     if (!experimentsAuthInfo) {
       const authQuery = {
         client_id: config.experimentApi.authClientId,
-        redirect_uri: `${window.location.origin}/auth`,
+        redirect_uri: `${window.location.origin}/auth?redirect_to=${encodeURIComponent(window.location.href)}`,
         response_type: 'token',
         scope: 'global',
       }
