@@ -17,11 +17,17 @@ const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       minWidth: '7rem',
+      '& input': {
+        textAlign: 'right',
+      },
     },
     tooltipped: {
       borderBottomWidth: 1,
       borderBottomStyle: 'dashed',
       borderBottomColor: theme.palette.grey[500],
+    },
+    adornment: {
+      width: '3rem',
     },
   }),
 )
@@ -52,7 +58,7 @@ export default function MetricDifferenceField(props: {
         }}
         InputProps={{
           endAdornment: (
-            <InputAdornment position='end'>
+            <InputAdornment position='end' className={classes.adornment}>
               <Tooltip title='Percentage Points'>
                 <Typography variant='body1' color='textSecondary' className={classes.tooltipped}>
                   pp
@@ -78,7 +84,11 @@ export default function MetricDifferenceField(props: {
           min: '0',
         }}
         InputProps={{
-          endAdornment: <InputAdornment position='end'>USD</InputAdornment>,
+          endAdornment: (
+            <InputAdornment position='end' className={classes.adornment}>
+              USD
+            </InputAdornment>
+          ),
         }}
       />
     )

@@ -859,7 +859,7 @@ exports[`allows adding, editing and removing a Metric Assignment 3`] = `
                     value=""
                   />
                   <div
-                    class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+                    class="MuiInputAdornment-root makeStyles-adornment-44 MuiInputAdornment-positionEnd"
                   >
                     <p
                       class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
@@ -1370,7 +1370,7 @@ exports[`allows adding, editing and removing a Metric Assignment 4`] = `
                     value="0.01"
                   />
                   <div
-                    class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+                    class="MuiInputAdornment-root makeStyles-adornment-44 MuiInputAdornment-positionEnd"
                   >
                     <p
                       class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
@@ -1879,7 +1879,7 @@ exports[`allows adding, editing and removing a Metric Assignment 5`] = `
                     value="0.01"
                   />
                   <div
-                    class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+                    class="MuiInputAdornment-root makeStyles-adornment-44 MuiInputAdornment-positionEnd"
                   >
                     <p
                       class="MuiTypography-root MuiTypography-body1 MuiTypography-colorTextSecondary"
@@ -2615,7 +2615,7 @@ exports[`allows adding, editing and removing a Metric Assignment 7`] = `
               </span>
               <br />
               <span
-                class="makeStyles-root-44 makeStyles-monospaced-21"
+                class="makeStyles-root-45 makeStyles-monospaced-21"
               >
                 primary
               </span>
@@ -2656,11 +2656,11 @@ exports[`allows adding, editing and removing a Metric Assignment 7`] = `
                 </svg>
                 <fieldset
                   aria-hidden="true"
-                  class="PrivateNotchedOutline-root-45 MuiOutlinedInput-notchedOutline"
+                  class="PrivateNotchedOutline-root-46 MuiOutlinedInput-notchedOutline"
                   style="padding-left: 8px;"
                 >
                   <legend
-                    class="PrivateNotchedOutline-legend-46"
+                    class="PrivateNotchedOutline-legend-47"
                     style="width: 0.01px;"
                   >
                     <span>
@@ -2679,7 +2679,7 @@ exports[`allows adding, editing and removing a Metric Assignment 7`] = `
                 <span
                   aria-disabled="false"
                   aria-label="Change Expected"
-                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-49 MuiSwitch-switchBase MuiSwitch-colorSecondary PrivateSwitchBase-checked-50 Mui-checked"
+                  class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-50 MuiSwitch-switchBase MuiSwitch-colorSecondary PrivateSwitchBase-checked-51 Mui-checked"
                   variant="outlined"
                 >
                   <span
@@ -2687,7 +2687,7 @@ exports[`allows adding, editing and removing a Metric Assignment 7`] = `
                   >
                     <input
                       checked=""
-                      class="PrivateSwitchBase-input-52 MuiSwitch-input"
+                      class="PrivateSwitchBase-input-53 MuiSwitch-input"
                       id="experiment.metricAssignments[0].changeExpected"
                       name="experiment.metricAssignments[0].changeExpected"
                       type="checkbox"
@@ -2710,7 +2710,7 @@ exports[`allows adding, editing and removing a Metric Assignment 7`] = `
               class="MuiTableCell-root MuiTableCell-body"
             >
               <div
-                class="MuiFormControl-root MuiTextField-root makeStyles-root-53 makeStyles-minDifferenceField-25"
+                class="MuiFormControl-root MuiTextField-root makeStyles-root-54 makeStyles-minDifferenceField-25"
               >
                 <div
                   class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd"
@@ -2728,10 +2728,10 @@ exports[`allows adding, editing and removing a Metric Assignment 7`] = `
                     value="0"
                   />
                   <div
-                    class="MuiInputAdornment-root MuiInputAdornment-positionEnd"
+                    class="MuiInputAdornment-root makeStyles-adornment-56 MuiInputAdornment-positionEnd"
                   >
                     <p
-                      class="MuiTypography-root makeStyles-tooltipped-54 MuiTypography-body1 MuiTypography-colorTextSecondary"
+                      class="MuiTypography-root makeStyles-tooltipped-55 MuiTypography-body1 MuiTypography-colorTextSecondary"
                       title="Percentage Points"
                     >
                       pp
@@ -2739,11 +2739,11 @@ exports[`allows adding, editing and removing a Metric Assignment 7`] = `
                   </div>
                   <fieldset
                     aria-hidden="true"
-                    class="PrivateNotchedOutline-root-45 MuiOutlinedInput-notchedOutline"
+                    class="PrivateNotchedOutline-root-46 MuiOutlinedInput-notchedOutline"
                     style="padding-left: 8px;"
                   >
                     <legend
-                      class="PrivateNotchedOutline-legend-46"
+                      class="PrivateNotchedOutline-legend-47"
                       style="width: 0.01px;"
                     >
                       <span>
