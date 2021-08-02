@@ -137,7 +137,6 @@ test('throws error for uncovered Recommendation', () => {
     render(
       <RecommendationDisplay
         recommendation={{
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           decision: 'Unknown Decision',
           chosenVariationId: 123,

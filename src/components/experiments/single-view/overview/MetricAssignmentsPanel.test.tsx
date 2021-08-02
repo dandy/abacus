@@ -298,7 +298,6 @@ test('opens, submits and cancels assign metric dialog', async () => {
   render(<MetricAssignmentsPanel {...{ experiment, metrics, experimentReloadRef }} />)
 
   mockedExperimentsApi.assignMetric.mockReset()
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   // @ts-ignore
   mockedExperimentsApi.assignMetric.mockImplementationOnce(async () => null)
 

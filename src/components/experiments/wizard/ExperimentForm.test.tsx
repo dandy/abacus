@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/require-await,@typescript-eslint/ban-ts-comment */
-
 import { act, fireEvent, getByRole, screen, waitFor } from '@testing-library/react'
 import { StatusCodes } from 'http-status-codes'
 import _ from 'lodash'
