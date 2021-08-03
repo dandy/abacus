@@ -1,4 +1,4 @@
-import { Chip, createStyles, makeStyles, Paper, Toolbar, Typography } from '@material-ui/core'
+import { Chip, createStyles, makeStyles, Paper, Toolbar, Tooltip, Typography } from '@material-ui/core'
 import { TableCellProps } from '@material-ui/core/TableCell'
 import _ from 'lodash'
 import React, { useMemo } from 'react'
@@ -52,6 +52,12 @@ const useStyles = makeStyles(() =>
     monospace: {
       fontFamily: theme.custom.fonts.monospace,
     },
+    audienceTable: {
+      tableLayout: 'fixed',
+      '& > tbody > tr > th': {
+        width: '25%',
+      },
+    },
   }),
 )
 
@@ -64,6 +70,11 @@ const eventStyles = makeStyles(() =>
     },
     eventName: {
       fontFamily: theme.custom.fonts.monospace,
+      whiteSpace: 'nowrap',
+      overflow: 'hidden',
+      textOverflow: 'ellipsis',
+      display: 'inline-block',
+      maxWidth: '100%',
     },
     eventList: {
       '& p:not(:first-child)': {
@@ -90,7 +101,9 @@ function ExposureEventsTable({ experiment: { exposureEvents } }: { experiment: E
       {exposureEvents && exposureEvents.length ? (
         exposureEvents.map((ev) => (
           <Typography className={classes.monospace} key={ev.event}>
-            <span className={classes.eventName}>{ev.event}</span>
+            <Tooltip title={ev.event}>
+              <span className={classes.eventName}>{ev.event}</span>
+            </Tooltip>
             {ev.props &&
               Object.entries(ev.props).map(([key, val]) => (
                 <span key={key} className={classes.entry}>
@@ -202,7 +215,7 @@ function AudiencePanel({
           Audience
         </Typography>
       </Toolbar>
-      <LabelValueTable data={data} />
+      <LabelValueTable data={data} className={classes.audienceTable} />
     </Paper>
   )
 }

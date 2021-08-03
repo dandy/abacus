@@ -20,6 +20,7 @@ import TableHead from '@material-ui/core/TableHead'
 import TableRow from '@material-ui/core/TableRow'
 import Typography from '@material-ui/core/Typography'
 import { Add } from '@material-ui/icons'
+import clsx from 'clsx'
 import { ErrorMessage, Field, Formik } from 'formik'
 import { Select, Switch } from 'formik-material-ui'
 import _ from 'lodash'
@@ -86,8 +87,21 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       flexGrow: 1,
     },
+    metricsTable: {
+      tableLayout: 'fixed',
+    },
     addMetricPlaceholder: {
       fontFamily: theme.typography.fontFamily,
+    },
+    smallColumn: {
+      width: '10%',
+    },
+    metricName: {
+      maxWidth: '100%',
+      display: 'inline-block',
+      overflow: 'hidden',
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis',
     },
     row: {
       minWidth: 400,
@@ -177,19 +191,19 @@ function MetricAssignmentsPanel({
           </div>
         </Tooltip>
       </Toolbar>
-      <Table>
+      <Table className={classes.metricsTable}>
         <TableHead>
           <TableRow>
             <TableCell component='th' variant='head'>
               Name
             </TableCell>
-            <TableCell component='th' variant='head'>
+            <TableCell component='th' variant='head' className={classes.smallColumn}>
               Attribution Window
             </TableCell>
-            <TableCell component='th' variant='head'>
+            <TableCell component='th' variant='head' className={classes.smallColumn}>
               Changes Expected
             </TableCell>
-            <TableCell component='th' variant='head'>
+            <TableCell component='th' variant='head' className={classes.smallColumn}>
               Minimum Difference
             </TableCell>
           </TableRow>
@@ -198,13 +212,15 @@ function MetricAssignmentsPanel({
           {resolvedMetricAssignments.map((resolvedMetricAssignment) => (
             <TableRow key={resolvedMetricAssignment.metricAssignmentId}>
               <TableCell>
-                <strong className={classes.monospace}>
-                  {resolvedMetricAssignment.metric.name}
-                  &nbsp;
-                  {resolvedMetricAssignment.isPrimary && <Attribute name='primary' />}
-                </strong>
+                <Tooltip title={resolvedMetricAssignment.metric.name}>
+                  <strong className={clsx(classes.monospace, classes.metricName)}>
+                    {resolvedMetricAssignment.metric.name}
+                  </strong>
+                </Tooltip>
                 <br />
                 <small className={classes.monospace}>{resolvedMetricAssignment.metric.description}</small>
+                <br />
+                {resolvedMetricAssignment.isPrimary && <Attribute name='primary' />}
               </TableCell>
               <TableCell className={classes.monospace}>
                 {AttributionWindowSecondsToHuman[resolvedMetricAssignment.attributionWindowSeconds]}

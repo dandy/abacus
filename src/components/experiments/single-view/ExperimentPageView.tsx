@@ -40,6 +40,11 @@ const useStyles = makeStyles((theme: Theme) =>
     titleName: {
       fontFamily: theme.custom.fonts.monospace,
       color: '#000',
+      display: 'inline-block',
+      overflow: 'hidden',
+      maxWidth: '100%',
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis',
     },
     titleNameSkeleton: {
       display: 'inline-block',
@@ -133,7 +138,9 @@ export default function ExperimentPageView({
           <Typography variant='h2'>
             Experiment:{' '}
             {experiment ? (
-              <span className={classes.titleName}>{experiment.name}</span>
+              <Tooltip title={experiment.name}>
+                <span className={classes.titleName}>{experiment.name}</span>
+              </Tooltip>
             ) : (
               <Skeleton className={classes.titleNameSkeleton} variant='text' width={200} />
             )}

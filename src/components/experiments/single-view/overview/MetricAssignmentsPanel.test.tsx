@@ -61,7 +61,7 @@ test('renders as expected with all metrics resolvable', () => {
           </div>
         </div>
         <table
-          class="MuiTable-root"
+          class="MuiTable-root makeStyles-metricsTable-4"
         >
           <thead
             class="MuiTableHead-root"
@@ -77,21 +77,21 @@ test('renders as expected with all metrics resolvable', () => {
                 Name
               </th>
               <th
-                class="MuiTableCell-root MuiTableCell-head"
+                class="MuiTableCell-root MuiTableCell-head makeStyles-smallColumn-6"
                 role="columnheader"
                 scope="col"
               >
                 Attribution Window
               </th>
               <th
-                class="MuiTableCell-root MuiTableCell-head"
+                class="MuiTableCell-root MuiTableCell-head makeStyles-smallColumn-6"
                 role="columnheader"
                 scope="col"
               >
                 Changes Expected
               </th>
               <th
-                class="MuiTableCell-root MuiTableCell-head"
+                class="MuiTableCell-root MuiTableCell-head makeStyles-smallColumn-6"
                 role="columnheader"
                 scope="col"
               >
@@ -109,15 +109,10 @@ test('renders as expected with all metrics resolvable', () => {
                 class="MuiTableCell-root MuiTableCell-body"
               >
                 <strong
-                  class="makeStyles-monospace-2"
+                  class="makeStyles-monospace-2 makeStyles-metricName-7"
+                  title="metric_1"
                 >
                   metric_1
-                   
-                  <span
-                    class="makeStyles-root-7"
-                  >
-                    primary
-                  </span>
                 </strong>
                 <br />
                 <small
@@ -125,6 +120,12 @@ test('renders as expected with all metrics resolvable', () => {
                 >
                   This is metric 1
                 </small>
+                <br />
+                <span
+                  class="makeStyles-root-10"
+                >
+                  primary
+                </span>
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-2"
@@ -142,7 +143,7 @@ test('renders as expected with all metrics resolvable', () => {
                 
                 10
                 <span
-                  class="makeStyles-root-8"
+                  class="makeStyles-root-11"
                   title="Percentage points."
                 >
                   pp
@@ -156,10 +157,10 @@ test('renders as expected with all metrics resolvable', () => {
                 class="MuiTableCell-root MuiTableCell-body"
               >
                 <strong
-                  class="makeStyles-monospace-2"
+                  class="makeStyles-monospace-2 makeStyles-metricName-7"
+                  title="metric_2"
                 >
                   metric_2
-                   
                 </strong>
                 <br />
                 <small
@@ -167,6 +168,7 @@ test('renders as expected with all metrics resolvable', () => {
                 >
                   This is metric 2
                 </small>
+                <br />
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-2"
@@ -193,10 +195,10 @@ test('renders as expected with all metrics resolvable', () => {
                 class="MuiTableCell-root MuiTableCell-body"
               >
                 <strong
-                  class="makeStyles-monospace-2"
+                  class="makeStyles-monospace-2 makeStyles-metricName-7"
+                  title="metric_2"
                 >
                   metric_2
-                   
                 </strong>
                 <br />
                 <small
@@ -204,6 +206,7 @@ test('renders as expected with all metrics resolvable', () => {
                 >
                   This is metric 2
                 </small>
+                <br />
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-2"
@@ -230,10 +233,10 @@ test('renders as expected with all metrics resolvable', () => {
                 class="MuiTableCell-root MuiTableCell-body"
               >
                 <strong
-                  class="makeStyles-monospace-2"
+                  class="makeStyles-monospace-2 makeStyles-metricName-7"
+                  title="metric_3"
                 >
                   metric_3
-                   
                 </strong>
                 <br />
                 <small
@@ -241,6 +244,7 @@ test('renders as expected with all metrics resolvable', () => {
                 >
                   This is metric 3
                 </small>
+                <br />
               </td>
               <td
                 class="MuiTableCell-root MuiTableCell-body makeStyles-monospace-2"
@@ -258,7 +262,7 @@ test('renders as expected with all metrics resolvable', () => {
                 
                 1200
                 <span
-                  class="makeStyles-root-8"
+                  class="makeStyles-root-11"
                   title="Percentage points."
                 >
                   pp
