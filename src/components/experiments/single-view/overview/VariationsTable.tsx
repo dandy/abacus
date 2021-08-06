@@ -49,9 +49,16 @@ function assignmentHref(variationName: string, experimentName: string) {
   return `javascript:(async () => {
     const token = JSON.parse(localStorage.getItem('experiments_auth_info'));
     const anonId = decodeURIComponent(document.cookie.match('(^|;)\\\\s*tk_ai\\\\s*=\\\\s*([^;]+)')?.pop() || '');
+    let usernameOverride = '';
     const headers = {'Content-Type': 'application/json'};
     if (token && token.accessToken) {
        headers.Authorization = 'Bearer ' + token['accessToken'];
+       usernameOverride = prompt(
+         'This will assign a logged-in user to the ${variationName} variation of ${experimentName}. ' +
+         'You have two options:\\n' +
+         '(1) Enter a username to assign (only works for staging experiments).\\n' +
+         '(2) Leave blank to assign yourself (works for any status).'
+       ); 
     }
     const response = await fetch(
       'https://public-api.wordpress.com/wpcom/v2/experiments/0.1.0/assignments', 
@@ -59,23 +66,33 @@ function assignmentHref(variationName: string, experimentName: string) {
         credentials: 'include', 
         method: 'PATCH', 
         headers, 
-        body: JSON.stringify({variations: {${experimentName}: '${variationName}'}, anon_id: anonId})
+        body: JSON.stringify({
+          variations: {${experimentName}: '${variationName}'},
+          anon_id: anonId,
+          username_override: usernameOverride
+        })
       }
     );
     const responseBody = await response.json();
     switch (responseBody.code) {
       case 'variation_not_found':
-        alert('The variation was not found, please update your bookmark');
+        alert('The variation was not found. Please update your bookmark.');
         break;
       case 'experiment_not_found':
-        alert('The experiment is disabled, please update your bookmark');
+        alert('The experiment was not found or is disabled. Please update your bookmark.');
         break;
       case 'user_not_assignable':
-        alert('You must be proxied or sandboxed to use this bookmark');
+        alert('You must be proxied or sandboxed to use this bookmark.');
         break;
       case 'invalid_ids':
-        alert('To assign yourself, you must run this from Abacus.\\n\\nTo assign the current anonymous user, verify ' +
-              'that Tracks is not blocked and run in an environment where the tk_ai cookie is set.');
+        alert(
+          'To assign yourself or another user, you must run this from Abacus and specify an existing user.\\n\\n' +
+          'To assign the current anonymous user, verify that Tracks is not blocked and run in an environment where ' +
+          'the tk_ai cookie is set.'
+        );
+        break;
+      case 'invalid_experiment_status':
+        alert('The current experiment status does not support manual assignment.');
         break;
       default:
         if (!responseBody.variations) {
@@ -87,7 +104,8 @@ function assignmentHref(variationName: string, experimentName: string) {
         if (responseBody.storage_method === 'anon_sqooped_out_table') {
           alert(baseMessage + 'Method: Logged-out assignment\\nApplies to the current anon user (tk_ai cookie).');
         } else {
-          alert(baseMessage + 'Method: Logged-in assignment\\nApplies to the current logged-in user.');
+          const appliedUserDesc = usernameOverride || 'the current logged-in user';
+          alert(baseMessage + 'Method: Logged-in assignment\\nApplies to ' + appliedUserDesc + '.');
         }
     }
 })()`
@@ -152,11 +170,26 @@ function VariationsTable({
                         </Link>
                       </Typography>
                       <Typography color='inherit' variant='body1' gutterBottom>
-                        <strong>Instructions:</strong>
+                        <strong>To assign yourself or another WP.com user:</strong>
                         <ol>
-                          <li> Drag the above link to your bookmarks or bookmarks bar. </li>
-                          <li> Click the bookmark when you are on the page you want to manually assign. </li>
-                          <li> You will receive an alert on success. </li>
+                          <li>Drag the above link to your bookmarks or bookmark bar.</li>
+                          <li>Click the bookmark when you are on any Abacus page.</li>
+                          <li>Follow the prompt to choose a user to assign.</li>
+                          <li>You will receive an alert on success.</li>
+                        </ol>
+                        <strong>To assign an anonymous user:</strong>
+                        <ol>
+                          <li>Drag the above link to your bookmarks or bookmark bar.</li>
+                          <li>
+                            Navigate to a page while logged-out with Tracks enabled (e.g., visit WordPress.com in
+                            incognito mode without any ad blockers).
+                          </li>
+                          <li>Ensure you are proxied or sandboxing the API.</li>
+                          <li>
+                            Click the bookmark to assign the current anonymous user (i.e., the ID from the tk_ai
+                            cookie).
+                          </li>
+                          <li>You will receive an alert on success.</li>
                         </ol>
                       </Typography>
                     </>
