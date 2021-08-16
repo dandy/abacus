@@ -25,6 +25,7 @@ import {
   Status,
   TagBare,
   TransactionTypes,
+  Variation,
 } from 'src/lib/schemas'
 
 // Note: analysis.recommendation is deprecated and doesn't match metricEstimates
@@ -320,6 +321,28 @@ function createExperimentFullNew(fieldOverrides: Partial<ExperimentFullNew> = {}
   }
 }
 
+function createVariation(fieldOverrides: Partial<Variation> = {}): Variation {
+  const variationId = fieldOverrides.variationId || 1
+  const name = variationId === 1 ? 'control' : variationId === 2 ? 'test' : `treatment_${variationId - 1}`
+  return {
+    variationId,
+    isDefault: variationId === 1 ? true : false,
+    name,
+    allocatedPercentage: 10,
+    ...fieldOverrides,
+  }
+}
+
+function createVariations(n: number): Variation[] {
+  const allocatedPercentage = Math.floor(100 / n)
+  return _.range(1, n + 1).map((variationId) =>
+    createVariation({
+      variationId,
+      allocatedPercentage,
+    }),
+  )
+}
+
 function createExperimentFull(fieldOverrides: Partial<ExperimentFull> = {}): ExperimentFull {
   const fieldsOnlyForExistingExperiments = [
     'experimentId',
@@ -349,18 +372,15 @@ function createExperimentFull(fieldOverrides: Partial<ExperimentFull> = {}): Exp
     conclusionUrl: null,
     deployedVariationId: null,
     variations: [
-      {
+      createVariation({
         variationId: 2,
         name: 'test',
         isDefault: false,
         allocatedPercentage: 40,
-      },
-      {
-        variationId: 1,
-        name: 'control',
-        isDefault: true,
+      }),
+      createVariation({
         allocatedPercentage: 60,
-      },
+      }),
     ],
     metricAssignments: [
       createMetricAssignment({
@@ -499,6 +519,7 @@ const Fixtures = {
   createTagFull,
   createSegmentAssignment,
   createSegments,
+  createVariations,
 }
 
 export default Fixtures
