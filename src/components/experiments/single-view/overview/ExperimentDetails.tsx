@@ -1,6 +1,4 @@
-import Grid from '@material-ui/core/Grid'
-import { createStyles, makeStyles, useTheme } from '@material-ui/core/styles'
-import useMediaQuery from '@material-ui/core/useMediaQuery'
+import { createStyles, makeStyles } from '@material-ui/core/styles'
 import debugFactory from 'debug'
 import React from 'react'
 
@@ -38,33 +36,14 @@ function ExperimentDetails({
 }): JSX.Element {
   debug('ExperimentDetails#render')
   const classes = useStyles()
-  const theme = useTheme()
-  const isMdDown = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
     <>
-      <Grid container spacing={2}>
-        <Grid item xs={12} lg={7}>
-          <Grid container direction='column' spacing={2}>
-            <Grid item>
-              <GeneralPanel className={classes.panel} {...{ experiment, experimentReloadRef }} />
-              {(experiment.status === Status.Completed || experiment.status === Status.Disabled) && (
-                <ConclusionsPanel className={classes.panel} {...{ experiment, experimentReloadRef }} />
-              )}
-            </Grid>
-            {isMdDown && (
-              <Grid item>
-                <AudiencePanel className={classes.panel} {...{ experiment, segments, tags }} />
-              </Grid>
-            )}
-          </Grid>
-        </Grid>
-        {!isMdDown && (
-          <Grid item lg={5}>
-            <AudiencePanel className={classes.panel} {...{ experiment, segments, tags }} />
-          </Grid>
-        )}
-      </Grid>
+      <GeneralPanel className={classes.panel} {...{ experiment, experimentReloadRef }} />
+      {(experiment.status === Status.Completed || experiment.status === Status.Disabled) && (
+        <ConclusionsPanel className={classes.panel} {...{ experiment, experimentReloadRef }} />
+      )}
+      <AudiencePanel className={classes.panel} {...{ experiment, segments, tags }} />
       <MetricAssignmentsPanel {...{ experiment, metrics, experimentReloadRef }} />
     </>
   )
