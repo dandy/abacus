@@ -29,7 +29,18 @@ jobs:
           name: Unit Testing
           command: npm run test:unit -- -- --ci --maxWorkers 2
 
-  integration-e2e:
+  integration:
+    executor:
+      name: node/default
+      tag: '12.18.4'
+    steps:
+      - checkout
+      - node/install-packages
+      - run:
+          name: Integration Testing
+          command: npm run test:integration -- --ci
+
+  e2e:
     executor:
       name: node/default
       tag: '12.18.4'
@@ -90,9 +101,6 @@ jobs:
           name: Configure local host mapping
           command: echo 127.0.0.1 a8c-abacus-local | sudo tee -a /etc/hosts
       - run:
-          name: Integration Testing
-          command: npm run test:integration -- --ci
-      - run:
           name: End-to-End Testing
           command: GENERATE_SOURCEMAP=false npm run test:e2e -- --ci
 
@@ -101,4 +109,5 @@ workflows:
     jobs:
       - static-checks
       - unit-tests
-      - integration-e2e
+      - integration
+      - e2e
