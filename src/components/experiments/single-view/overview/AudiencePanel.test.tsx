@@ -14,6 +14,17 @@ test('renders as expected with no segment assignments', () => {
   expect(container).toMatchSnapshot()
 })
 
+test('renders as expected with 5 variations', () => {
+  const experiment = Fixtures.createExperimentFull({
+    segmentAssignments: [],
+    variations: Fixtures.createVariations(5),
+  })
+  const tags = Fixtures.createTagBares(5)
+  const { container } = render(<AudiencePanel experiment={experiment} segments={[]} tags={tags} />)
+
+  expect(container).toMatchSnapshot()
+})
+
 test('renders as expected with no exclusion groups', () => {
   const experiment = Fixtures.createExperimentFull({
     segmentAssignments: [],
