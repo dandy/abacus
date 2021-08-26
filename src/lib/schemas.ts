@@ -432,9 +432,28 @@ export const experimentFullNewSchema = experimentFullSchema.shape({
   metricAssignments: yup
     .array(metricAssignmentNewSchema)
     .defined()
-    .min(1, 'At least one metric assignment is required'),
+    .min(1, 'At least one metric assignment is required.'),
   segmentAssignments: yup.array(segmentAssignmentNewSchema).defined(),
-  variations: yup.array<VariationNew>(variationNewSchema).defined().min(2),
+  variations: yup
+    .array<VariationNew>(variationNewSchema)
+    .defined()
+    .min(2)
+    .test(
+      'default-variation-exists',
+      'A default variation is required.',
+      (variations: VariationNew[]) => variations && variations.some((variation) => variation.isDefault),
+    )
+    .test(
+      'max-total',
+      'The sum of allocated percentages must be less than or equal to 100.',
+      (variations: VariationNew[]) =>
+        variations && variations.reduce((acc, variation) => acc + Number(variation.allocatedPercentage), 0) <= 100,
+    )
+    .test(
+      'unique-names',
+      'Variation names must be unique.',
+      (variations: VariationNew[]) => variations && new Set(variations.map((x) => x.name)).size === variations.length,
+    ),
 })
 export interface ExperimentFullNew extends yup.InferType<typeof experimentFullNewSchema> {}
 /**

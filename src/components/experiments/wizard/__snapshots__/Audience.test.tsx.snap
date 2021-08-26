@@ -97,19 +97,19 @@ exports[`renders as expected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-8 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-11 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-11"
+                  class="PrivateSwitchBase-input-14"
                   name="experiment.existingUsersAllowed"
                   type="radio"
                   value="false"
                 />
                 <div
-                  class="PrivateRadioButtonIcon-root-12"
+                  class="PrivateRadioButtonIcon-root-15"
                 >
                   <svg
                     aria-hidden="true"
@@ -123,7 +123,7 @@ exports[`renders as expected 1`] = `
                   </svg>
                   <svg
                     aria-hidden="true"
-                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-13"
+                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-16"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
@@ -148,20 +148,20 @@ exports[`renders as expected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-8 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-9 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-11 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-12 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
                   checked=""
-                  class="PrivateSwitchBase-input-11"
+                  class="PrivateSwitchBase-input-14"
                   name="experiment.existingUsersAllowed"
                   type="radio"
                   value="true"
                 />
                 <div
-                  class="PrivateRadioButtonIcon-root-12 PrivateRadioButtonIcon-checked-14"
+                  class="PrivateRadioButtonIcon-root-15 PrivateRadioButtonIcon-checked-17"
                 >
                   <svg
                     aria-hidden="true"
@@ -175,7 +175,7 @@ exports[`renders as expected 1`] = `
                   </svg>
                   <svg
                     aria-hidden="true"
-                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-13"
+                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-16"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
@@ -227,20 +227,20 @@ exports[`renders as expected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-8 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-9 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-11 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-12 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
                   checked=""
-                  class="PrivateSwitchBase-input-11"
+                  class="PrivateSwitchBase-input-14"
                   name="non-formik-segment-exclusion-state-include"
                   type="radio"
                   value="include"
                 />
                 <div
-                  class="PrivateRadioButtonIcon-root-12 PrivateRadioButtonIcon-checked-14"
+                  class="PrivateRadioButtonIcon-root-15 PrivateRadioButtonIcon-checked-17"
                 >
                   <svg
                     aria-hidden="true"
@@ -254,7 +254,7 @@ exports[`renders as expected 1`] = `
                   </svg>
                   <svg
                     aria-hidden="true"
-                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-13"
+                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-16"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
@@ -279,19 +279,19 @@ exports[`renders as expected 1`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-8 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-11 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-11"
+                  class="PrivateSwitchBase-input-14"
                   name="non-formik-segment-exclusion-state-exclude"
                   type="radio"
                   value="exclude"
                 />
                 <div
-                  class="PrivateRadioButtonIcon-root-12"
+                  class="PrivateRadioButtonIcon-root-15"
                 >
                   <svg
                     aria-hidden="true"
@@ -305,7 +305,7 @@ exports[`renders as expected 1`] = `
                   </svg>
                   <svg
                     aria-hidden="true"
-                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-13"
+                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-16"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
@@ -406,11 +406,11 @@ exports[`renders as expected 1`] = `
               </div>
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-15 MuiOutlinedInput-notchedOutline"
+                class="PrivateNotchedOutline-root-18 MuiOutlinedInput-notchedOutline"
                 style="padding-left: 8px;"
               >
                 <legend
-                  class="PrivateNotchedOutline-legend-16"
+                  class="PrivateNotchedOutline-legend-19"
                   style="width: 0.01px;"
                 >
                   <span>
@@ -438,7 +438,7 @@ exports[`renders as expected 1`] = `
         <p
           class="MuiFormHelperText-root makeStyles-segmentationHelperText-3"
         >
-          Define the percentages to include in the experiment. 
+          Set the percentage of traffic allocated to each variation. Percentages may sum to less than 100 to avoid allocating the entire userbase. 
           <br />
            Use “control” for the default (fallback) experience.
         </p>
@@ -446,7 +446,7 @@ exports[`renders as expected 1`] = `
           class="MuiTableContainer-root"
         >
           <table
-            class="MuiTable-root makeStyles-variants-7"
+            class="MuiTable-root makeStyles-variants-10"
           >
             <thead
               class="MuiTableHead-root"
@@ -466,6 +466,10 @@ exports[`renders as expected 1`] = `
                 >
                    Allocated Percentage 
                 </th>
+                <th
+                  class="MuiTableCell-root MuiTableCell-head"
+                  scope="col"
+                />
               </tr>
             </thead>
             <tbody
@@ -483,13 +487,14 @@ exports[`renders as expected 1`] = `
                   class="MuiTableCell-root MuiTableCell-body"
                 >
                   <div
-                    class="MuiFormControl-root MuiTextField-root makeStyles-variationAllocatedPercentage-6"
+                    class="MuiFormControl-root MuiTextField-root makeStyles-variationAllocatedPercentage-9"
                   >
                     <div
                       class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd MuiInputBase-marginDense MuiOutlinedInput-marginDense"
                     >
                       <input
                         aria-invalid="false"
+                        aria-label="Allocated Percentage"
                         class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
                         max="99"
                         min="1"
@@ -509,11 +514,11 @@ exports[`renders as expected 1`] = `
                       </div>
                       <fieldset
                         aria-hidden="true"
-                        class="PrivateNotchedOutline-root-15 MuiOutlinedInput-notchedOutline"
+                        class="PrivateNotchedOutline-root-18 MuiOutlinedInput-notchedOutline"
                         style="padding-left: 8px;"
                       >
                         <legend
-                          class="PrivateNotchedOutline-legend-16"
+                          class="PrivateNotchedOutline-legend-19"
                           style="width: 0.01px;"
                         >
                           <span>
@@ -524,6 +529,9 @@ exports[`renders as expected 1`] = `
                     </div>
                   </div>
                 </td>
+                <td
+                  class="MuiTableCell-root MuiTableCell-body"
+                />
               </tr>
               <tr
                 class="MuiTableRow-root"
@@ -531,19 +539,50 @@ exports[`renders as expected 1`] = `
                 <td
                   class="MuiTableCell-root MuiTableCell-body"
                 >
-                  treatment
+                  <div
+                    class="MuiFormControl-root MuiTextField-root"
+                  >
+                    <div
+                      class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                    >
+                      <input
+                        aria-invalid="false"
+                        aria-label="Variation Name"
+                        class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                        name="experiment.variations[1].name"
+                        required=""
+                        type="text"
+                        value="treatment"
+                      />
+                      <fieldset
+                        aria-hidden="true"
+                        class="PrivateNotchedOutline-root-18 MuiOutlinedInput-notchedOutline"
+                        style="padding-left: 8px;"
+                      >
+                        <legend
+                          class="PrivateNotchedOutline-legend-19"
+                          style="width: 0.01px;"
+                        >
+                          <span>
+                            ​
+                          </span>
+                        </legend>
+                      </fieldset>
+                    </div>
+                  </div>
                 </td>
                 <td
                   class="MuiTableCell-root MuiTableCell-body"
                 >
                   <div
-                    class="MuiFormControl-root MuiTextField-root makeStyles-variationAllocatedPercentage-6"
+                    class="MuiFormControl-root MuiTextField-root makeStyles-variationAllocatedPercentage-9"
                   >
                     <div
                       class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd MuiInputBase-marginDense MuiOutlinedInput-marginDense"
                     >
                       <input
                         aria-invalid="false"
+                        aria-label="Allocated Percentage"
                         class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
                         max="99"
                         min="1"
@@ -563,11 +602,11 @@ exports[`renders as expected 1`] = `
                       </div>
                       <fieldset
                         aria-hidden="true"
-                        class="PrivateNotchedOutline-root-15 MuiOutlinedInput-notchedOutline"
+                        class="PrivateNotchedOutline-root-18 MuiOutlinedInput-notchedOutline"
                         style="padding-left: 8px;"
                       >
                         <legend
-                          class="PrivateNotchedOutline-legend-16"
+                          class="PrivateNotchedOutline-legend-19"
                           style="width: 0.01px;"
                         >
                           <span>
@@ -575,6 +614,83 @@ exports[`renders as expected 1`] = `
                           </span>
                         </legend>
                       </fieldset>
+                    </div>
+                  </div>
+                </td>
+                <td
+                  class="MuiTableCell-root MuiTableCell-body"
+                />
+              </tr>
+              <tr
+                class="MuiTableRow-root"
+              >
+                <td
+                  class="MuiTableCell-root MuiTableCell-body"
+                  colspan="3"
+                >
+                  <div
+                    class="MuiPaper-root MuiAlert-root MuiAlert-standardWarning makeStyles-abnWarning-6 MuiPaper-elevation0"
+                    role="alert"
+                  >
+                    <div
+                      class="MuiAlert-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="MuiAlert-message"
+                    >
+                      <strong>
+                         Manual analysis only A/B/n 
+                      </strong>
+                      <br />
+                      <p>
+                        Experiments with more than a single treatment variation are in an early alpha stage.
+                      </p>
+                      <p>
+                        No results will be displayed.
+                      </p>
+                      <p>
+                        Please do not set up such experiments in production without consulting the ExPlat team first.
+                      </p>
+                      <div
+                        class="makeStyles-addVariation-7"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root makeStyles-addVariationIcon-8"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+                          />
+                        </svg>
+                        <button
+                          aria-label="Add Variation"
+                          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSizeSmall MuiButton-sizeSmall MuiButton-disableElevation"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label"
+                          >
+                            Add Variation
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -681,11 +797,11 @@ exports[`renders as expected 1`] = `
               </div>
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-15 MuiOutlinedInput-notchedOutline"
+                class="PrivateNotchedOutline-root-18 MuiOutlinedInput-notchedOutline"
                 style="padding-left: 8px;"
               >
                 <legend
-                  class="PrivateNotchedOutline-legend-16"
+                  class="PrivateNotchedOutline-legend-19"
                   style="width: 0.01px;"
                 >
                   <span>
@@ -799,19 +915,19 @@ exports[`renders as expected 2`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-8 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-11 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-11"
+                  class="PrivateSwitchBase-input-14"
                   name="experiment.existingUsersAllowed"
                   type="radio"
                   value="false"
                 />
                 <div
-                  class="PrivateRadioButtonIcon-root-12"
+                  class="PrivateRadioButtonIcon-root-15"
                 >
                   <svg
                     aria-hidden="true"
@@ -825,7 +941,7 @@ exports[`renders as expected 2`] = `
                   </svg>
                   <svg
                     aria-hidden="true"
-                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-13"
+                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-16"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
@@ -850,20 +966,20 @@ exports[`renders as expected 2`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-8 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-9 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-11 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-12 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
                   checked=""
-                  class="PrivateSwitchBase-input-11"
+                  class="PrivateSwitchBase-input-14"
                   name="experiment.existingUsersAllowed"
                   type="radio"
                   value="true"
                 />
                 <div
-                  class="PrivateRadioButtonIcon-root-12 PrivateRadioButtonIcon-checked-14"
+                  class="PrivateRadioButtonIcon-root-15 PrivateRadioButtonIcon-checked-17"
                 >
                   <svg
                     aria-hidden="true"
@@ -877,7 +993,7 @@ exports[`renders as expected 2`] = `
                   </svg>
                   <svg
                     aria-hidden="true"
-                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-13"
+                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-16"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
@@ -929,20 +1045,20 @@ exports[`renders as expected 2`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-8 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-11 MuiRadio-root MuiRadio-colorSecondary MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
                   checked=""
-                  class="PrivateSwitchBase-input-11"
+                  class="PrivateSwitchBase-input-14"
                   name="non-formik-segment-exclusion-state-include"
                   type="radio"
                   value="include"
                 />
                 <div
-                  class="PrivateRadioButtonIcon-root-12"
+                  class="PrivateRadioButtonIcon-root-15"
                 >
                   <svg
                     aria-hidden="true"
@@ -956,7 +1072,7 @@ exports[`renders as expected 2`] = `
                   </svg>
                   <svg
                     aria-hidden="true"
-                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-13"
+                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-16"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
@@ -981,19 +1097,19 @@ exports[`renders as expected 2`] = `
           >
             <span
               aria-disabled="false"
-              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-8 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-9 Mui-checked MuiIconButton-colorSecondary"
+              class="MuiButtonBase-root MuiIconButton-root PrivateSwitchBase-root-11 MuiRadio-root MuiRadio-colorSecondary PrivateSwitchBase-checked-12 Mui-checked MuiIconButton-colorSecondary"
             >
               <span
                 class="MuiIconButton-label"
               >
                 <input
-                  class="PrivateSwitchBase-input-11"
+                  class="PrivateSwitchBase-input-14"
                   name="non-formik-segment-exclusion-state-exclude"
                   type="radio"
                   value="exclude"
                 />
                 <div
-                  class="PrivateRadioButtonIcon-root-12 PrivateRadioButtonIcon-checked-14"
+                  class="PrivateRadioButtonIcon-root-15 PrivateRadioButtonIcon-checked-17"
                 >
                   <svg
                     aria-hidden="true"
@@ -1007,7 +1123,7 @@ exports[`renders as expected 2`] = `
                   </svg>
                   <svg
                     aria-hidden="true"
-                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-13"
+                    class="MuiSvgIcon-root PrivateRadioButtonIcon-layer-16"
                     focusable="false"
                     viewBox="0 0 24 24"
                   >
@@ -1129,11 +1245,11 @@ exports[`renders as expected 2`] = `
               </div>
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-15 MuiOutlinedInput-notchedOutline"
+                class="PrivateNotchedOutline-root-18 MuiOutlinedInput-notchedOutline"
                 style="padding-left: 8px;"
               >
                 <legend
-                  class="PrivateNotchedOutline-legend-16"
+                  class="PrivateNotchedOutline-legend-19"
                   style="width: 0.01px;"
                 >
                   <span>
@@ -1161,7 +1277,7 @@ exports[`renders as expected 2`] = `
         <p
           class="MuiFormHelperText-root makeStyles-segmentationHelperText-3"
         >
-          Define the percentages to include in the experiment. 
+          Set the percentage of traffic allocated to each variation. Percentages may sum to less than 100 to avoid allocating the entire userbase. 
           <br />
            Use “control” for the default (fallback) experience.
         </p>
@@ -1169,7 +1285,7 @@ exports[`renders as expected 2`] = `
           class="MuiTableContainer-root"
         >
           <table
-            class="MuiTable-root makeStyles-variants-7"
+            class="MuiTable-root makeStyles-variants-10"
           >
             <thead
               class="MuiTableHead-root"
@@ -1189,6 +1305,10 @@ exports[`renders as expected 2`] = `
                 >
                    Allocated Percentage 
                 </th>
+                <th
+                  class="MuiTableCell-root MuiTableCell-head"
+                  scope="col"
+                />
               </tr>
             </thead>
             <tbody
@@ -1206,13 +1326,14 @@ exports[`renders as expected 2`] = `
                   class="MuiTableCell-root MuiTableCell-body"
                 >
                   <div
-                    class="MuiFormControl-root MuiTextField-root makeStyles-variationAllocatedPercentage-6"
+                    class="MuiFormControl-root MuiTextField-root makeStyles-variationAllocatedPercentage-9"
                   >
                     <div
                       class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd MuiInputBase-marginDense MuiOutlinedInput-marginDense"
                     >
                       <input
                         aria-invalid="false"
+                        aria-label="Allocated Percentage"
                         class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
                         max="99"
                         min="1"
@@ -1232,11 +1353,11 @@ exports[`renders as expected 2`] = `
                       </div>
                       <fieldset
                         aria-hidden="true"
-                        class="PrivateNotchedOutline-root-15 MuiOutlinedInput-notchedOutline"
+                        class="PrivateNotchedOutline-root-18 MuiOutlinedInput-notchedOutline"
                         style="padding-left: 8px;"
                       >
                         <legend
-                          class="PrivateNotchedOutline-legend-16"
+                          class="PrivateNotchedOutline-legend-19"
                           style="width: 0.01px;"
                         >
                           <span>
@@ -1247,6 +1368,9 @@ exports[`renders as expected 2`] = `
                     </div>
                   </div>
                 </td>
+                <td
+                  class="MuiTableCell-root MuiTableCell-body"
+                />
               </tr>
               <tr
                 class="MuiTableRow-root"
@@ -1254,26 +1378,57 @@ exports[`renders as expected 2`] = `
                 <td
                   class="MuiTableCell-root MuiTableCell-body"
                 >
-                  treatment
+                  <div
+                    class="MuiFormControl-root MuiTextField-root"
+                  >
+                    <div
+                      class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-marginDense MuiOutlinedInput-marginDense"
+                    >
+                      <input
+                        aria-invalid="false"
+                        aria-label="Variation Name"
+                        class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
+                        name="experiment.variations[1].name"
+                        required=""
+                        type="text"
+                        value=""
+                      />
+                      <fieldset
+                        aria-hidden="true"
+                        class="PrivateNotchedOutline-root-18 MuiOutlinedInput-notchedOutline"
+                        style="padding-left: 8px;"
+                      >
+                        <legend
+                          class="PrivateNotchedOutline-legend-19"
+                          style="width: 0.01px;"
+                        >
+                          <span>
+                            ​
+                          </span>
+                        </legend>
+                      </fieldset>
+                    </div>
+                  </div>
                 </td>
                 <td
                   class="MuiTableCell-root MuiTableCell-body"
                 >
                   <div
-                    class="MuiFormControl-root MuiTextField-root makeStyles-variationAllocatedPercentage-6"
+                    class="MuiFormControl-root MuiTextField-root makeStyles-variationAllocatedPercentage-9"
                   >
                     <div
                       class="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-formControl MuiInputBase-adornedEnd MuiOutlinedInput-adornedEnd MuiInputBase-marginDense MuiOutlinedInput-marginDense"
                     >
                       <input
                         aria-invalid="false"
+                        aria-label="Allocated Percentage"
                         class="MuiInputBase-input MuiOutlinedInput-input MuiInputBase-inputAdornedEnd MuiOutlinedInput-inputAdornedEnd MuiInputBase-inputMarginDense MuiOutlinedInput-inputMarginDense"
                         max="99"
                         min="1"
                         name="experiment.variations[1].allocatedPercentage"
                         required=""
                         type="number"
-                        value="50"
+                        value=""
                       />
                       <div
                         class="MuiInputAdornment-root MuiInputAdornment-positionEnd MuiInputAdornment-marginDense"
@@ -1286,11 +1441,11 @@ exports[`renders as expected 2`] = `
                       </div>
                       <fieldset
                         aria-hidden="true"
-                        class="PrivateNotchedOutline-root-15 MuiOutlinedInput-notchedOutline"
+                        class="PrivateNotchedOutline-root-18 MuiOutlinedInput-notchedOutline"
                         style="padding-left: 8px;"
                       >
                         <legend
-                          class="PrivateNotchedOutline-legend-16"
+                          class="PrivateNotchedOutline-legend-19"
                           style="width: 0.01px;"
                         >
                           <span>
@@ -1298,6 +1453,83 @@ exports[`renders as expected 2`] = `
                           </span>
                         </legend>
                       </fieldset>
+                    </div>
+                  </div>
+                </td>
+                <td
+                  class="MuiTableCell-root MuiTableCell-body"
+                />
+              </tr>
+              <tr
+                class="MuiTableRow-root"
+              >
+                <td
+                  class="MuiTableCell-root MuiTableCell-body"
+                  colspan="3"
+                >
+                  <div
+                    class="MuiPaper-root MuiAlert-root MuiAlert-standardWarning makeStyles-abnWarning-6 MuiPaper-elevation0"
+                    role="alert"
+                  >
+                    <div
+                      class="MuiAlert-icon"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit"
+                        focusable="false"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          d="M12 5.99L19.53 19H4.47L12 5.99M12 2L1 21h22L12 2zm1 14h-2v2h2v-2zm0-6h-2v4h2v-4z"
+                        />
+                      </svg>
+                    </div>
+                    <div
+                      class="MuiAlert-message"
+                    >
+                      <strong>
+                         Manual analysis only A/B/n 
+                      </strong>
+                      <br />
+                      <p>
+                        Experiments with more than a single treatment variation are in an early alpha stage.
+                      </p>
+                      <p>
+                        No results will be displayed.
+                      </p>
+                      <p>
+                        Please do not set up such experiments in production without consulting the ExPlat team first.
+                      </p>
+                      <div
+                        class="makeStyles-addVariation-7"
+                      >
+                        <svg
+                          aria-hidden="true"
+                          class="MuiSvgIcon-root makeStyles-addVariationIcon-8"
+                          focusable="false"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+                          />
+                        </svg>
+                        <button
+                          aria-label="Add Variation"
+                          class="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedSizeSmall MuiButton-sizeSmall MuiButton-disableElevation"
+                          tabindex="0"
+                          type="button"
+                        >
+                          <span
+                            class="MuiButton-label"
+                          >
+                            Add Variation
+                          </span>
+                          <span
+                            class="MuiTouchRipple-root"
+                          />
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </td>
@@ -1426,11 +1658,11 @@ exports[`renders as expected 2`] = `
               </div>
               <fieldset
                 aria-hidden="true"
-                class="PrivateNotchedOutline-root-15 MuiOutlinedInput-notchedOutline"
+                class="PrivateNotchedOutline-root-18 MuiOutlinedInput-notchedOutline"
                 style="padding-left: 8px;"
               >
                 <legend
-                  class="PrivateNotchedOutline-legend-16"
+                  class="PrivateNotchedOutline-legend-19"
                   style="width: 0.01px;"
                 >
                   <span>

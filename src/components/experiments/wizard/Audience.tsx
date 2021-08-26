@@ -1,9 +1,11 @@
 import {
+  Button,
   Chip,
   FormControl,
   FormControlLabel,
   FormHelperText,
   FormLabel,
+  IconButton,
   InputAdornment,
   MenuItem,
   Radio,
@@ -18,8 +20,10 @@ import {
   Typography,
 } from '@material-ui/core'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
+import { Add, Clear } from '@material-ui/icons'
+import { Alert } from '@material-ui/lab'
 import Autocomplete from '@material-ui/lab/Autocomplete'
-import { Field, FormikProps, useField } from 'formik'
+import { Field, FieldArray, FormikProps, useField } from 'formik'
 import { RadioGroup as FormikMuiRadioGroup, Select, TextField as FormikMuiTextField } from 'formik-material-ui'
 import { AutocompleteProps, AutocompleteRenderInputParams, fieldToAutocomplete } from 'formik-material-ui-lab'
 import _ from 'lodash'
@@ -52,6 +56,17 @@ const useStyles = makeStyles((theme: Theme) =>
       display: 'flex',
       flexDirection: 'row',
       marginBottom: theme.spacing(1),
+    },
+    abnWarning: {
+      maxWidth: '25rem',
+    },
+    addVariation: {
+      marginTop: theme.spacing(1),
+      display: 'flex',
+      alignItems: 'center',
+    },
+    addVariationIcon: {
+      marginRight: theme.spacing(1),
     },
     variationAllocatedPercentage: {
       width: '7rem',
@@ -153,6 +168,11 @@ const Audience = ({
 
   const platformError = formikProps.touched.experiment?.platform && formikProps.errors.experiment?.platform
 
+  const variationsError =
+    formikProps.touched.experiment?.variations && _.isString(formikProps.errors.experiment?.variations)
+      ? formikProps.errors.experiment?.variations
+      : undefined
+
   return (
     <div className={classes.root}>
       <Typography variant='h4' gutterBottom>
@@ -250,41 +270,115 @@ const Audience = ({
         <FormControl component='fieldset' className={classes.segmentationFieldSet}>
           <FormLabel htmlFor='variations-select'>Variations</FormLabel>
           <FormHelperText className={classes.segmentationHelperText}>
-            Define the percentages to include in the experiment. <br /> Use &ldquo;control&rdquo; for the default
-            (fallback) experience.
+            Set the percentage of traffic allocated to each variation. Percentages may sum to less than 100 to avoid
+            allocating the entire userbase. <br /> Use &ldquo;control&rdquo; for the default (fallback) experience.
           </FormHelperText>
+          {variationsError && <FormHelperText error>{variationsError}</FormHelperText>}
           <TableContainer>
             <Table className={classes.variants}>
               <TableHead>
                 <TableRow>
                   <TableCell> Name </TableCell>
                   <TableCell> Allocated Percentage </TableCell>
+                  <TableCell></TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
-                {formikProps.values.experiment.variations.map((variation, index) => {
-                  return (
-                    // The key here needs to be changed for variable variations
-                    <TableRow key={variation.name}>
-                      <TableCell>{variation.name}</TableCell>
-                      <TableCell>
-                        <Field
-                          className={classes.variationAllocatedPercentage}
-                          component={FormikMuiTextField}
-                          name={`experiment.variations[${index}].allocatedPercentage`}
-                          type='number'
-                          size='small'
-                          variant='outlined'
-                          inputProps={{ min: 1, max: 99 }}
-                          required
-                          InputProps={{
-                            endAdornment: <InputAdornment position='end'>%</InputAdornment>,
-                          }}
-                        />
-                      </TableCell>
-                    </TableRow>
-                  )
-                })}
+                <FieldArray
+                  name={`experiment.variations`}
+                  render={(arrayHelpers) => {
+                    const onAddVariation = () => {
+                      arrayHelpers.push({
+                        name: ``,
+                        isDefault: false,
+                        allocatedPercentage: '',
+                      })
+                    }
+
+                    const onRemoveVariation = (index: number) => arrayHelpers.remove(index)
+
+                    const variations = formikProps.values.experiment.variations
+
+                    return (
+                      <>
+                        {variations.map((variation, index) => {
+                          return (
+                            // The key here needs to be changed for variable variations
+                            <TableRow key={index}>
+                              <TableCell>
+                                {variation.isDefault ? (
+                                  variation.name
+                                ) : (
+                                  <Field
+                                    component={FormikMuiTextField}
+                                    name={`experiment.variations[${index}].name`}
+                                    size='small'
+                                    variant='outlined'
+                                    required
+                                    inputProps={{
+                                      'aria-label': 'Variation Name',
+                                    }}
+                                  />
+                                )}
+                              </TableCell>
+                              <TableCell>
+                                <Field
+                                  className={classes.variationAllocatedPercentage}
+                                  component={FormikMuiTextField}
+                                  name={`experiment.variations[${index}].allocatedPercentage`}
+                                  type='number'
+                                  size='small'
+                                  variant='outlined'
+                                  inputProps={{ min: 1, max: 99, 'aria-label': 'Allocated Percentage' }}
+                                  required
+                                  InputProps={{
+                                    endAdornment: <InputAdornment position='end'>%</InputAdornment>,
+                                  }}
+                                />
+                              </TableCell>
+                              <TableCell>
+                                {!variation.isDefault && 2 < variations.length && (
+                                  <IconButton onClick={() => onRemoveVariation(index)} aria-label='Remove variation'>
+                                    <Clear />
+                                  </IconButton>
+                                )}
+                              </TableCell>
+                            </TableRow>
+                          )
+                        })}
+                        <TableRow>
+                          <TableCell colSpan={3}>
+                            <Alert severity='warning' className={classes.abnWarning}>
+                              <strong> Manual analysis only A/B/n </strong>
+                              <br />
+                              <p>
+                                Experiments with more than a single treatment variation are in an early alpha stage.
+                              </p>
+                              <p>No results will be displayed.</p>
+                              <p>
+                                Please do not set up such experiments in production without consulting the ExPlat team
+                                first.
+                              </p>
+
+                              <div className={classes.addVariation}>
+                                <Add className={classes.addVariationIcon} />
+                                <Button
+                                  variant='contained'
+                                  onClick={onAddVariation}
+                                  disableElevation
+                                  size='small'
+                                  aria-label='Add Variation'
+                                >
+                                  Add Variation
+                                </Button>
+                              </div>
+                            </Alert>
+                          </TableCell>
+                        </TableRow>
+                      </>
+                    )
+                  }}
+                />
               </TableBody>
             </Table>
           </TableContainer>

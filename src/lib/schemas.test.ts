@@ -304,6 +304,9 @@ describe('lib/schemas.ts module', () => {
             [ValidationError: This field is required],
             [ValidationError: This field is required],
             [ValidationError: This field is required],
+            [ValidationError: A default variation is required.],
+            [ValidationError: The sum of allocated percentages must be less than or equal to 100.],
+            [ValidationError: Variation names must be unique.],
           ]
         `)
       }
@@ -333,6 +336,9 @@ describe('lib/schemas.ts module', () => {
             [ValidationError: This field is required],
             [ValidationError: This field is required],
             [ValidationError: This field is required],
+            [ValidationError: A default variation is required.],
+            [ValidationError: The sum of allocated percentages must be less than or equal to 100.],
+            [ValidationError: Variation names must be unique.],
           ]
         `)
       }

@@ -76,12 +76,21 @@ test('renders as expected', async () => {
   )
   expect(container).toMatchSnapshot()
 
+  const addVariationButton = screen.getByRole('button', { name: /Add variation/i })
+  fireEvent.click(addVariationButton)
+  const removeVariationButton = screen.getAllByRole('button', { name: /Remove variation/i })
+  fireEvent.click(removeVariationButton[0])
+
   const segmentComboboxInput = screen.getByPlaceholderText(/Search and select to customize/)
 
-  fireEvent.change(segmentComboboxInput, { target: { value: 'AU' } })
+  await act(async () => {
+    fireEvent.change(segmentComboboxInput, { target: { value: 'AU' } })
+  })
 
-  const segmentOption = await screen.findByRole('option', { name: /Locale: en-AU/ })
-  fireEvent.click(segmentOption)
+  const segmentOption = await screen.findByRole('option', { name: /Locale: en-AU/i })
+  await act(async () => {
+    fireEvent.click(segmentOption)
+  })
 
   // eslint-disable-next-line @typescript-eslint/require-await
   await act(async () => {

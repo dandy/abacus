@@ -211,6 +211,13 @@ test('sections should be browsable by the section buttons and show validation er
 
   screen.getByText(/Define Your Audience/)
   expect(container).toMatchSnapshot()
+
+  // Activating the variations level validation error:
+  const allocatedPercentage = screen.getAllByRole('spinbutton', { name: /Allocated percentage/i })
+  await act(async () => {
+    fireEvent.change(allocatedPercentage[0], { target: { value: '99' } })
+  })
+  fireEvent.blur(allocatedPercentage[0])
 })
 
 test('section should be validated after change', async () => {
@@ -407,6 +414,20 @@ test('form submits with valid fields', async () => {
   await act(async () => {
     fireEvent.click(targetingOption)
   })
+
+  const addVariationButton = screen.getByRole('button', { name: /Add variation/i })
+  fireEvent.click(addVariationButton)
+
+  const variationNames = screen.getAllByRole('textbox', { name: /Variation name/i })
+  fireEvent.change(variationNames[1], { target: { value: 'treatment_2' } })
+
+  const allocatedPercentages = screen.getAllByRole('spinbutton', { name: /Allocated percentage/i })
+  await act(async () => {
+    fireEvent.change(allocatedPercentages[0], { target: { value: '33' } })
+    fireEvent.change(allocatedPercentages[1], { target: { value: '33' } })
+    fireEvent.change(allocatedPercentages[2], { target: { value: '33' } })
+  })
+
   await act(async () => {
     fireEvent.click(screen.getByRole('button', { name: /Next/ }))
   })
@@ -522,14 +543,19 @@ test('form submits with valid fields', async () => {
       ],
       variations: [
         {
-          allocatedPercentage: '50',
+          allocatedPercentage: 33,
           isDefault: true,
           name: 'control',
         },
         {
-          allocatedPercentage: '50',
+          allocatedPercentage: 33,
           isDefault: false,
           name: 'treatment',
+        },
+        {
+          allocatedPercentage: 33,
+          isDefault: false,
+          name: 'treatment_2',
         },
       ],
       metricAssignments: [
