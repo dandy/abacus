@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme: Theme) =>
     titleName: {
       fontFamily: theme.custom.fonts.monospace,
       color: '#000',
-      display: 'inline-block',
+      display: 'inline',
       overflow: 'hidden',
       maxWidth: '100%',
       whiteSpace: 'nowrap',
