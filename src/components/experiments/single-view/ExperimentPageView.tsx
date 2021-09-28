@@ -37,14 +37,17 @@ const useStyles = makeStyles((theme: Theme) =>
       margin: theme.spacing(3, 0, 1, 0),
       color: theme.palette.grey.A700,
     },
-    titleName: {
-      fontFamily: theme.custom.fonts.monospace,
-      color: '#000',
-      display: 'inline',
+    titleHeader: {
+      display: 'inline-block',
       overflow: 'hidden',
       maxWidth: '100%',
       whiteSpace: 'nowrap',
       textOverflow: 'ellipsis',
+    },
+    titleName: {
+      fontFamily: theme.custom.fonts.monospace,
+      color: '#000',
+      display: 'inline',
     },
     titleNameSkeleton: {
       display: 'inline-block',
@@ -135,7 +138,7 @@ export default function ExperimentPageView({
     <Layout headTitle={`${experiment?.name ?? 'unknown'} - Experiment`}>
       <>
         <div className={classes.title}>
-          <Typography variant='h2'>
+          <Typography className={classes.titleHeader} variant='h2'>
             Experiment:{' '}
             {experiment ? (
               <Tooltip title={experiment.name}>
